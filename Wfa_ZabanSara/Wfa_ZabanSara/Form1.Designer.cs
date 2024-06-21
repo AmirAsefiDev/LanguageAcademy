@@ -31,6 +31,7 @@
             panel2 = new Panel();
             ButtonDegree = new Button();
             pictureBox1 = new PictureBox();
+            ButtonStudent = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -38,6 +39,7 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Controls.Add(ButtonStudent);
             panel2.Controls.Add(ButtonDegree);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 63);
@@ -66,6 +68,16 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
+            // ButtonStudent
+            // 
+            ButtonStudent.Location = new Point(124, 3);
+            ButtonStudent.Name = "ButtonStudent";
+            ButtonStudent.Size = new Size(106, 97);
+            ButtonStudent.TabIndex = 1;
+            ButtonStudent.Text = "دانش آموز";
+            ButtonStudent.UseVisualStyleBackColor = true;
+            ButtonStudent.Click += ButtonStudent_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
@@ -90,5 +102,6 @@
         private Panel panel2;
         private Button ButtonDegree;
         private PictureBox pictureBox1;
+        private Button ButtonStudent;
     }
 }

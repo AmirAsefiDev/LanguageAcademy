@@ -39,9 +39,9 @@ namespace Wfa_ZabanSara.Forms
         public bool ValidateData()
         {
             bool Result = true;
-            if (TxtTitle.Text.Trim() == String.Empty)
+            if (TextBoxTitle.Text.Trim() == String.Empty)
             {
-                errorProvider.SetError(TxtTitle, "لطفا مقدار را وارد نمایید");
+                errorProvider.SetError(TextBoxTitle, "لطفا مقدار را وارد نمایید");
                 Result = false;
             }
 
@@ -53,7 +53,7 @@ namespace Wfa_ZabanSara.Forms
             if (ValidateData())
             {
                 Degree objdegree = new Degree();
-                objdegree.Title = TxtTitle.Text.Trim();
+                objdegree.Title = TextBoxTitle.Text.Trim();
                 BusinessDegree objDB = new BusinessDegree();
                 if (objDB.Insert(objdegree) != 0)
                 {
@@ -72,7 +72,7 @@ namespace Wfa_ZabanSara.Forms
         {
             if (ValidateData())
             {
-                if (TxtTitle.Tag.ToString().Trim() == string.Empty)
+                if (TextBoxTitle.Tag.ToString().Trim() == string.Empty)
                 {
                     MsgBox.Show("لطفا برروری سطر مورد نظر خود کلیک کنید","توجه");
 
@@ -85,8 +85,8 @@ namespace Wfa_ZabanSara.Forms
                     return;
                 }
                 Degree objD = new Degree();
-                objD.ID = int.Parse(TxtTitle.Tag.ToString());
-                objD.Title = TxtTitle.Text.Trim();
+                objD.ID = int.Parse(TextBoxTitle.Tag.ToString());
+                objD.Title = TextBoxTitle.Text.Trim();
                 BusinessDegree ObjBD = new BusinessDegree();
                 if (ObjBD.Update(objD) != 0)
                 {
@@ -103,16 +103,16 @@ namespace Wfa_ZabanSara.Forms
 
         private void ClearText()
         {
-            TxtTitle.Tag = string.Empty;
-            TxtTitle.Text = string.Empty;
+            TextBoxTitle.Tag = string.Empty;
+            TextBoxTitle.Text = string.Empty;
         }
 
         private void DgvDgree_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DgvDgree.Rows.Count > 1)
             {
-                TxtTitle.Tag = DgvDgree.CurrentRow.Cells["ID"].Value.ToString();
-                TxtTitle.Text = DgvDgree.CurrentRow.Cells["Title"].Value.ToString();
+                TextBoxTitle.Tag = DgvDgree.CurrentRow.Cells["ID"].Value.ToString();
+                TextBoxTitle.Text = DgvDgree.CurrentRow.Cells["Title"].Value.ToString();
             }
             else
             {
@@ -128,7 +128,7 @@ namespace Wfa_ZabanSara.Forms
         private void BtnDelete_Click(object sender, EventArgs e)
         {      
             //Forms.frmMsg f = new frmMsg();
-            if (TxtTitle.Tag.ToString().Trim() == string.Empty)
+            if (TextBoxTitle.Tag.ToString().Trim() == string.Empty)
             {
                 MsgBox.Show("لطفا برروری سطر مورد نظر خود کلیک کنید", "");
 
@@ -149,7 +149,7 @@ namespace Wfa_ZabanSara.Forms
             if ( MsgBox.Show("آیا می خواهید این رکورد حذف شود","توجه!",2)== DialogResult.OK)
             {
                 Degree objD = new Degree();
-                objD.ID = int.Parse(TxtTitle.Tag.ToString());
+                objD.ID = int.Parse(TextBoxTitle.Tag.ToString());
 
                 BusinessDegree ObjBD = new BusinessDegree();
                 ObjBD.Delete(objD);
@@ -166,12 +166,12 @@ namespace Wfa_ZabanSara.Forms
 
         private void TxtTitle_MouseEnter(object sender, EventArgs e)
         {
-            TxtTitle.BackColor = Color.MediumVioletRed;
+            TextBoxTitle.BackColor = Color.MediumVioletRed;
         }
 
         private void TxtTitle_Leave(object sender, EventArgs e)
         {
-            TxtTitle.BackColor = Color.White;
+            TextBoxTitle.BackColor = Color.White;
         }
     }
 }

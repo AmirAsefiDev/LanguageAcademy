@@ -23,5 +23,12 @@
             degreeForm.StrFormName = "فرم مدارک";
             degreeForm.ShowDialog();
         }
+
+        private void ButtonStudent_Click(object sender, EventArgs e)
+        {
+            Forms.StudentForm studentForm = new Forms.StudentForm();
+            studentForm.StrFormName = "فرم دانش آموز";
+            studentForm.ShowDialog();
+        }
     }
 }

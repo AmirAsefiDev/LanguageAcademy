@@ -31,6 +31,8 @@
             myTextBox1 = new MyTextBox();
             myTextBox2 = new MyTextBox();
             checkBox1 = new CheckBox();
+            myComboBox1 = new MyComboBox();
+            dropdown1 = new Dropdown();
             SuspendLayout();
             // 
             // myTextBox1
@@ -54,18 +56,44 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(267, 135);
+            checkBox1.Location = new Point(160, 135);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(83, 19);
             checkBox1.TabIndex = 2;
             checkBox1.Text = "checkBox1";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // myComboBox1
+            // 
+            myComboBox1.DataSource = null;
+            myComboBox1.DisplayMember = "";
+            myComboBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            myComboBox1.Location = new Point(311, 135);
+            myComboBox1.Name = "myComboBox1";
+            myComboBox1.selectedItem = null;
+            myComboBox1.Size = new Size(214, 26);
+            myComboBox1.TabIndex = 3;
+            myComboBox1.ValueMember = "";
+            // 
+            // dropdown1
+            // 
+            dropdown1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dropdown1.InputMask = "";
+            dropdown1.Location = new Point(56, 35);
+            dropdown1.Margin = new Padding(4, 3, 4, 3);
+            dropdown1.Name = "dropdown1";
+            dropdown1.Size = new Size(351, 29);
+            dropdown1.TabIndex = 4;
+            dropdown1.Value = "";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(577, 313);
+            ClientSize = new Size(673, 483);
+            Controls.Add(dropdown1);
+            Controls.Add(myComboBox1);
             Controls.Add(checkBox1);
             Controls.Add(myTextBox2);
             Controls.Add(myTextBox1);
@@ -80,5 +108,7 @@
         private MyTextBox myTextBox1;
         private MyTextBox myTextBox2;
         private CheckBox checkBox1;
+        private MyComboBox myComboBox1;
+        private Dropdown dropdown1;
     }
 }

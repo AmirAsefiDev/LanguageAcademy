@@ -1,6 +1,6 @@
 ﻿namespace BaseControl
 {
-    partial class MyTextBox
+    partial class MyComboBox
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,37 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
-            // textBox1
+            // comboBox1
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Location = new Point(0, 0);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(200, 23);
-            textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
-            textBox1.Enter += textBox1_Enter;
-            textBox1.KeyPress += textBox1_KeyPress;
-            textBox1.Leave += textBox1_Leave;
+            comboBox1.Dock = DockStyle.Fill;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(0, 0);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(214, 25);
+            comboBox1.TabIndex = 0;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox1.Enter += comboBox1_Enter;
+            comboBox1.Leave += comboBox1_Leave;
             // 
-            // MyTextBox
+            // MyComboBox
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(textBox1);
-            Name = "MyTextBox";
-            Size = new Size(200, 23);
-            Load += MyTextBox_Load;
-            KeyPress += MyTextBox_KeyPress;
-            Resize += MyTextBox_Resize;
+            Controls.Add(comboBox1);
+            Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Name = "MyComboBox";
+            Size = new Size(214, 26);
+            Resize += MyComboBox_Resize;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
+        private ComboBox comboBox1;
     }
 }

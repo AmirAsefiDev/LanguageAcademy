@@ -31,13 +31,12 @@
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel2 = new Panel();
-            myTextBox1 = new BaseControl.MyTextBox();
+            TextBoxTitle = new BaseControl.MyTextBox();
             BtnDelete = new Button();
             BtnPrint = new Button();
             BtnNew = new Button();
             BtnEdit = new Button();
             label2 = new Label();
-            TxtTitle = new TextBox();
             panel3 = new Panel();
             DgvDgree = new DataGridView();
             ColumnRowNumber = new DataGridViewTextBoxColumn();
@@ -50,27 +49,26 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(myTextBox1);
+            panel2.Controls.Add(TextBoxTitle);
             panel2.Controls.Add(BtnDelete);
             panel2.Controls.Add(BtnPrint);
             panel2.Controls.Add(BtnNew);
             panel2.Controls.Add(BtnEdit);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(TxtTitle);
             panel2.Dock = DockStyle.Right;
             panel2.Location = new Point(310, 63);
             panel2.Name = "panel2";
             panel2.Size = new Size(267, 413);
             panel2.TabIndex = 2;
             // 
-            // myTextBox1
+            // TextBoxTitle
             // 
-            myTextBox1.IsNumber = true;
-            myTextBox1.IsReal = false;
-            myTextBox1.Location = new Point(20, 138);
-            myTextBox1.Name = "myTextBox1";
-            myTextBox1.Size = new Size(222, 23);
-            myTextBox1.TabIndex = 8;
+            TextBoxTitle.IsNumber = false;
+            TextBoxTitle.IsReal = false;
+            TextBoxTitle.Location = new Point(30, 26);
+            TextBoxTitle.Name = "TextBoxTitle";
+            TextBoxTitle.Size = new Size(170, 23);
+            TextBoxTitle.TabIndex = 8;
             // 
             // BtnDelete
             // 
@@ -126,20 +124,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(206, 81);
+            label2.Location = new Point(206, 26);
             label2.Name = "label2";
             label2.Size = new Size(39, 17);
             label2.TabIndex = 3;
             label2.Text = "عنوان";
-            // 
-            // TxtTitle
-            // 
-            TxtTitle.Location = new Point(30, 78);
-            TxtTitle.Name = "TxtTitle";
-            TxtTitle.Size = new Size(170, 25);
-            TxtTitle.TabIndex = 1;
-            TxtTitle.Leave += TxtTitle_Leave;
-            TxtTitle.MouseEnter += TxtTitle_MouseEnter;
             // 
             // panel3
             // 
@@ -204,7 +193,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtTitle;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView DgvDgree;
         private System.Windows.Forms.Button BtnEdit;
@@ -213,6 +201,6 @@
         private System.Windows.Forms.Button BtnNew;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnRowNumber;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private BaseControl.MyTextBox myTextBox1;
+        private BaseControl.MyTextBox TextBoxTitle;
     }
 }
