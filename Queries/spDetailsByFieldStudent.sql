@@ -10,8 +10,8 @@ GO
 
 -- ==========================================================================================
 -- Entity Name:  spDetailsByFieldStudent
--- Author:      Rahim Lotfi
--- Create date: 1395/4/16
+-- Author:      AmirAsefi
+-- Create date: 1403/4/3
 --Description:  This stored procedure is intended for Select By Field  from Student  Table
 -- ==========================================================================================
 
