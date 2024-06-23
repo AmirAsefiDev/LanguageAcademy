@@ -32,6 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             panel2 = new Panel();
+            button1 = new Button();
             DatePickerDateOfBirth = new BaseControl.Dropdown();
             ButtonOpenImage = new Button();
             pictureBoxStudent = new PictureBox();
@@ -77,6 +78,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(DatePickerDateOfBirth);
             panel2.Controls.Add(ButtonOpenImage);
             panel2.Controls.Add(pictureBoxStudent);
@@ -105,6 +107,18 @@
             panel2.Size = new Size(459, 486);
             panel2.TabIndex = 3;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            button1.ImageAlign = ContentAlignment.TopCenter;
+            button1.Location = new Point(6, 152);
+            button1.Name = "button1";
+            button1.Size = new Size(47, 28);
+            button1.TabIndex = 21;
+            button1.Text = "ذخیره";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // DatePickerDateOfBirth
             // 
             DatePickerDateOfBirth.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -118,21 +132,23 @@
             // 
             // ButtonOpenImage
             // 
+            ButtonOpenImage.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonOpenImage.ImageAlign = ContentAlignment.TopCenter;
-            ButtonOpenImage.Location = new Point(33, 156);
+            ButtonOpenImage.Location = new Point(56, 152);
             ButtonOpenImage.Name = "ButtonOpenImage";
-            ButtonOpenImage.Size = new Size(90, 28);
+            ButtonOpenImage.Size = new Size(94, 28);
             ButtonOpenImage.TabIndex = 0;
             ButtonOpenImage.Text = "انتخاب تصویر";
             ButtonOpenImage.UseVisualStyleBackColor = true;
+            ButtonOpenImage.Click += ButtonOpenImage_Click;
             // 
             // pictureBoxStudent
             // 
             pictureBoxStudent.BackColor = Color.White;
             pictureBoxStudent.BorderStyle = BorderStyle.Fixed3D;
-            pictureBoxStudent.Location = new Point(17, 19);
+            pictureBoxStudent.Location = new Point(7, 19);
             pictureBoxStudent.Name = "pictureBoxStudent";
-            pictureBoxStudent.Size = new Size(122, 131);
+            pictureBoxStudent.Size = new Size(142, 131);
             pictureBoxStudent.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxStudent.TabIndex = 20;
             pictureBoxStudent.TabStop = false;
@@ -148,6 +164,7 @@
             BtnDelete.Text = "حذف";
             BtnDelete.TextAlign = ContentAlignment.MiddleLeft;
             BtnDelete.UseVisualStyleBackColor = true;
+            BtnDelete.Click += BtnDelete_Click;
             // 
             // BtnPrint
             // 
@@ -185,6 +202,7 @@
             BtnEdit.Text = "ویرایش";
             BtnEdit.TextAlign = ContentAlignment.MiddleLeft;
             BtnEdit.UseVisualStyleBackColor = true;
+            BtnEdit.Click += BtnEdit_Click;
             // 
             // label8
             // 
@@ -343,8 +361,6 @@
             // 
             // DgvStudent
             // 
-            DgvStudent.AllowUserToAddRows = false;
-            DgvStudent.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(192, 192, 255);
             DgvStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DgvStudent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -354,16 +370,15 @@
             DgvStudent.Dock = DockStyle.Fill;
             DgvStudent.Location = new Point(0, 0);
             DgvStudent.Name = "DgvStudent";
-            DgvStudent.ReadOnly = true;
             DgvStudent.Size = new Size(707, 486);
             DgvStudent.TabIndex = 0;
+            DgvStudent.CellClick += DgvStudent_CellClick;
             DgvStudent.CellFormatting += DgvStudent_CellFormatting;
             // 
             // ColumnRowNumber
             // 
             ColumnRowNumber.HeaderText = "ردیف";
             ColumnRowNumber.Name = "ColumnRowNumber";
-            ColumnRowNumber.ReadOnly = true;
             // 
             // errorProviderStudent
             // 
@@ -424,5 +439,6 @@
         private Button ButtonOpenImage;
         private BaseControl.Dropdown DatePickerDateOfBirth;
         private ErrorProvider errorProviderStudent;
+        private Button button1;
     }
 }
