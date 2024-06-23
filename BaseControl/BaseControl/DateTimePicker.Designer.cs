@@ -28,254 +28,234 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.TopPanel = new System.Windows.Forms.Panel();
-            this.CurrentCalendarLabel = new System.Windows.Forms.Label();
-            this.LastYearButton = new System.Windows.Forms.Button();
-            this.LastMonthButton = new System.Windows.Forms.Button();
-            this.NextMonthButton = new System.Windows.Forms.Button();
-            this.NextYearButton = new System.Windows.Forms.Button();
-            this.BottomPanel = new System.Windows.Forms.Panel();
-            this.GotoTodayButton = new System.Windows.Forms.Button();
-            this.GotoSelectedDateButton = new System.Windows.Forms.Button();
-            this.SelectedDatelabel = new System.Windows.Forms.Label();
-            this.CalendarDataGridView = new System.Windows.Forms.DataGridView();
-            this.Day1Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day2Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day3Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day4Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day5Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day6Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day7Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TopPanel.SuspendLayout();
-            this.BottomPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CalendarDataGridView)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            TopPanel = new Panel();
+            CurrentCalendarLabel = new Label();
+            LastYearButton = new Button();
+            LastMonthButton = new Button();
+            NextMonthButton = new Button();
+            NextYearButton = new Button();
+            BottomPanel = new Panel();
+            GotoTodayButton = new Button();
+            GotoSelectedDateButton = new Button();
+            SelectedDatelabel = new Label();
+            CalendarDataGridView = new DataGridView();
+            Day1Column = new DataGridViewTextBoxColumn();
+            Day2Column = new DataGridViewTextBoxColumn();
+            Day3Column = new DataGridViewTextBoxColumn();
+            Day4Column = new DataGridViewTextBoxColumn();
+            Day5Column = new DataGridViewTextBoxColumn();
+            Day6Column = new DataGridViewTextBoxColumn();
+            Day7Column = new DataGridViewTextBoxColumn();
+            TopPanel.SuspendLayout();
+            BottomPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CalendarDataGridView).BeginInit();
+            SuspendLayout();
             // 
             // TopPanel
             // 
-            this.TopPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.TopPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TopPanel.Controls.Add(this.CurrentCalendarLabel);
-            this.TopPanel.Controls.Add(this.LastYearButton);
-            this.TopPanel.Controls.Add(this.LastMonthButton);
-            this.TopPanel.Controls.Add(this.NextMonthButton);
-            this.TopPanel.Controls.Add(this.NextYearButton);
-            this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopPanel.Location = new System.Drawing.Point(0, 0);
-            this.TopPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TopPanel.Name = "TopPanel";
-            this.TopPanel.Size = new System.Drawing.Size(500, 52);
-            this.TopPanel.TabIndex = 0;
+            TopPanel.BackColor = Color.Gainsboro;
+            TopPanel.BorderStyle = BorderStyle.FixedSingle;
+            TopPanel.Controls.Add(CurrentCalendarLabel);
+            TopPanel.Controls.Add(LastYearButton);
+            TopPanel.Controls.Add(LastMonthButton);
+            TopPanel.Controls.Add(NextMonthButton);
+            TopPanel.Controls.Add(NextYearButton);
+            TopPanel.Dock = DockStyle.Top;
+            TopPanel.Location = new Point(0, 0);
+            TopPanel.Name = "TopPanel";
+            TopPanel.Size = new Size(320, 45);
+            TopPanel.TabIndex = 0;
             // 
             // CurrentCalendarLabel
             // 
-            this.CurrentCalendarLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CurrentCalendarLabel.Location = new System.Drawing.Point(206, 12);
-            this.CurrentCalendarLabel.Name = "CurrentCalendarLabel";
-            this.CurrentCalendarLabel.Size = new System.Drawing.Size(89, 30);
-            this.CurrentCalendarLabel.TabIndex = 4;
-            this.CurrentCalendarLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            CurrentCalendarLabel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            CurrentCalendarLabel.Location = new Point(132, 8);
+            CurrentCalendarLabel.Name = "CurrentCalendarLabel";
+            CurrentCalendarLabel.Size = new Size(51, 26);
+            CurrentCalendarLabel.TabIndex = 4;
+            CurrentCalendarLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // LastYearButton
             // 
-            this.LastYearButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LastYearButton.Location = new System.Drawing.Point(398, 11);
-            this.LastYearButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.LastYearButton.Name = "LastYearButton";
-            this.LastYearButton.Size = new System.Drawing.Size(88, 27);
-            this.LastYearButton.TabIndex = 3;
-            this.LastYearButton.Text = "سال قبل";
-            this.LastYearButton.UseVisualStyleBackColor = true;
-            this.LastYearButton.Click += new System.EventHandler(this.LastYearButton_Click);
+            LastYearButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            LastYearButton.Location = new Point(252, 10);
+            LastYearButton.Name = "LastYearButton";
+            LastYearButton.Size = new Size(60, 23);
+            LastYearButton.TabIndex = 3;
+            LastYearButton.Text = "سال قبل";
+            LastYearButton.UseVisualStyleBackColor = true;
+            LastYearButton.Click += LastYearButton_Click;
             // 
             // LastMonthButton
             // 
-            this.LastMonthButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LastMonthButton.Location = new System.Drawing.Point(302, 11);
-            this.LastMonthButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.LastMonthButton.Name = "LastMonthButton";
-            this.LastMonthButton.Size = new System.Drawing.Size(88, 27);
-            this.LastMonthButton.TabIndex = 2;
-            this.LastMonthButton.Text = "ماه قبل";
-            this.LastMonthButton.UseVisualStyleBackColor = true;
-            this.LastMonthButton.Click += new System.EventHandler(this.LastMonthButton_Click);
+            LastMonthButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            LastMonthButton.Location = new Point(189, 10);
+            LastMonthButton.Name = "LastMonthButton";
+            LastMonthButton.Size = new Size(60, 23);
+            LastMonthButton.TabIndex = 2;
+            LastMonthButton.Text = "ماه قبل";
+            LastMonthButton.UseVisualStyleBackColor = true;
+            LastMonthButton.Click += LastMonthButton_Click;
             // 
             // NextMonthButton
             // 
-            this.NextMonthButton.Location = new System.Drawing.Point(111, 11);
-            this.NextMonthButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.NextMonthButton.Name = "NextMonthButton";
-            this.NextMonthButton.Size = new System.Drawing.Size(88, 27);
-            this.NextMonthButton.TabIndex = 1;
-            this.NextMonthButton.Text = "ماه بعد";
-            this.NextMonthButton.UseVisualStyleBackColor = true;
-            this.NextMonthButton.Click += new System.EventHandler(this.NextMonthButton_Click);
+            NextMonthButton.Location = new Point(66, 10);
+            NextMonthButton.Name = "NextMonthButton";
+            NextMonthButton.Size = new Size(60, 23);
+            NextMonthButton.TabIndex = 1;
+            NextMonthButton.Text = "ماه بعد";
+            NextMonthButton.UseVisualStyleBackColor = true;
+            NextMonthButton.Click += NextMonthButton_Click;
             // 
             // NextYearButton
             // 
-            this.NextYearButton.Location = new System.Drawing.Point(15, 11);
-            this.NextYearButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.NextYearButton.Name = "NextYearButton";
-            this.NextYearButton.Size = new System.Drawing.Size(88, 27);
-            this.NextYearButton.TabIndex = 0;
-            this.NextYearButton.Text = "سال بعد";
-            this.NextYearButton.UseVisualStyleBackColor = true;
-            this.NextYearButton.Click += new System.EventHandler(this.NextYearButton_Click);
+            NextYearButton.Location = new Point(4, 10);
+            NextYearButton.Name = "NextYearButton";
+            NextYearButton.Size = new Size(60, 23);
+            NextYearButton.TabIndex = 0;
+            NextYearButton.Text = "سال بعد";
+            NextYearButton.UseVisualStyleBackColor = true;
+            NextYearButton.Click += NextYearButton_Click;
             // 
             // BottomPanel
             // 
-            this.BottomPanel.BackColor = System.Drawing.Color.Gainsboro;
-            this.BottomPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BottomPanel.Controls.Add(this.GotoTodayButton);
-            this.BottomPanel.Controls.Add(this.GotoSelectedDateButton);
-            this.BottomPanel.Controls.Add(this.SelectedDatelabel);
-            this.BottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomPanel.Location = new System.Drawing.Point(0, 326);
-            this.BottomPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.BottomPanel.Name = "BottomPanel";
-            this.BottomPanel.Size = new System.Drawing.Size(500, 56);
-            this.BottomPanel.TabIndex = 1;
+            BottomPanel.BackColor = Color.Gainsboro;
+            BottomPanel.BorderStyle = BorderStyle.FixedSingle;
+            BottomPanel.Controls.Add(GotoTodayButton);
+            BottomPanel.Controls.Add(GotoSelectedDateButton);
+            BottomPanel.Controls.Add(SelectedDatelabel);
+            BottomPanel.Dock = DockStyle.Bottom;
+            BottomPanel.Location = new Point(0, 251);
+            BottomPanel.Name = "BottomPanel";
+            BottomPanel.Size = new Size(320, 49);
+            BottomPanel.TabIndex = 1;
             // 
             // GotoTodayButton
             // 
-            this.GotoTodayButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.GotoTodayButton.Location = new System.Drawing.Point(398, 13);
-            this.GotoTodayButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.GotoTodayButton.Name = "GotoTodayButton";
-            this.GotoTodayButton.Size = new System.Drawing.Size(88, 27);
-            this.GotoTodayButton.TabIndex = 7;
-            this.GotoTodayButton.Text = "تاریخ امروز";
-            this.GotoTodayButton.UseVisualStyleBackColor = true;
-            this.GotoTodayButton.Click += new System.EventHandler(this.GotoTodayButton_Click);
+            GotoTodayButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            GotoTodayButton.Location = new Point(232, 11);
+            GotoTodayButton.Name = "GotoTodayButton";
+            GotoTodayButton.Size = new Size(75, 23);
+            GotoTodayButton.TabIndex = 7;
+            GotoTodayButton.Text = "تاریخ امروز";
+            GotoTodayButton.UseVisualStyleBackColor = true;
+            GotoTodayButton.Click += GotoTodayButton_Click;
             // 
             // GotoSelectedDateButton
             // 
-            this.GotoSelectedDateButton.Location = new System.Drawing.Point(15, 13);
-            this.GotoSelectedDateButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.GotoSelectedDateButton.Name = "GotoSelectedDateButton";
-            this.GotoSelectedDateButton.Size = new System.Drawing.Size(88, 27);
-            this.GotoSelectedDateButton.TabIndex = 6;
-            this.GotoSelectedDateButton.Text = "تاریخ انتخابی";
-            this.GotoSelectedDateButton.UseVisualStyleBackColor = true;
-            this.GotoSelectedDateButton.Click += new System.EventHandler(this.GotoSelectedDateButton_Click);
+            GotoSelectedDateButton.Location = new Point(13, 11);
+            GotoSelectedDateButton.Name = "GotoSelectedDateButton";
+            GotoSelectedDateButton.Size = new Size(75, 23);
+            GotoSelectedDateButton.TabIndex = 6;
+            GotoSelectedDateButton.Text = "تاریخ انتخابی";
+            GotoSelectedDateButton.UseVisualStyleBackColor = true;
+            GotoSelectedDateButton.Click += GotoSelectedDateButton_Click;
             // 
             // SelectedDatelabel
             // 
-            this.SelectedDatelabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SelectedDatelabel.Location = new System.Drawing.Point(147, 11);
-            this.SelectedDatelabel.Name = "SelectedDatelabel";
-            this.SelectedDatelabel.Size = new System.Drawing.Size(210, 30);
-            this.SelectedDatelabel.TabIndex = 5;
-            this.SelectedDatelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            SelectedDatelabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            SelectedDatelabel.Location = new Point(126, 10);
+            SelectedDatelabel.Name = "SelectedDatelabel";
+            SelectedDatelabel.Size = new Size(71, 26);
+            SelectedDatelabel.TabIndex = 5;
+            SelectedDatelabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // CalendarDataGridView
             // 
-            this.CalendarDataGridView.AllowUserToAddRows = false;
-            this.CalendarDataGridView.AllowUserToDeleteRows = false;
-            this.CalendarDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.CalendarDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CalendarDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Day1Column,
-            this.Day2Column,
-            this.Day3Column,
-            this.Day4Column,
-            this.Day5Column,
-            this.Day6Column,
-            this.Day7Column});
-            this.CalendarDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CalendarDataGridView.Location = new System.Drawing.Point(0, 52);
-            this.CalendarDataGridView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.CalendarDataGridView.MultiSelect = false;
-            this.CalendarDataGridView.Name = "CalendarDataGridView";
-            this.CalendarDataGridView.ReadOnly = true;
-            this.CalendarDataGridView.RowHeadersVisible = false;
-            this.CalendarDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.CalendarDataGridView.Size = new System.Drawing.Size(500, 274);
-            this.CalendarDataGridView.TabIndex = 2;
+            CalendarDataGridView.AllowUserToAddRows = false;
+            CalendarDataGridView.AllowUserToDeleteRows = false;
+            CalendarDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            CalendarDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            CalendarDataGridView.Columns.AddRange(new DataGridViewColumn[] { Day1Column, Day2Column, Day3Column, Day4Column, Day5Column, Day6Column, Day7Column });
+            CalendarDataGridView.Dock = DockStyle.Fill;
+            CalendarDataGridView.Location = new Point(0, 45);
+            CalendarDataGridView.MultiSelect = false;
+            CalendarDataGridView.Name = "CalendarDataGridView";
+            CalendarDataGridView.ReadOnly = true;
+            CalendarDataGridView.RowHeadersVisible = false;
+            CalendarDataGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            CalendarDataGridView.Size = new Size(320, 206);
+            CalendarDataGridView.TabIndex = 2;
             // 
             // Day1Column
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Day1Column.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Day1Column.HeaderText = "ش";
-            this.Day1Column.Name = "Day1Column";
-            this.Day1Column.ReadOnly = true;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Day1Column.DefaultCellStyle = dataGridViewCellStyle15;
+            Day1Column.HeaderText = "ش";
+            Day1Column.Name = "Day1Column";
+            Day1Column.ReadOnly = true;
             // 
             // Day2Column
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Day2Column.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Day2Column.HeaderText = "ی";
-            this.Day2Column.Name = "Day2Column";
-            this.Day2Column.ReadOnly = true;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Day2Column.DefaultCellStyle = dataGridViewCellStyle16;
+            Day2Column.HeaderText = "ی";
+            Day2Column.Name = "Day2Column";
+            Day2Column.ReadOnly = true;
             // 
             // Day3Column
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Day3Column.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Day3Column.HeaderText = "د";
-            this.Day3Column.Name = "Day3Column";
-            this.Day3Column.ReadOnly = true;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Day3Column.DefaultCellStyle = dataGridViewCellStyle17;
+            Day3Column.HeaderText = "د";
+            Day3Column.Name = "Day3Column";
+            Day3Column.ReadOnly = true;
             // 
             // Day4Column
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Day4Column.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Day4Column.HeaderText = "س";
-            this.Day4Column.Name = "Day4Column";
-            this.Day4Column.ReadOnly = true;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Day4Column.DefaultCellStyle = dataGridViewCellStyle18;
+            Day4Column.HeaderText = "س";
+            Day4Column.Name = "Day4Column";
+            Day4Column.ReadOnly = true;
             // 
             // Day5Column
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Day5Column.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Day5Column.HeaderText = "چ";
-            this.Day5Column.Name = "Day5Column";
-            this.Day5Column.ReadOnly = true;
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Day5Column.DefaultCellStyle = dataGridViewCellStyle19;
+            Day5Column.HeaderText = "چ";
+            Day5Column.Name = "Day5Column";
+            Day5Column.ReadOnly = true;
             // 
             // Day6Column
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Day6Column.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Day6Column.HeaderText = "پ";
-            this.Day6Column.Name = "Day6Column";
-            this.Day6Column.ReadOnly = true;
+            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Day6Column.DefaultCellStyle = dataGridViewCellStyle20;
+            Day6Column.HeaderText = "پ";
+            Day6Column.Name = "Day6Column";
+            Day6Column.ReadOnly = true;
             // 
             // Day7Column
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Day7Column.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Day7Column.HeaderText = "ج";
-            this.Day7Column.Name = "Day7Column";
-            this.Day7Column.ReadOnly = true;
+            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Day7Column.DefaultCellStyle = dataGridViewCellStyle21;
+            Day7Column.HeaderText = "ج";
+            Day7Column.Name = "Day7Column";
+            Day7Column.ReadOnly = true;
             // 
             // DateTimePicker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.CalendarDataGridView);
-            this.Controls.Add(this.BottomPanel);
-            this.Controls.Add(this.TopPanel);
-            this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "DateTimePicker";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(500, 382);
-            this.Load += new System.EventHandler(this.DateTimePicker_Load);
-            this.TopPanel.ResumeLayout(false);
-            this.BottomPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CalendarDataGridView)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(CalendarDataGridView);
+            Controls.Add(BottomPanel);
+            Controls.Add(TopPanel);
+            Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Name = "DateTimePicker";
+            RightToLeft = RightToLeft.Yes;
+            Size = new Size(320, 300);
+            Load += DateTimePicker_Load;
+            TopPanel.ResumeLayout(false);
+            BottomPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)CalendarDataGridView).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

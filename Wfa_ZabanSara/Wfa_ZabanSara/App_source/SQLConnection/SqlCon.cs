@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
         public SqlConnection OpenCon()
         {
-            Strcon = "Data Source=.;Initial Catalog=Db_Zabansara;Integrated Security=True;Encrypt=False;";
+            Strcon = "Data Source=DESKTOP-UCH34N1\\AMIR;Initial Catalog=Db_Zabansara;Integrated Security=True;Encrypt=False";
 
             con = new SqlConnection(Strcon);
             con.Open();

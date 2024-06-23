@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             panel2 = new Panel();
-            dropdown1 = new BaseControl.Dropdown();
+            DatePickerDateOfBirth = new BaseControl.Dropdown();
             ButtonOpenImage = new Button();
             pictureBoxStudent = new PictureBox();
             BtnDelete = new Button();
@@ -39,12 +40,12 @@
             BtnNew = new Button();
             BtnEdit = new Button();
             label8 = new Label();
-            textBox1 = new TextBox();
+            TextBoxAddress = new TextBox();
             label7 = new Label();
             TextBoxPhone = new BaseControl.MyTextBox();
             label6 = new Label();
             label5 = new Label();
-            myComboBox1 = new BaseControl.MyComboBox();
+            ComboBoxSex = new BaseControl.MyComboBox();
             label4 = new Label();
             ComboBox_ID_FK_Degree = new BaseControl.MyComboBox();
             label3 = new Label();
@@ -56,25 +57,27 @@
             panel3 = new Panel();
             DgvStudent = new DataGridView();
             ColumnRowNumber = new DataGridViewTextBoxColumn();
+            errorProviderStudent = new ErrorProvider(components);
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudent).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgvStudent).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderStudent).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
             groupBox1.Dock = DockStyle.Bottom;
-            groupBox1.Location = new Point(0, 545);
+            groupBox1.Location = new Point(0, 549);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1123, 104);
+            groupBox1.Size = new Size(1166, 137);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "جستجو";
             // 
             // panel2
             // 
-            panel2.Controls.Add(dropdown1);
+            panel2.Controls.Add(DatePickerDateOfBirth);
             panel2.Controls.Add(ButtonOpenImage);
             panel2.Controls.Add(pictureBoxStudent);
             panel2.Controls.Add(BtnDelete);
@@ -82,12 +85,12 @@
             panel2.Controls.Add(BtnNew);
             panel2.Controls.Add(BtnEdit);
             panel2.Controls.Add(label8);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(TextBoxAddress);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(TextBoxPhone);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(myComboBox1);
+            panel2.Controls.Add(ComboBoxSex);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(ComboBox_ID_FK_Degree);
             panel2.Controls.Add(label3);
@@ -97,21 +100,21 @@
             panel2.Controls.Add(TextBoxName);
             panel2.Controls.Add(TextBoxNationalCode);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(664, 63);
+            panel2.Location = new Point(707, 63);
             panel2.Name = "panel2";
-            panel2.Size = new Size(459, 482);
+            panel2.Size = new Size(459, 486);
             panel2.TabIndex = 3;
             // 
-            // dropdown1
+            // DatePickerDateOfBirth
             // 
-            dropdown1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dropdown1.InputMask = "";
-            dropdown1.Location = new Point(159, 229);
-            dropdown1.Margin = new Padding(4, 3, 4, 3);
-            dropdown1.Name = "dropdown1";
-            dropdown1.Size = new Size(201, 29);
-            dropdown1.TabIndex = 22;
-            dropdown1.Value = "";
+            DatePickerDateOfBirth.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DatePickerDateOfBirth.InputMask = "";
+            DatePickerDateOfBirth.Location = new Point(159, 229);
+            DatePickerDateOfBirth.Margin = new Padding(4, 3, 4, 3);
+            DatePickerDateOfBirth.Name = "DatePickerDateOfBirth";
+            DatePickerDateOfBirth.Size = new Size(201, 29);
+            DatePickerDateOfBirth.TabIndex = 11;
+            DatePickerDateOfBirth.Value = "";
             // 
             // ButtonOpenImage
             // 
@@ -119,7 +122,7 @@
             ButtonOpenImage.Location = new Point(33, 156);
             ButtonOpenImage.Name = "ButtonOpenImage";
             ButtonOpenImage.Size = new Size(90, 28);
-            ButtonOpenImage.TabIndex = 21;
+            ButtonOpenImage.TabIndex = 0;
             ButtonOpenImage.Text = "انتخاب تصویر";
             ButtonOpenImage.UseVisualStyleBackColor = true;
             // 
@@ -138,7 +141,7 @@
             // 
             BtnDelete.Image = Properties.Resources.DeleteImage;
             BtnDelete.ImageAlign = ContentAlignment.MiddleRight;
-            BtnDelete.Location = new Point(131, 414);
+            BtnDelete.Location = new Point(131, 408);
             BtnDelete.Name = "BtnDelete";
             BtnDelete.Size = new Size(91, 53);
             BtnDelete.TabIndex = 19;
@@ -150,10 +153,10 @@
             // 
             BtnPrint.Image = Properties.Resources.PrintImge;
             BtnPrint.ImageAlign = ContentAlignment.MiddleRight;
-            BtnPrint.Location = new Point(26, 414);
+            BtnPrint.Location = new Point(26, 408);
             BtnPrint.Name = "BtnPrint";
             BtnPrint.Size = new Size(91, 53);
-            BtnPrint.TabIndex = 18;
+            BtnPrint.TabIndex = 20;
             BtnPrint.Text = "پرنیت";
             BtnPrint.TextAlign = ContentAlignment.MiddleLeft;
             BtnPrint.UseVisualStyleBackColor = true;
@@ -162,22 +165,23 @@
             // 
             BtnNew.Image = Properties.Resources.InsertImage;
             BtnNew.ImageAlign = ContentAlignment.MiddleRight;
-            BtnNew.Location = new Point(341, 414);
+            BtnNew.Location = new Point(341, 408);
             BtnNew.Name = "BtnNew";
             BtnNew.Size = new Size(91, 53);
             BtnNew.TabIndex = 17;
             BtnNew.Text = "جدید";
             BtnNew.TextAlign = ContentAlignment.MiddleLeft;
             BtnNew.UseVisualStyleBackColor = true;
+            BtnNew.Click += BtnNew_Click;
             // 
             // BtnEdit
             // 
             BtnEdit.Image = Properties.Resources.UpdateImage;
             BtnEdit.ImageAlign = ContentAlignment.MiddleRight;
-            BtnEdit.Location = new Point(237, 414);
+            BtnEdit.Location = new Point(237, 408);
             BtnEdit.Name = "BtnEdit";
             BtnEdit.Size = new Size(91, 53);
-            BtnEdit.TabIndex = 16;
+            BtnEdit.TabIndex = 18;
             BtnEdit.Text = "ویرایش";
             BtnEdit.TextAlign = ContentAlignment.MiddleLeft;
             BtnEdit.UseVisualStyleBackColor = true;
@@ -188,16 +192,16 @@
             label8.Location = new Point(366, 312);
             label8.Name = "label8";
             label8.Size = new Size(37, 17);
-            label8.TabIndex = 14;
+            label8.TabIndex = 16;
             label8.Text = "آدرس";
             // 
-            // textBox1
+            // TextBoxAddress
             // 
-            textBox1.Location = new Point(159, 312);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(201, 77);
-            textBox1.TabIndex = 12;
+            TextBoxAddress.Location = new Point(159, 312);
+            TextBoxAddress.Multiline = true;
+            TextBoxAddress.Name = "TextBoxAddress";
+            TextBoxAddress.Size = new Size(201, 77);
+            TextBoxAddress.TabIndex = 15;
             // 
             // label7
             // 
@@ -205,7 +209,7 @@
             label7.Location = new Point(366, 274);
             label7.Name = "label7";
             label7.Size = new Size(32, 17);
-            label7.TabIndex = 11;
+            label7.TabIndex = 14;
             label7.Text = "تلفن";
             // 
             // TextBoxPhone
@@ -215,7 +219,7 @@
             TextBoxPhone.Location = new Point(159, 274);
             TextBoxPhone.Name = "TextBoxPhone";
             TextBoxPhone.Size = new Size(200, 23);
-            TextBoxPhone.TabIndex = 10;
+            TextBoxPhone.TabIndex = 13;
             // 
             // label6
             // 
@@ -223,7 +227,7 @@
             label6.Location = new Point(366, 233);
             label6.Name = "label6";
             label6.Size = new Size(59, 17);
-            label6.TabIndex = 9;
+            label6.TabIndex = 12;
             label6.Text = "تاریخ تولد";
             // 
             // label5
@@ -232,20 +236,23 @@
             label5.Location = new Point(366, 192);
             label5.Name = "label5";
             label5.Size = new Size(47, 17);
-            label5.TabIndex = 7;
+            label5.TabIndex = 10;
             label5.Text = "جنسیت";
             // 
-            // myComboBox1
+            // ComboBoxSex
             // 
-            myComboBox1.DataSource = null;
-            myComboBox1.DisplayMember = "";
-            myComboBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            myComboBox1.Location = new Point(159, 192);
-            myComboBox1.Name = "myComboBox1";
-            myComboBox1.selectedItem = null;
-            myComboBox1.Size = new Size(200, 25);
-            myComboBox1.TabIndex = 6;
-            myComboBox1.ValueMember = "";
+            ComboBoxSex.AutoCompleteMode = AutoCompleteMode.None;
+            ComboBoxSex.AutoCompleteSource = AutoCompleteSource.None;
+            ComboBoxSex.DataSource = null;
+            ComboBoxSex.DisplayMember = "";
+            ComboBoxSex.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ComboBoxSex.Location = new Point(159, 192);
+            ComboBoxSex.Name = "ComboBoxSex";
+            ComboBoxSex.SelectedIndex = -1;
+            ComboBoxSex.SelectedValue = null;
+            ComboBoxSex.Size = new Size(200, 25);
+            ComboBoxSex.TabIndex = 9;
+            ComboBoxSex.ValueMember = "";
             // 
             // label4
             // 
@@ -253,19 +260,22 @@
             label4.Location = new Point(366, 150);
             label4.Name = "label4";
             label4.Size = new Size(39, 17);
-            label4.TabIndex = 5;
+            label4.TabIndex = 8;
             label4.Text = "مدرک";
             // 
             // ComboBox_ID_FK_Degree
             // 
+            ComboBox_ID_FK_Degree.AutoCompleteMode = AutoCompleteMode.None;
+            ComboBox_ID_FK_Degree.AutoCompleteSource = AutoCompleteSource.None;
             ComboBox_ID_FK_Degree.DataSource = null;
             ComboBox_ID_FK_Degree.DisplayMember = "";
             ComboBox_ID_FK_Degree.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ComboBox_ID_FK_Degree.Location = new Point(159, 150);
             ComboBox_ID_FK_Degree.Name = "ComboBox_ID_FK_Degree";
-            ComboBox_ID_FK_Degree.selectedItem = null;
+            ComboBox_ID_FK_Degree.SelectedIndex = -1;
+            ComboBox_ID_FK_Degree.SelectedValue = null;
             ComboBox_ID_FK_Degree.Size = new Size(200, 25);
-            ComboBox_ID_FK_Degree.TabIndex = 4;
+            ComboBox_ID_FK_Degree.TabIndex = 7;
             ComboBox_ID_FK_Degree.ValueMember = "";
             // 
             // label3
@@ -274,7 +284,7 @@
             label3.Location = new Point(366, 106);
             label3.Name = "label3";
             label3.Size = new Size(77, 17);
-            label3.TabIndex = 3;
+            label3.TabIndex = 6;
             label3.Text = "نام خانوادگی";
             // 
             // TextBoxLastName
@@ -284,7 +294,7 @@
             TextBoxLastName.Location = new Point(159, 106);
             TextBoxLastName.Name = "TextBoxLastName";
             TextBoxLastName.Size = new Size(200, 23);
-            TextBoxLastName.TabIndex = 2;
+            TextBoxLastName.TabIndex = 5;
             // 
             // label2
             // 
@@ -292,7 +302,7 @@
             label2.Location = new Point(366, 61);
             label2.Name = "label2";
             label2.Size = new Size(23, 17);
-            label2.TabIndex = 1;
+            label2.TabIndex = 4;
             label2.Text = "نام";
             // 
             // label1
@@ -301,7 +311,7 @@
             label1.Location = new Point(366, 19);
             label1.Name = "label1";
             label1.Size = new Size(45, 17);
-            label1.TabIndex = 1;
+            label1.TabIndex = 2;
             label1.Text = "کدملی";
             // 
             // TextBoxName
@@ -311,7 +321,7 @@
             TextBoxName.Location = new Point(159, 61);
             TextBoxName.Name = "TextBoxName";
             TextBoxName.Size = new Size(200, 23);
-            TextBoxName.TabIndex = 0;
+            TextBoxName.TabIndex = 3;
             // 
             // TextBoxNationalCode
             // 
@@ -320,7 +330,7 @@
             TextBoxNationalCode.Location = new Point(159, 19);
             TextBoxNationalCode.Name = "TextBoxNationalCode";
             TextBoxNationalCode.Size = new Size(200, 23);
-            TextBoxNationalCode.TabIndex = 0;
+            TextBoxNationalCode.TabIndex = 1;
             // 
             // panel3
             // 
@@ -328,7 +338,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 63);
             panel3.Name = "panel3";
-            panel3.Size = new Size(664, 482);
+            panel3.Size = new Size(707, 486);
             panel3.TabIndex = 4;
             // 
             // DgvStudent
@@ -345,8 +355,8 @@
             DgvStudent.Location = new Point(0, 0);
             DgvStudent.Name = "DgvStudent";
             DgvStudent.ReadOnly = true;
-            DgvStudent.Size = new Size(664, 482);
-            DgvStudent.TabIndex = 1;
+            DgvStudent.Size = new Size(707, 486);
+            DgvStudent.TabIndex = 0;
             DgvStudent.CellFormatting += DgvStudent_CellFormatting;
             // 
             // ColumnRowNumber
@@ -355,16 +365,23 @@
             ColumnRowNumber.Name = "ColumnRowNumber";
             ColumnRowNumber.ReadOnly = true;
             // 
+            // errorProviderStudent
+            // 
+            errorProviderStudent.ContainerControl = this;
+            errorProviderStudent.RightToLeft = true;
+            // 
             // StudentForm
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1123, 649);
+            ClientSize = new Size(1166, 686);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(groupBox1);
             Margin = new Padding(5);
             Name = "StudentForm";
+            WindowState = FormWindowState.Maximized;
+            Load += StudentForm_Load;
             Controls.SetChildIndex(groupBox1, 0);
             Controls.SetChildIndex(panel2, 0);
             Controls.SetChildIndex(panel3, 0);
@@ -373,6 +390,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxStudent).EndInit();
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)DgvStudent).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderStudent).EndInit();
             ResumeLayout(false);
         }
 
@@ -392,18 +410,19 @@
         private Label label3;
         private BaseControl.MyTextBox TextBoxLastName;
         private Label label5;
-        private BaseControl.MyComboBox myComboBox1;
+        private BaseControl.MyComboBox ComboBoxSex;
         private Label label7;
         private BaseControl.MyTextBox TextBoxPhone;
         private Label label6;
         private Label label8;
-        private TextBox textBox1;
+        private TextBox TextBoxAddress;
         private Button BtnDelete;
         private Button BtnPrint;
         private Button BtnNew;
         private Button BtnEdit;
         private PictureBox pictureBoxStudent;
         private Button ButtonOpenImage;
-        private BaseControl.Dropdown dropdown1;
+        private BaseControl.Dropdown DatePickerDateOfBirth;
+        private ErrorProvider errorProviderStudent;
     }
 }

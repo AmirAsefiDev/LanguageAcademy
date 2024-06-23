@@ -41,6 +41,7 @@
             comboBox1.TabIndex = 0;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox1.Enter += comboBox1_Enter;
+            comboBox1.KeyPress += comboBox1_KeyPress;
             comboBox1.Leave += comboBox1_Leave;
             // 
             // MyComboBox

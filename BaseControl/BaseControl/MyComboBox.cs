@@ -48,12 +48,28 @@ namespace BaseControl
             set { comboBox1.DisplayMember = value; }
         }
 
-        public object selectedItem
+        public object SelectedValue
         {
             get { return comboBox1.SelectedValue; }
             set { comboBox1.SelectedValue = value; }
         }
 
+        public AutoCompleteMode AutoCompleteMode
+        {
+            get { return comboBox1.AutoCompleteMode; }
+            set { comboBox1.AutoCompleteMode = value; }
+        }
+
+        public AutoCompleteSource AutoCompleteSource
+        {
+            get { return comboBox1.AutoCompleteSource; }
+            set { comboBox1.AutoCompleteSource = value; }
+        }
+        public int SelectedIndex
+        {
+            get { return comboBox1.SelectedIndex; }
+            set { comboBox1.SelectedIndex = value; }
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -74,6 +90,11 @@ namespace BaseControl
         private void comboBox1_Leave(object sender, EventArgs e)
         {
             comboBox1.BackColor = Color.White;
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

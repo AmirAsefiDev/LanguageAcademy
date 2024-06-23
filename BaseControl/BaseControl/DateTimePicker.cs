@@ -112,7 +112,7 @@ namespace BaseControl
                 }
                 foreach (var row in CalendarDataGridView.Rows.OfType<DataGridViewRow>())
                 {
-                    row.Height = 26;
+                    row.Height = 22;
                 }
                 if (!selectedDateExists)
                     CalendarDataGridView.CurrentCell = null;

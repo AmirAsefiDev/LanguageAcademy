@@ -71,7 +71,7 @@
             myComboBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             myComboBox1.Location = new Point(311, 135);
             myComboBox1.Name = "myComboBox1";
-            myComboBox1.selectedItem = null;
+            myComboBox1.SelectedValue = null;
             myComboBox1.Size = new Size(214, 26);
             myComboBox1.TabIndex = 3;
             myComboBox1.ValueMember = "";
