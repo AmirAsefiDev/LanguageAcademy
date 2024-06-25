@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Wfa_ZabanSara.Forms.MasterForm
+﻿namespace Wfa_ZabanSara.Forms.MasterForm
 {
     public partial class frmMaster : Form
     {
-        public string StrFormName= "فرم اصلی";
+        public string StrFormName = "فرم اصلی";
         public frmMaster()
         {
             InitializeComponent();
@@ -27,7 +17,7 @@ namespace Wfa_ZabanSara.Forms.MasterForm
         {
             labFormName.Text = StrFormName;
             picExit.Left = panelMaster.Width - picExit.Width;
-            labFormName.Left = panelMaster.Width / 2 - labFormName.Width /2;
+            labFormName.Left = panelMaster.Width / 2 - labFormName.Width / 2;
         }
     }
 }

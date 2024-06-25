@@ -29,6 +29,7 @@ namespace Wfa_ZabanSara.Forms
         private void DegreeForm_Load(object sender, EventArgs e)
         {
             GetList();
+            ClearText();
         }
 
         private void DgvDgree_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

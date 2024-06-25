@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            ButtonStudent = new Button();
             ButtonDegree = new Button();
             pictureBox1 = new PictureBox();
-            ButtonStudent = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -46,6 +46,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(710, 106);
             panel2.TabIndex = 2;
+            // 
+            // ButtonStudent
+            // 
+            ButtonStudent.Location = new Point(124, 3);
+            ButtonStudent.Name = "ButtonStudent";
+            ButtonStudent.Size = new Size(106, 97);
+            ButtonStudent.TabIndex = 1;
+            ButtonStudent.Text = "دانش آموز";
+            ButtonStudent.UseVisualStyleBackColor = true;
+            ButtonStudent.Click += ButtonStudent_Click;
             // 
             // ButtonDegree
             // 
@@ -67,16 +77,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
-            // 
-            // ButtonStudent
-            // 
-            ButtonStudent.Location = new Point(124, 3);
-            ButtonStudent.Name = "ButtonStudent";
-            ButtonStudent.Size = new Size(106, 97);
-            ButtonStudent.TabIndex = 1;
-            ButtonStudent.Text = "دانش آموز";
-            ButtonStudent.UseVisualStyleBackColor = true;
-            ButtonStudent.Click += ButtonStudent_Click;
             // 
             // Form1
             // 

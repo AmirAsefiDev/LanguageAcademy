@@ -1,4 +1,6 @@
-﻿namespace Wfa_ZabanSara
+﻿using Wfa_ZabanSara.Forms;
+
+namespace Wfa_ZabanSara
 {
     public partial class Form1 : Forms.MasterForm.frmMaster
     {

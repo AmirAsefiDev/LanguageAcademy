@@ -9,6 +9,9 @@ namespace Wfa_ZabanSara.App_source.Cpublic
 {
     public class MyFile
     {
+                                             
+        public static string StudentImage = "StudentImage/";
+
         public static void CopyFile(string StrPath1,string StrPath2)
         {
             if (File.Exists(StrPath2))

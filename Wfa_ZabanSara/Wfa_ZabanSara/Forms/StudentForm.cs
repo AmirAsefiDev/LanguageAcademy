@@ -8,15 +8,15 @@ namespace Wfa_ZabanSara.Forms
 {
     public partial class StudentForm : MasterForm.frmMaster
     {
+        bool ChangePicture = false;
         public StudentForm()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
         }
         private void GetListStudent()
         {
             DgvStudent.DataSource = new StudentBusiness().GetList();
-            ComboBox_ID_FK_Degree.DataSource = new BusinessDegree().GetList();
-
             SetSetting();
 
         }
@@ -33,15 +33,25 @@ namespace Wfa_ZabanSara.Forms
             DgvStudent.Columns["DateOfBirth"].HeaderText = "تاریخ تولد";
             DgvStudent.Columns["Address"].HeaderText = "آدرس";
             DgvStudent.Columns["Phone"].HeaderText = "تلفن";
-            //--------------------------------------------------------
+
+            if (DgvStudent.Rows.Count == 1)
+            {
+                MsgBox.Show("برای مقدار وارد شده هیچ رکوردی پیدا نشد", "هشدار");
+            }
+        }
+        private void SetrSettingOnlyOneRun()
+        {
+            ComboBox_ID_FK_Degree.DataSource = new BusinessDegree().GetList();
+            //-------------------------------
             ComboBox_ID_FK_Degree.DisplayMember = "Title";
             ComboBox_ID_FK_Degree.ValueMember = "ID";
             ComboBox_ID_FK_Degree.AutoCompleteMode = AutoCompleteMode.Suggest;
             ComboBox_ID_FK_Degree.AutoCompleteSource = AutoCompleteSource.ListItems;
-            //--------------------------------------------------------
+            //------------------------------            
             ComboBoxSex.Text = "انتخاب کنید";
             ComboBoxSex.Items.Add("زن");
             ComboBoxSex.Items.Add("مرد");
+
         }
         private void StudentForm_Load(object sender, EventArgs e)
         {
@@ -73,6 +83,8 @@ namespace Wfa_ZabanSara.Forms
             };
 
             GetListStudent();
+            ClearText();
+            SetrSettingOnlyOneRun();
         }
 
         private void DgvStudent_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -92,6 +104,7 @@ namespace Wfa_ZabanSara.Forms
             errorProviderStudent.Clear();
             pictureBoxStudent.Tag = string.Empty;
             pictureBoxStudent.Image = null;
+            TextBoxNationalCode.Tag = string.Empty;
         }
 
         private bool ValidateData()
@@ -122,7 +135,7 @@ namespace Wfa_ZabanSara.Forms
             }
             if (TextBoxPhone.Text.Trim() == string.Empty || TextBoxPhone.Text.Trim().Length != 11)
             {
-                errorProviderStudent.SetError(TextBoxPhone, "لطفا مقدارتلفن را درست وارد کنید");
+                errorProviderStudent.SetError(TextBoxPhone, "لطفا مقدار تلفن را درست وارد کنید");
                 result = false;
             }
             return result;
@@ -161,7 +174,10 @@ namespace Wfa_ZabanSara.Forms
                 if (ID > 0)
                 {
                     if (pictureBoxStudent.Tag.ToString().Trim() != string.Empty)
-                        MyFile.CopyFile(pictureBoxStudent.Tag.ToString(), "StudentImage/" + ID.ToString() + ".jpg");
+                        MyFile.CopyFile(pictureBoxStudent.Tag.ToString(), MyFile.StudentImage + ID.ToString() + ".jpg");
+                    st.ID = ID;
+                    st.Image = MyFile.StudentImage + ID.ToString() + ".jpg";
+                    stb.Update(st);
                 }
                 GetListStudent();
                 MsgBox.Show("دانش آموز مورد نظر اضافه شد", "درج دانش آموز");
@@ -186,8 +202,12 @@ namespace Wfa_ZabanSara.Forms
                 stb.Update(st);
                 if (st.ID > 0)
                 {
-                    if (pictureBoxStudent.Tag.ToString().Trim() != string.Empty)
-                        MyFile.CopyFile(pictureBoxStudent.Tag.ToString(), "StudentImage/" + st.ID.ToString() + ".jpg");
+                    if (ChangePicture)
+                    {
+                        if (pictureBoxStudent.Tag.ToString().Trim() != string.Empty)
+                            MyFile.CopyFile(pictureBoxStudent.Tag.ToString(), MyFile.StudentImage + st.ID.ToString() + ".jpg");
+                    }
+
                 }
                 GetListStudent();
                 MsgBox.Show("دانش آموز مورد نظر اصلاح شد", "درج دانش آموز");
@@ -198,6 +218,7 @@ namespace Wfa_ZabanSara.Forms
 
         private void DgvStudent_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            ClearText();
             if (DgvStudent.Rows.Count > 1)
             {
                 if (DgvStudent.CurrentRow.Cells["ID"].Value == null)
@@ -214,10 +235,10 @@ namespace Wfa_ZabanSara.Forms
                 DatePickerDateOfBirth.Text = DgvStudent.CurrentRow.Cells["DateOfBirth"].Value.ToString();
                 ComboBoxSex.Text = DgvStudent.CurrentRow.Cells["Sex"].Value.ToString();
                 ComboBox_ID_FK_Degree.SelectedValue = DgvStudent.CurrentRow.Cells["ID_FK_Degree"].Value.ToString();
-                if (File.Exists("StudentImage/" + TextBoxNationalCode.Tag.ToString() + ".jpg"))
+                if (File.Exists(MyFile.StudentImage + TextBoxNationalCode.Tag.ToString() + ".jpg"))
                 {
-                    pictureBoxStudent.Image = Image.FromFile("StudentImage/" + TextBoxNationalCode.Tag.ToString() + ".jpg");
-                    pictureBoxStudent.Tag = "StudentImage/" + TextBoxNationalCode.Tag.ToString() + ".jpg";
+                    pictureBoxStudent.Image = Image.FromFile(MyFile.StudentImage + TextBoxNationalCode.Tag.ToString() + ".jpg");
+                    pictureBoxStudent.Tag = MyFile.StudentImage + TextBoxNationalCode.Tag.ToString() + ".jpg";
                 }
 
                 else
@@ -232,7 +253,7 @@ namespace Wfa_ZabanSara.Forms
             StudentBusiness stb = new();
             if (TextBoxNationalCode.Tag.ToString() == string.Empty)
             {
-                MsgBox.Show("لطفا بر روی رکورد مرود نظر کلیک کنید", "هشدار");
+                MsgBox.Show("لطفا بر روی رکورد مورد نظر کلیک کنید", "هشدار");
                 return;
             }
             if (MsgBox.Show("آیا می خواهید این رکورد حذف شود", "هشدار", 2) == DialogResult.OK)
@@ -245,7 +266,7 @@ namespace Wfa_ZabanSara.Forms
                     if (pictureBoxStudent.Tag.ToString().Trim() != string.Empty)
                     {
                         pictureBoxStudent.Image = null;
-                        MyFile.DeleteFile("StudentImage/" + st.ID.ToString() + ".jpg");
+                        MyFile.DeleteFile(MyFile.StudentImage + st.ID.ToString() + ".jpg");
                     }
 
                 }
@@ -265,6 +286,7 @@ namespace Wfa_ZabanSara.Forms
                 {
                     pictureBoxStudent.Image = Image.FromFile(op.FileName);
                     pictureBoxStudent.Tag = op.FileName;
+                    ChangePicture = true;
                 }
             }
             catch
@@ -283,6 +305,83 @@ namespace Wfa_ZabanSara.Forms
                 {
                     MyFile.CopyFile(pictureBoxStudent.Tag.ToString(), s.FileName);
                     MsgBox.Show("عکس مورد نظر شما کپی شد", "کپی فایل");
+                }
+            }
+        }
+
+        private void ButtonSearchNationalCode_Click(object sender, EventArgs e)
+        {
+            if (TextBoxSearchNationalCode.Text.Trim().Length >= 2)
+            {
+                StudentBusiness b = new StudentBusiness();
+                DgvStudent.DataSource = b.DetailsByField("NationalCode", TextBoxSearchNationalCode.Text.Trim());
+                SetSetting();
+            }
+            else
+                MsgBox.Show("مقدار کد ملی را به درستی وارد کنید", "هشدار");
+
+        }
+
+        private void ButtonSearchName_Click(object sender, EventArgs e)
+        {
+            if (TextBoxSearchName.Text.Trim().Length >= 2)
+            {
+                StudentBusiness b = new StudentBusiness();
+                DgvStudent.DataSource = b.DetailsByField("Name", TextBoxSearchName.Text.Trim());
+                SetSetting();
+            }
+            else
+                MsgBox.Show("مقدار نام را به درستی وارد کنید", "هشدار");
+
+        }
+
+        private void ButtonSearchLastName_Click(object sender, EventArgs e)
+        {
+            if (TextBoxSearchLastName.Text.Trim().Length >= 2)
+            {
+                StudentBusiness b = new StudentBusiness();
+                DgvStudent.DataSource = b.DetailsByField("LastName", TextBoxSearchLastName.Text.Trim());
+                SetSetting();
+            }
+            else
+                MsgBox.Show("مقدار نام خانوادگی را به درستی وارد کنید", "هشدار");
+
+        }
+
+        private void ButtonSearchMore_Click(object sender, EventArgs e)
+        {
+            SearchStudentFrom f = new();
+            f.StrFormName = "فرم جستجوی دانش آموزان";
+            f.ShowDialog();
+            /////////////////////////////////////////////////////
+            if (f.SendParameter > 0)
+            {
+
+
+                if (DgvStudent.Rows.Count > 1)
+                {
+                    if (f.DgvStudent.CurrentRow.Cells["ID"].Value == null)
+                        return;
+                    if (f.DgvStudent.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
+                        return;
+
+                    TextBoxNationalCode.Text = f.DgvStudent.CurrentRow.Cells["NationalCode"].Value.ToString();
+                    TextBoxNationalCode.Tag = f.DgvStudent.CurrentRow.Cells["ID"].Value.ToString();
+                    TextBoxName.Text = f.DgvStudent.CurrentRow.Cells["Name"].Value.ToString();
+                    TextBoxLastName.Text = f.DgvStudent.CurrentRow.Cells["LastName"].Value.ToString();
+                    TextBoxAddress.Text = f.DgvStudent.CurrentRow.Cells["Address"].Value.ToString();
+                    TextBoxPhone.Text = f.DgvStudent.CurrentRow.Cells["Phone"].Value.ToString();
+                    DatePickerDateOfBirth.Text = f.DgvStudent.CurrentRow.Cells["DateOfBirth"].Value.ToString();
+                    ComboBoxSex.Text = f.DgvStudent.CurrentRow.Cells["Sex"].Value.ToString();
+                    ComboBox_ID_FK_Degree.SelectedValue = f.DgvStudent.CurrentRow.Cells["ID_FK_Degree"].Value.ToString();
+                    if (File.Exists(MyFile.StudentImage + TextBoxNationalCode.Tag.ToString() + ".jpg"))
+                    {
+                        pictureBoxStudent.Image = Image.FromFile(MyFile.StudentImage + TextBoxNationalCode.Tag.ToString() + ".jpg");
+                        pictureBoxStudent.Tag = MyFile.StudentImage + TextBoxNationalCode.Tag.ToString() + ".jpg";
+                    }
+
+                    else
+                        pictureBoxStudent.Image = null;
                 }
             }
         }

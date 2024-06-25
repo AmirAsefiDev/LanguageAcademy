@@ -1,4 +1,4 @@
-USE [Db_Zabansara]
+ USE [Db_Zabansara]
 GO
 
 /****** Object:  StoredProcedure [dbo].[spDetailsByFieldStudent]    Script Date: 6/22/2024 3:51:10 PM ******/
@@ -23,7 +23,7 @@ AS
     DECLARE @query nvarchar(2000);
 
     SET @query = 'SELECT Student.ID, [NationalCode], [Name],ID_FK_Degree, [LastName], Degree.Title as '''+'Degree'+''',
-				  case  [Sex] when 0 then '''+'مونث'+''' when 1 then '''+'مذکر'+''' end  as Sex ,
+				  case  [Sex] when 0 then '''+'زن'+''' when 1 then '''+'مرد'+''' end  as Sex ,
 				  [DateofBirth], [Phone], [Image], [Address]  FROM [dbo].[Student] join Degree
 	              on Student.ID_FK_Degree=Degree.ID  WHERE ' + @FieldName  + ' like ''%' + @Value + '%'''
     EXEC(@query)
