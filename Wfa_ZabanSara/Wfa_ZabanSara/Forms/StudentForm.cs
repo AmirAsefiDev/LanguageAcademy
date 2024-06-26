@@ -14,45 +14,6 @@ namespace Wfa_ZabanSara.Forms
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
         }
-        private void GetListStudent()
-        {
-            DgvStudent.DataSource = new StudentBusiness().GetList();
-            SetSetting();
-
-        }
-        public void SetSetting()
-        {
-            DgvStudent.Columns["ID"].Visible = false;
-            DgvStudent.Columns["Image"].Visible = false;
-            DgvStudent.Columns["ID_FK_Degree"].Visible = false;
-            DgvStudent.Columns["Name"].HeaderText = "نام";
-            DgvStudent.Columns["LastName"].HeaderText = "نام خانوادگی";
-            DgvStudent.Columns["NationalCode"].HeaderText = "کدملی";
-            DgvStudent.Columns["Degree"].HeaderText = "مدرک";
-            DgvStudent.Columns["Sex"].HeaderText = "جنسیت";
-            DgvStudent.Columns["DateOfBirth"].HeaderText = "تاریخ تولد";
-            DgvStudent.Columns["Address"].HeaderText = "آدرس";
-            DgvStudent.Columns["Phone"].HeaderText = "تلفن";
-
-            if (DgvStudent.Rows.Count == 1)
-            {
-                MsgBox.Show("برای مقدار وارد شده هیچ رکوردی پیدا نشد", "هشدار");
-            }
-        }
-        private void SetrSettingOnlyOneRun()
-        {
-            ComboBox_ID_FK_Degree.DataSource = new BusinessDegree().GetList();
-            //-------------------------------
-            ComboBox_ID_FK_Degree.DisplayMember = "Title";
-            ComboBox_ID_FK_Degree.ValueMember = "ID";
-            ComboBox_ID_FK_Degree.AutoCompleteMode = AutoCompleteMode.Suggest;
-            ComboBox_ID_FK_Degree.AutoCompleteSource = AutoCompleteSource.ListItems;
-            //------------------------------            
-            ComboBoxSex.Text = "انتخاب کنید";
-            ComboBoxSex.Items.Add("زن");
-            ComboBoxSex.Items.Add("مرد");
-
-        }
         private void StudentForm_Load(object sender, EventArgs e)
         {
             DatePickerDateOfBirth.Value = DateTime.Now.ToString("yyyy/MM/dd");
@@ -69,11 +30,14 @@ namespace Wfa_ZabanSara.Forms
                 {
                     DatePickerDateOfBirth.CloseDropdown();
                 };
-                if (DatePickerDateOfBirth.Tag != null)
+                DatePickerDateOfBirth.Click += DatePickerDateOfBirth_Click;
                 {
-                    picker.SelectedDate = (DateTime)DatePickerDateOfBirth.Tag;
-
+                    picker.SelectedDate = Convert.ToDateTime(DatePickerDateOfBirth.Value.ToString());
                 }
+                //if (DatePickerDateOfBirth.Tag != null)
+                //{
+                //    picker.SelectedDate = (DateTime)DatePickerDateOfBirth.Tag;
+                //}
                 picker.OnSelectedDateChanged += (s, args) =>
                 {
                     DatePickerDateOfBirth.Value = picker.SelectedDate.ToString("yyyy/MM/dd");
@@ -84,61 +48,17 @@ namespace Wfa_ZabanSara.Forms
 
             GetListStudent();
             ClearText();
-            SetrSettingOnlyOneRun();
+            SetSettingOnlyOneRun();
+        }
+
+        private void DatePickerDateOfBirth_Click(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void DgvStudent_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             DgvStudent.Rows[e.RowIndex].Cells["ColumnRowNumber"].Value = e.RowIndex + 1;
-        }
-
-        private void ClearText()
-        {
-            TextBoxName.Text = string.Empty;
-            TextBoxLastName.Text = string.Empty;
-            TextBoxNationalCode.Text = string.Empty;
-            TextBoxPhone.Text = string.Empty;
-            ComboBoxSex.Text = "انتخاب کنید";
-            ComboBox_ID_FK_Degree.Text = "دیپلم";
-            TextBoxAddress.Text = string.Empty;
-            errorProviderStudent.Clear();
-            pictureBoxStudent.Tag = string.Empty;
-            pictureBoxStudent.Image = null;
-            TextBoxNationalCode.Tag = string.Empty;
-        }
-
-        private bool ValidateData()
-        {
-            errorProviderStudent.Clear();
-
-            bool result = true;
-
-            if (TextBoxNationalCode.Text.Trim() == string.Empty || TextBoxNationalCode.Text.Trim().Length != 10)
-            {
-                errorProviderStudent.SetError(TextBoxNationalCode, "لطفا مقدار کد ملی را درست وارد کنید");
-                result = false;
-            }
-            if (TextBoxName.Text.Trim() == string.Empty)
-            {
-                errorProviderStudent.SetError(TextBoxName, "لطفا مقدار نام را وارد کنید");
-                result = false;
-            }
-            if (TextBoxLastName.Text.Trim() == string.Empty)
-            {
-                errorProviderStudent.SetError(TextBoxLastName, "لطفا مقدار نام خانوادگی را وارد کنید");
-                result = false;
-            }
-            if (ComboBoxSex.SelectedIndex == -1)
-            {
-                errorProviderStudent.SetError(ComboBoxSex, "لطفا مقدار جنسیت را انتخاب کنید");
-                result = false;
-            }
-            if (TextBoxPhone.Text.Trim() == string.Empty || TextBoxPhone.Text.Trim().Length != 11)
-            {
-                errorProviderStudent.SetError(TextBoxPhone, "لطفا مقدار تلفن را درست وارد کنید");
-                result = false;
-            }
-            return result;
         }
 
         public Student FillData()
@@ -315,7 +235,7 @@ namespace Wfa_ZabanSara.Forms
             {
                 StudentBusiness b = new StudentBusiness();
                 DgvStudent.DataSource = b.DetailsByField("NationalCode", TextBoxSearchNationalCode.Text.Trim());
-                SetSetting();
+                SetSettingStudent();
             }
             else
                 MsgBox.Show("مقدار کد ملی را به درستی وارد کنید", "هشدار");
@@ -328,7 +248,7 @@ namespace Wfa_ZabanSara.Forms
             {
                 StudentBusiness b = new StudentBusiness();
                 DgvStudent.DataSource = b.DetailsByField("Name", TextBoxSearchName.Text.Trim());
-                SetSetting();
+                SetSettingStudent();
             }
             else
                 MsgBox.Show("مقدار نام را به درستی وارد کنید", "هشدار");
@@ -341,7 +261,7 @@ namespace Wfa_ZabanSara.Forms
             {
                 StudentBusiness b = new StudentBusiness();
                 DgvStudent.DataSource = b.DetailsByField("LastName", TextBoxSearchLastName.Text.Trim());
-                SetSetting();
+                SetSettingStudent();
             }
             else
                 MsgBox.Show("مقدار نام خانوادگی را به درستی وارد کنید", "هشدار");
@@ -371,7 +291,7 @@ namespace Wfa_ZabanSara.Forms
                     TextBoxLastName.Text = f.DgvStudent.CurrentRow.Cells["LastName"].Value.ToString();
                     TextBoxAddress.Text = f.DgvStudent.CurrentRow.Cells["Address"].Value.ToString();
                     TextBoxPhone.Text = f.DgvStudent.CurrentRow.Cells["Phone"].Value.ToString();
-                    DatePickerDateOfBirth.Text = f.DgvStudent.CurrentRow.Cells["DateOfBirth"].Value.ToString();
+                    DatePickerDateOfBirth.Value = f.DgvStudent.CurrentRow.Cells["DateOfBirth"].Value.ToString();
                     ComboBoxSex.Text = f.DgvStudent.CurrentRow.Cells["Sex"].Value.ToString();
                     ComboBox_ID_FK_Degree.SelectedValue = f.DgvStudent.CurrentRow.Cells["ID_FK_Degree"].Value.ToString();
                     if (File.Exists(MyFile.StudentImage + TextBoxNationalCode.Tag.ToString() + ".jpg"))
@@ -385,5 +305,97 @@ namespace Wfa_ZabanSara.Forms
                 }
             }
         }
+
+        private void GetListStudent()
+        {
+            DgvStudent.DataSource = new StudentBusiness().GetList();
+            SetSettingStudent();
+
+        }
+        public void SetSettingStudent()
+        {
+            DgvStudent.Columns["ID"].Visible = false;
+            DgvStudent.Columns["Image"].Visible = false;
+            DgvStudent.Columns["ID_FK_Degree"].Visible = false;
+            DgvStudent.Columns["Name"].HeaderText = "نام";
+            DgvStudent.Columns["LastName"].HeaderText = "نام خانوادگی";
+            DgvStudent.Columns["NationalCode"].HeaderText = "کدملی";
+            DgvStudent.Columns["Degree"].HeaderText = "مدرک";
+            DgvStudent.Columns["Sex"].HeaderText = "جنسیت";
+            DgvStudent.Columns["DateOfBirth"].HeaderText = "تاریخ تولد";
+            DgvStudent.Columns["Address"].HeaderText = "آدرس";
+            DgvStudent.Columns["Phone"].HeaderText = "تلفن";
+
+            if (DgvStudent.Rows.Count == 1)
+            {
+                MsgBox.Show("برای مقدار وارد شده هیچ رکوردی پیدا نشد", "هشدار");
+            }
+        }
+        private void SetSettingOnlyOneRun()
+        {
+            ComboBox_ID_FK_Degree.DataSource = new BusinessDegree().GetList();
+            //-------------------------------
+            ComboBox_ID_FK_Degree.DisplayMember = "Title";
+            ComboBox_ID_FK_Degree.ValueMember = "ID";
+            ComboBox_ID_FK_Degree.AutoCompleteMode = AutoCompleteMode.Suggest;
+            ComboBox_ID_FK_Degree.AutoCompleteSource = AutoCompleteSource.ListItems;
+            //------------------------------            
+            ComboBoxSex.Text = "انتخاب کنید";
+            ComboBoxSex.Items.Add("زن");
+            ComboBoxSex.Items.Add("مرد");
+
+        }
+
+        private void ClearText()
+        {
+            TextBoxName.Text = string.Empty;
+            TextBoxLastName.Text = string.Empty;
+            TextBoxNationalCode.Text = string.Empty;
+            TextBoxPhone.Text = string.Empty;
+            ComboBoxSex.Text = "انتخاب کنید";
+            ComboBox_ID_FK_Degree.Text = "دیپلم";
+            TextBoxAddress.Text = string.Empty;
+            DatePickerDateOfBirth.Value = DateTime.Now.ToString();
+            errorProviderStudent.Clear();
+            //---------------------------
+            pictureBoxStudent.Tag = string.Empty;
+            pictureBoxStudent.Image = null;
+            TextBoxNationalCode.Tag = string.Empty;
+        }
+
+        private bool ValidateData()
+        {
+            errorProviderStudent.Clear();
+
+            bool result = true;
+
+            if (TextBoxNationalCode.Text.Trim() == string.Empty || TextBoxNationalCode.Text.Trim().Length != 10)
+            {
+                errorProviderStudent.SetError(TextBoxNationalCode, "لطفا مقدار کد ملی را درست وارد کنید");
+                result = false;
+            }
+            if (TextBoxName.Text.Trim() == string.Empty)
+            {
+                errorProviderStudent.SetError(TextBoxName, "لطفا مقدار نام را وارد کنید");
+                result = false;
+            }
+            if (TextBoxLastName.Text.Trim() == string.Empty)
+            {
+                errorProviderStudent.SetError(TextBoxLastName, "لطفا مقدار نام خانوادگی را وارد کنید");
+                result = false;
+            }
+            if (ComboBoxSex.SelectedIndex == -1)
+            {
+                errorProviderStudent.SetError(ComboBoxSex, "لطفا مقدار جنسیت را انتخاب کنید");
+                result = false;
+            }
+            if (TextBoxPhone.Text.Trim() == string.Empty || TextBoxPhone.Text.Trim().Length != 11)
+            {
+                errorProviderStudent.SetError(TextBoxPhone, "لطفا مقدار تلفن را درست وارد کنید");
+                result = false;
+            }
+            return result;
+        }
+
     }
 }

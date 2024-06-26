@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            ButtonTeacher = new Button();
             ButtonStudent = new Button();
             ButtonDegree = new Button();
             pictureBox1 = new PictureBox();
@@ -39,6 +40,7 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Controls.Add(ButtonTeacher);
             panel2.Controls.Add(ButtonStudent);
             panel2.Controls.Add(ButtonDegree);
             panel2.Dock = DockStyle.Top;
@@ -46,6 +48,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(710, 106);
             panel2.TabIndex = 2;
+            // 
+            // ButtonTeacher
+            // 
+            ButtonTeacher.Location = new Point(236, 3);
+            ButtonTeacher.Name = "ButtonTeacher";
+            ButtonTeacher.Size = new Size(106, 97);
+            ButtonTeacher.TabIndex = 2;
+            ButtonTeacher.Text = "استاد";
+            ButtonTeacher.UseVisualStyleBackColor = true;
+            ButtonTeacher.Click += ButtonTeacher_Click;
             // 
             // ButtonStudent
             // 
@@ -103,5 +115,6 @@
         private Button ButtonDegree;
         private PictureBox pictureBox1;
         private Button ButtonStudent;
+        private Button ButtonTeacher;
     }
 }

@@ -11,6 +11,7 @@ namespace Wfa_ZabanSara.App_source.Cpublic
     {
                                              
         public static string StudentImage = "StudentImage/";
+        public static string TeacherImage = "TeacherImage/";
 
         public static void CopyFile(string StrPath1,string StrPath2)
         {
