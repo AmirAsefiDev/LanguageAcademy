@@ -44,7 +44,14 @@ namespace Wfa_ZabanSara
         {
             CourseForm course = new();
             course.StrFormName = "فرم درس";
-            course.ShowDialog();    
+            course.ShowDialog();
+        }
+
+        private void ButtonCourseGroup_Click(object sender, EventArgs e)
+        {
+            CourseGroupForm courseForm = new CourseGroupForm();
+            courseForm.StrFormName = "فرم گروه درسی";
+            courseForm.ShowDialog();
         }
     }
 }

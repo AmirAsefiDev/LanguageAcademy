@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            ButtonCourse = new Button();
             ButtonTeacher = new Button();
             ButtonStudent = new Button();
             ButtonDegree = new Button();
             pictureBox1 = new PictureBox();
-            ButtonCourse = new Button();
+            ButtonCourseGroup = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -41,6 +42,7 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Controls.Add(ButtonCourseGroup);
             panel2.Controls.Add(ButtonCourse);
             panel2.Controls.Add(ButtonTeacher);
             panel2.Controls.Add(ButtonStudent);
@@ -51,6 +53,20 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(883, 134);
             panel2.TabIndex = 2;
+            // 
+            // ButtonCourse
+            // 
+            ButtonCourse.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ButtonCourse.Image = Properties.Resources.emblem_library;
+            ButtonCourse.Location = new Point(390, 8);
+            ButtonCourse.Margin = new Padding(3, 4, 3, 4);
+            ButtonCourse.Name = "ButtonCourse";
+            ButtonCourse.Size = new Size(119, 119);
+            ButtonCourse.TabIndex = 3;
+            ButtonCourse.Text = "درس";
+            ButtonCourse.TextImageRelation = TextImageRelation.ImageAboveText;
+            ButtonCourse.UseVisualStyleBackColor = true;
+            ButtonCourse.Click += ButtonCourse_Click;
             // 
             // ButtonTeacher
             // 
@@ -104,19 +120,19 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
-            // ButtonCourse
+            // ButtonCourseGroup
             // 
-            ButtonCourse.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ButtonCourse.Image = Properties.Resources.emblem_library;
-            ButtonCourse.Location = new Point(390, 8);
-            ButtonCourse.Margin = new Padding(3, 4, 3, 4);
-            ButtonCourse.Name = "ButtonCourse";
-            ButtonCourse.Size = new Size(119, 119);
-            ButtonCourse.TabIndex = 3;
-            ButtonCourse.Text = "درس";
-            ButtonCourse.TextImageRelation = TextImageRelation.ImageAboveText;
-            ButtonCourse.UseVisualStyleBackColor = true;
-            ButtonCourse.Click += ButtonCourse_Click;
+            ButtonCourseGroup.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ButtonCourseGroup.Image = Properties.Resources.Group_icon;
+            ButtonCourseGroup.Location = new Point(515, 9);
+            ButtonCourseGroup.Margin = new Padding(3, 4, 3, 4);
+            ButtonCourseGroup.Name = "ButtonCourseGroup";
+            ButtonCourseGroup.Size = new Size(119, 119);
+            ButtonCourseGroup.TabIndex = 4;
+            ButtonCourseGroup.Text = "گروه درسی";
+            ButtonCourseGroup.TextImageRelation = TextImageRelation.ImageAboveText;
+            ButtonCourseGroup.UseVisualStyleBackColor = true;
+            ButtonCourseGroup.Click += ButtonCourseGroup_Click;
             // 
             // Form1
             // 
@@ -146,5 +162,6 @@
         private Button ButtonStudent;
         private Button ButtonTeacher;
         private Button ButtonCourse;
+        private Button ButtonCourseGroup;
     }
 }

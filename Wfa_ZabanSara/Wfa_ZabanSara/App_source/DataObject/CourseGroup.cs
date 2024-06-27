@@ -7,7 +7,7 @@
 	 private   byte  _Term ;   
 	 private   byte  _LevelCourse ;   
 	 private   string  _Tuition ;   
-	 private   string  _WeekPaln ;   
+	 private   string  _WeekPlan ;   
 	 private   byte  _ClassNumber ;   
 	 private   int  _ID_FK_Teacher ;   
 	 private   int  _ID_FK_Course ;   
@@ -44,9 +44,9 @@
 	}
 
  
-	 public  string   WeekPaln {
-		 get{  return _WeekPaln; }
-		 set{_WeekPaln=  value;}
+	 public  string   WeekPlan {
+		 get{  return _WeekPlan; }
+		 set{_WeekPlan=  value;}
 	}
 
  
