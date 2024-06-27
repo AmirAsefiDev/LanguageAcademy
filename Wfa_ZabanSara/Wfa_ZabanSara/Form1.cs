@@ -39,5 +39,12 @@ namespace Wfa_ZabanSara
             TeacherForm.StrFormName = "فرم استاد";
             TeacherForm.ShowDialog();
         }
+
+        private void ButtonCourse_Click(object sender, EventArgs e)
+        {
+            CourseForm course = new();
+            course.StrFormName = "فرم درس";
+            course.ShowDialog();    
+        }
     }
 }

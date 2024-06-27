@@ -37,7 +37,6 @@
             BtnSearchSex = new Button();
             label5 = new Label();
             ComboBoxSearchSex = new BaseControl.MyComboBox();
-            button1 = new Button();
             BtnSearchLastName = new Button();
             BtnSearchName = new Button();
             BtnSearchNationalCode = new Button();
@@ -63,7 +62,6 @@
             groupBox1.Controls.Add(BtnSearchSex);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(ComboBoxSearchSex);
-            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(BtnSearchLastName);
             groupBox1.Controls.Add(BtnSearchName);
             groupBox1.Controls.Add(BtnSearchNationalCode);
@@ -85,7 +83,7 @@
             // 
             BtnPrint.Image = Properties.Resources.PrintImge;
             BtnPrint.ImageAlign = ContentAlignment.MiddleRight;
-            BtnPrint.Location = new Point(173, 76);
+            BtnPrint.Location = new Point(154, 76);
             BtnPrint.Name = "BtnPrint";
             BtnPrint.Size = new Size(91, 47);
             BtnPrint.TabIndex = 32;
@@ -163,15 +161,6 @@
             ComboBoxSearchSex.Size = new Size(130, 25);
             ComboBoxSearchSex.TabIndex = 30;
             ComboBoxSearchSex.ValueMember = "";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(43, 75);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 47);
-            button1.TabIndex = 33;
-            button1.Text = "انتقال کد";
-            button1.UseVisualStyleBackColor = true;
             // 
             // BtnSearchLastName
             // 
@@ -325,7 +314,6 @@
         private Button BtnSearchSex;
         private Label label5;
         private BaseControl.MyComboBox ComboBoxSearchSex;
-        private Button button1;
         private Button BtnSearchLastName;
         private Button BtnSearchName;
         private Button BtnSearchNationalCode;

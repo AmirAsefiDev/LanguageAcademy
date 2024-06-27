@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             groupBox1 = new GroupBox();
             ButtonSearchMore = new Button();
             ButtonSearchLastName = new Button();
@@ -482,8 +482,8 @@
             // DgvStudent
             // 
             DgvStudent.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(192, 192, 255);
-            DgvStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(192, 192, 255);
+            DgvStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             DgvStudent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvStudent.BackgroundColor = SystemColors.ButtonHighlight;
             DgvStudent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;

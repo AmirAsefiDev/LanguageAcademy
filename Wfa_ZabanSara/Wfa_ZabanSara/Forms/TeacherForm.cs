@@ -140,6 +140,7 @@ namespace Wfa_ZabanSara.Forms
                     {
                         if (PictureBoxTeacher.Tag.ToString().Trim() != string.Empty)
                             MyFile.CopyFile(PictureBoxTeacher.Tag.ToString(), MyFile.TeacherImage + teacher.ID.ToString() + ".jpg");
+                        ChangePicture = false;
                     }
                 }
                 GetListTeacher();
@@ -182,7 +183,7 @@ namespace Wfa_ZabanSara.Forms
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
             TeacherBusiness business = new();
-            if (TextBoxNationalCode.Tag.ToString() == string.Empty)
+            if (TextBoxNationalCode.Tag == null || string.IsNullOrEmpty(TextBoxNationalCode.Tag.ToString()))
             {
                 MsgBox.Show("لطفا بر روی رکورد مورد نظر کلیک کنید", "هشدار");
                 return;
