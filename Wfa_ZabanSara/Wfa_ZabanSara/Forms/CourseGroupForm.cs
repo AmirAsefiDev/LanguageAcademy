@@ -36,7 +36,7 @@ namespace Wfa_ZabanSara.Forms
                     if (searchCourseForm.DataGridViewSearchCourse.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
                         return;
 
-                    TextBoxCourseName.Text = searchCourseForm.DataGridViewSearchCourse.CurrentRow.Cells["Title"].Value.ToString();
+                    TextBoxCourseName.Text = searchCourseForm.DataGridViewSearchCourse.CurrentRow.Cells["title"].Value.ToString();
                     TextBoxCourseName.Tag = searchCourseForm.DataGridViewSearchCourse.CurrentRow.Cells["ID"].Value.ToString();
                     TextBoxTuition.Text = searchCourseForm.DataGridViewSearchCourse.CurrentRow.Cells["Tuition"].Value.ToString();
                     int LevelCount = int.Parse(searchCourseForm.DataGridViewSearchCourse.CurrentRow.Cells["LevelCount"].Value.ToString());
@@ -80,7 +80,7 @@ namespace Wfa_ZabanSara.Forms
                 CourseGroupBusiness ObjCourseGroupBusiness = new();
                 CourseGroup courseGroup = FillData();
 
-                TextBoxTuition.Tag  = ObjCourseGroupBusiness.Insert(courseGroup);
+                TextBoxTuition.Tag = ObjCourseGroupBusiness.Insert(courseGroup);
 
                 GetListCourseGroup();
                 MsgBox.Show("درس مورد نظر اضافه شد", "درج درس");
@@ -103,7 +103,7 @@ namespace Wfa_ZabanSara.Forms
                 ObjCourseGroupBusiness.Update(courseGroup);
 
                 GetListCourseGroup();
-                MsgBox.Show("گروه درس مورد نظر اضافه شد", "درج گروه درسی");
+                MsgBox.Show("گروه درس مورد نظر ویرایش شد", "درج گروه درسی");
                 ClearText();
             }
         }
@@ -143,7 +143,22 @@ namespace Wfa_ZabanSara.Forms
 
         private void ButtonDeleteCourseGroup_Click(object sender, EventArgs e)
         {
+            if (TextBoxTuition.Tag.ToString() == string.Empty)
+            {
+                MsgBox.Show("لطفا برروی سطر مورد نظر کلیک کنید", "هشدار");
+                return;
+            }
+            if (MsgBox.Show("آیا می خواهید این رکورد حذف شود", "حذف گروه درس", 2) == DialogResult.OK)
+            {
+                CourseGroupBusiness ObjCourseGroupBusiness = new();
+                CourseGroup ObjCourseGroup = FillData();
+                ObjCourseGroup.ID = int.Parse(TextBoxTuition.Tag.ToString());
+                ObjCourseGroupBusiness.Delete(ObjCourseGroup);
+            }
 
+            GetListCourseGroup();
+            MsgBox.Show("گروه درس مورد نظر شما حذف شد", "حذف گروه درس");
+            ClearText();
         }
 
         private void ButtonPrintCourseGroup_Click(object sender, EventArgs e)
@@ -153,39 +168,131 @@ namespace Wfa_ZabanSara.Forms
 
         private void ButtonSearchCourseTeacher_Click(object sender, EventArgs e)
         {
+            SearchTeacherForm searchTeacherForm = new();
+            searchTeacherForm.StrFormName = "فرم جستجوی استاد";
+            searchTeacherForm.ShowDialog();
+            //-------------------------
+            if (searchTeacherForm.SendParameter > 0)
+            {
+                if (searchTeacherForm.DataGridViewTeacher.Rows.Count > 1)
+                {
+                    if (searchTeacherForm.DataGridViewTeacher.CurrentRow.Cells["ID"].Value == null)
+                        return;
+                    if (searchTeacherForm.DataGridViewTeacher.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
+                        return;
+                    TextBoxSearchCourseTeacher.Text = searchTeacherForm.DataGridViewTeacher.CurrentRow.Cells["Name"].Value.ToString() + " " +
+                        searchTeacherForm.DataGridViewTeacher.CurrentRow.Cells["LastName"].Value.ToString();
+                    TextBoxSearchCourseTeacher.Tag = searchTeacherForm.DataGridViewTeacher.CurrentRow.Cells["ID"].Value.ToString();
+
+                    DgvCourseGroup.DataSource = new CourseGroupBusiness().DetailsByField("ID_FK_Teacher", TextBoxSearchCourseTeacher.Tag.ToString());
+                    SetSettingCourseGroup();
+
+                    if (DgvCourseGroup.Rows.Count < 2)
+                    {
+                        MsgBox.Show("برای این استاد گروه درس تعریف نشده");
+                    }
+
+                }
+            }
 
         }
 
         private void ButtonSearchCourseName_Click(object sender, EventArgs e)
         {
+            SearchCourseForm searchCourseForm = new();
+            searchCourseForm.StrFormName = "فرم جستجوی درس";
+            searchCourseForm.ShowDialog();
+            //------------------------------------
+            if (searchCourseForm.SendParameter > 0)
+            {
+                if (searchCourseForm.DataGridViewSearchCourse.Rows.Count > 1)
+                {
+                    if (searchCourseForm.DataGridViewSearchCourse.CurrentRow.Cells["ID"].Value == null)
+                        return;
+                    if (searchCourseForm.DataGridViewSearchCourse.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
+                        return;
+                    TextBoxSearchCourseName.Text = searchCourseForm.DataGridViewSearchCourse.CurrentRow.Cells["Title"].Value.ToString();
+                    TextBoxSearchCourseName.Tag = searchCourseForm.DataGridViewSearchCourse.CurrentRow.Cells["ID"].Value.ToString();
 
+                    DgvCourseGroup.DataSource = new CourseGroupBusiness().DetailsByField("ID_FK_Course", TextBoxSearchCourseName.Tag.ToString());
+                    SetSettingCourseGroup();
+
+                    if (DgvCourseGroup.Rows.Count < 2)
+                    {
+                        MsgBox.Show("برای این درس گروه درسی تشکیل نشده");
+                    }
+
+                }
+            }
         }
 
         private void ButtonSearchCourseYear_Click(object sender, EventArgs e)
         {
-
+            DgvCourseGroup.DataSource = new CourseGroupBusiness().DetailsByField("Year", TextBoxSearchCourseYear.Text);
+            if (DgvCourseGroup.Rows.Count < 2)
+            {
+                MsgBox.Show("برای این سال گروه درسی وجود ندارد");
+            }
         }
 
         private void ButtonSearchMore_Click(object sender, EventArgs e)
         {
+            SearchCourseGroupForm searchForm = new();
+            searchForm.StrFormName = "فرم جستجوی گروه درسی";
+            searchForm.ShowDialog();
+            //---------------------------------------------
+            if (searchForm.SendParameter > 0)
+            {
+                if (searchForm.DgvCourseGroup.Rows.Count > 1)
+                {
+                    if (searchForm.DgvCourseGroup.CurrentRow.Cells["ID"].Value == null)
+                        return;
+                    if (searchForm.DgvCourseGroup.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
+                        return;
+                    TextBoxTuition.Tag = searchForm.DgvCourseGroup.CurrentRow.Cells["ID"].Value.ToString();
+                    TextBoxTeacherCourse.Tag = searchForm.DgvCourseGroup.CurrentRow.Cells["ID_FK_Teacher"].Value.ToString();
+                    TextBoxCourseName.Tag = searchForm.DgvCourseGroup.CurrentRow.Cells["ID_FK_Course"].Value.ToString();
+                    TextBoxTeacherCourse.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["teacherName"].Value.ToString();
+                    TextBoxCourseName.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["Title"].Value.ToString();
 
+                    //--------GetAllLevels------
+
+                    DataTable Dt = new CourseBusiness().DetailsByField("ID", TextBoxCourseName.Tag.ToString());
+                    byte levelCount = Dt.Rows[0].Field<byte>("LevelCount");
+                    ComboBoxLevelCourse.Items.Clear();
+                    for (int i = 1; i < levelCount; i++)
+                    {
+                        ComboBoxLevelCourse.Items.Add(i);
+                    }
+
+                    ComboBoxLevelCourse.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["LevelCourse"].Value.ToString();
+
+                    TextBoxTuition.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["Tuition"].Value.ToString();
+                    TextBoxCourseYear.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["Year"].Value.ToString();
+                    TextBoxTerm.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["Term"].Value.ToString();
+                    TextBoxClassNumber.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["ClassNumber"].Value.ToString();
+                    TextBoxWeekPlan.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["Weekplan"].Value.ToString();
+                }
+            }
         }
 
 
 
         private void GetListCourseGroup()
         {
-            if (TextBoxTuition.Tag != null)
+            ////if (TextBoxTuition.Tag == null)
             //if (TextBoxTuition.Tag.ToString() != string.Empty)
-            {
-                CourseGroupBusiness courseGroupBusiness = new();
-                DgvCourseGroup.DataSource = courseGroupBusiness.DetailsByField("CourseGroup.ID", TextBoxTuition.Tag.ToString());
-                SetSettingCourseGroup();
-            }
-            else
-            {
-                DgvCourseGroup.DataSource = null;
-            }
+            //{
+            //    CourseGroupBusiness courseGroupBusiness = new();
+            //    DgvCourseGroup.DataSource = courseGroupBusiness.DetailsByField("CourseGroup.ID",TextBoxTuition.Tag.ToString());
+            //    SetSettingCourseGroup();
+            //}
+            //else
+            //    DgvCourseGroup.DataSource = null;
+            CourseGroupBusiness courseGroupBusiness = new();
+            DgvCourseGroup.DataSource = courseGroupBusiness.GetList();
+            SetSettingCourseGroup();
+
         }
         private void SetSettingCourseGroup()
         {
@@ -218,7 +325,7 @@ namespace Wfa_ZabanSara.Forms
             return courseGroup;
         }
         private bool ValidateData()
-        {        
+        {
             errorProviderCourseGroup.Clear();
             bool result = true;
 
@@ -235,11 +342,6 @@ namespace Wfa_ZabanSara.Forms
             if (ComboBoxLevelCourse.SelectedIndex == -1)
             {
                 errorProviderCourseGroup.SetError(ComboBoxLevelCourse, "سطح مورد نظر خود را انتخاب کنید");
-                result = false;
-            }
-            if (TextBoxTuition.Text.Trim() == string.Empty)
-            {
-                errorProviderCourseGroup.SetError(TextBoxTuition, "مقدار شهریه را وارد کنید");
                 result = false;
             }
             if (TextBoxTeacherCourse.Text.Trim() == string.Empty)

@@ -4,7 +4,7 @@ using System.Data.SqlClient;
      public class CourseGroupData
      {
 
-	 public int DataInsertCourseGroup(int ID , int Year ,byte Term ,byte LevelCourse ,string Tuition ,string WeekPaln ,byte ClassNumber ,int ID_FK_Teacher ,int ID_FK_Course )
+	 public int DataInsertCourseGroup(int ID , int Year ,byte Term ,byte LevelCourse ,string Tuition ,string WeekPlan ,byte ClassNumber ,int ID_FK_Teacher ,int ID_FK_Course )
 	{
 		try{
 		SqlCon Scon = new SqlCon();
@@ -16,7 +16,7 @@ using System.Data.SqlClient;
 		Sqlcom.Parameters.AddWithValue("@Term",Term);
 		Sqlcom.Parameters.AddWithValue("@LevelCourse",LevelCourse);
 		Sqlcom.Parameters.AddWithValue("@Tuition",Tuition);
-		Sqlcom.Parameters.AddWithValue("@WeekPlan",WeekPaln);
+		Sqlcom.Parameters.AddWithValue("@WeekPlan",WeekPlan);
 		Sqlcom.Parameters.AddWithValue("@ClassNumber",ClassNumber);
 		Sqlcom.Parameters.AddWithValue("@ID_FK_Teacher",ID_FK_Teacher);
 		Sqlcom.Parameters.AddWithValue("@ID_FK_Course",ID_FK_Course);
@@ -52,7 +52,7 @@ using System.Data.SqlClient;
 		}
 	}
 
-	 public int DataUpdateCourseGroup(int ID , int Year ,byte Term ,byte LevelCourse ,string Tuition ,string WeekPaln ,byte ClassNumber ,int ID_FK_Teacher ,int ID_FK_Course )
+	 public int DataUpdateCourseGroup(int ID , int Year ,byte Term ,byte LevelCourse ,string Tuition ,string WeekPlan ,byte ClassNumber ,int ID_FK_Teacher ,int ID_FK_Course )
 	{
 		try{
 		SqlCon Scon = new SqlCon();
@@ -64,7 +64,7 @@ using System.Data.SqlClient;
 		Sqlcom.Parameters.AddWithValue("@Term",Term);
 		Sqlcom.Parameters.AddWithValue("@LevelCourse",LevelCourse);
 		Sqlcom.Parameters.AddWithValue("@Tuition",Tuition);
-		Sqlcom.Parameters.AddWithValue("@WeekPlan",WeekPaln);
+		Sqlcom.Parameters.AddWithValue("@WeekPlan",WeekPlan);
 		Sqlcom.Parameters.AddWithValue("@ClassNumber",ClassNumber);
 		Sqlcom.Parameters.AddWithValue("@ID_FK_Teacher",ID_FK_Teacher);
 		Sqlcom.Parameters.AddWithValue("@ID_FK_Course",ID_FK_Course);

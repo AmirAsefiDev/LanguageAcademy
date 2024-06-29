@@ -19,6 +19,7 @@ namespace Wfa_ZabanSara.Forms
         public SearchTeacherForm()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         private void SearchTeacherForm_Load(object sender, EventArgs e)
