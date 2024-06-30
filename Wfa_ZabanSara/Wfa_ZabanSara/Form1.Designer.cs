@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            ButtonCourseSelect = new Button();
+            ButtonCourseGroup = new Button();
             ButtonCourse = new Button();
             ButtonTeacher = new Button();
             ButtonStudent = new Button();
             ButtonDegree = new Button();
             pictureBox1 = new PictureBox();
-            ButtonCourseGroup = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -42,6 +43,7 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Controls.Add(ButtonCourseSelect);
             panel2.Controls.Add(ButtonCourseGroup);
             panel2.Controls.Add(ButtonCourse);
             panel2.Controls.Add(ButtonTeacher);
@@ -53,6 +55,32 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(883, 134);
             panel2.TabIndex = 2;
+            // 
+            // ButtonCourseSelect
+            // 
+            ButtonCourseSelect.Image = Properties.Resources.Student_3_icon;
+            ButtonCourseSelect.Location = new Point(640, 8);
+            ButtonCourseSelect.Name = "ButtonCourseSelect";
+            ButtonCourseSelect.Size = new Size(119, 119);
+            ButtonCourseSelect.TabIndex = 5;
+            ButtonCourseSelect.Text = "انتخاب واحد";
+            ButtonCourseSelect.TextImageRelation = TextImageRelation.ImageAboveText;
+            ButtonCourseSelect.UseVisualStyleBackColor = true;
+            ButtonCourseSelect.Click += ButtonCourseSelect_Click;
+            // 
+            // ButtonCourseGroup
+            // 
+            ButtonCourseGroup.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ButtonCourseGroup.Image = Properties.Resources.Group_icon;
+            ButtonCourseGroup.Location = new Point(515, 9);
+            ButtonCourseGroup.Margin = new Padding(3, 4, 3, 4);
+            ButtonCourseGroup.Name = "ButtonCourseGroup";
+            ButtonCourseGroup.Size = new Size(119, 119);
+            ButtonCourseGroup.TabIndex = 4;
+            ButtonCourseGroup.Text = "گروه درسی";
+            ButtonCourseGroup.TextImageRelation = TextImageRelation.ImageAboveText;
+            ButtonCourseGroup.UseVisualStyleBackColor = true;
+            ButtonCourseGroup.Click += ButtonCourseGroup_Click;
             // 
             // ButtonCourse
             // 
@@ -88,7 +116,7 @@
             ButtonStudent.Location = new Point(139, 9);
             ButtonStudent.Margin = new Padding(3, 4, 3, 4);
             ButtonStudent.Name = "ButtonStudent";
-            ButtonStudent.Size = new Size(119, 117);
+            ButtonStudent.Size = new Size(119, 119);
             ButtonStudent.TabIndex = 1;
             ButtonStudent.Text = "دانش آموز";
             ButtonStudent.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -101,7 +129,7 @@
             ButtonDegree.Location = new Point(13, 9);
             ButtonDegree.Margin = new Padding(3, 4, 3, 4);
             ButtonDegree.Name = "ButtonDegree";
-            ButtonDegree.Size = new Size(119, 117);
+            ButtonDegree.Size = new Size(119, 119);
             ButtonDegree.TabIndex = 0;
             ButtonDegree.Text = "مدرک";
             ButtonDegree.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -119,20 +147,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
-            // 
-            // ButtonCourseGroup
-            // 
-            ButtonCourseGroup.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ButtonCourseGroup.Image = Properties.Resources.Group_icon;
-            ButtonCourseGroup.Location = new Point(515, 9);
-            ButtonCourseGroup.Margin = new Padding(3, 4, 3, 4);
-            ButtonCourseGroup.Name = "ButtonCourseGroup";
-            ButtonCourseGroup.Size = new Size(119, 119);
-            ButtonCourseGroup.TabIndex = 4;
-            ButtonCourseGroup.Text = "گروه درسی";
-            ButtonCourseGroup.TextImageRelation = TextImageRelation.ImageAboveText;
-            ButtonCourseGroup.UseVisualStyleBackColor = true;
-            ButtonCourseGroup.Click += ButtonCourseGroup_Click;
             // 
             // Form1
             // 
@@ -163,5 +177,6 @@
         private Button ButtonTeacher;
         private Button ButtonCourse;
         private Button ButtonCourseGroup;
+        private Button ButtonCourseSelect;
     }
 }

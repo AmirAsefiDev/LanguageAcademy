@@ -377,7 +377,7 @@ namespace Wfa_ZabanSara.Forms
             TextBoxLastName.Text = string.Empty;
             TextBoxNationalCode.Text = string.Empty;
             TextBoxNationalCode.Tag = string.Empty;
-            ComboBox_ID_FK_Degree.Text = "دیپلم";
+            ComboBox_ID_FK_Degree.Text = "A1";
             ComboBoxSex.Text = "انتخاب کنید";
             DatePickerDateOfBirth.Value = DateTime.Now.ToString();
             TextBoxPhone.Text = string.Empty;

@@ -353,7 +353,7 @@ namespace Wfa_ZabanSara.Forms
             TextBoxNationalCode.Text = string.Empty;
             TextBoxPhone.Text = string.Empty;
             ComboBoxSex.Text = "انتخاب کنید";
-            ComboBox_ID_FK_Degree.Text = "دیپلم";
+            ComboBox_ID_FK_Degree.Text = "A1";
             TextBoxAddress.Text = string.Empty;
             DatePickerDateOfBirth.Value = DateTime.Now.ToString();
             errorProviderStudent.Clear();

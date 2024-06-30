@@ -53,5 +53,12 @@ namespace Wfa_ZabanSara
             courseForm.StrFormName = "فرم گروه درسی";
             courseForm.ShowDialog();
         }
+
+        private void ButtonCourseSelect_Click(object sender, EventArgs e)
+        {
+            CourseSelectForm courseSelectForm = new();
+            courseSelectForm.StrFormName = "فرم انتخاب واحد";
+            courseSelectForm.ShowDialog();
+        }
     }
 }

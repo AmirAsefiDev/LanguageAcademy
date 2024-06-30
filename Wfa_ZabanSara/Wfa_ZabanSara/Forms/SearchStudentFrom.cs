@@ -8,6 +8,7 @@ namespace Wfa_ZabanSara.Forms
         public SearchStudentFrom()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
 
         }
         private void SearchStudentFrom_Load(object sender, EventArgs e)
