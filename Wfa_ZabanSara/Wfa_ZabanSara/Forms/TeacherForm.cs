@@ -1,8 +1,10 @@
 ﻿using BaseControl.ExtensionMethods;
 using System.Data;
+using System.Windows.Forms;
 using Wfa_ZabanSara.App_source;
 using Wfa_ZabanSara.App_source.BusinessLayer;
 using Wfa_ZabanSara.App_source.Cpublic;
+using winprint;
 
 namespace Wfa_ZabanSara.Forms
 {
@@ -387,5 +389,9 @@ namespace Wfa_ZabanSara.Forms
             PictureBoxTeacher.Image = null;
         }
 
+        private void ButtonPrint_Click(object sender, EventArgs e)
+        {
+            PrintDGV.Print_DataGridView(FarsiGridView.reverse_DataGridView(DataGridViewTeacher));
+        }
     }
 }

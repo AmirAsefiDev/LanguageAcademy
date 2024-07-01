@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Wfa_ZabanSara.App_source;
 using Wfa_ZabanSara.App_source.BusinessLayer;
 using Wfa_ZabanSara.App_source.DataObject;
+using winprint;
 
 namespace Wfa_ZabanSara.Forms
 {
@@ -58,13 +59,13 @@ namespace Wfa_ZabanSara.Forms
                 BusinessDegree objDB = new BusinessDegree();
                 if (objDB.Insert(objdegree) != 0)
                 {
-                    MsgBox.Show("مدرک جدید درست ثبت شد","");
+                    MsgBox.Show("مدرک جدید درست ثبت شد", "");
                     GetList();
                     ClearText();
                 }
                 else
                 {
-                    MsgBox.Show("مدرک جدید درست ثبت نشد","");
+                    MsgBox.Show("مدرک جدید درست ثبت نشد", "");
                 }
             }
         }
@@ -75,7 +76,7 @@ namespace Wfa_ZabanSara.Forms
             {
                 if (TextBoxTitle.Tag.ToString().Trim() == string.Empty)
                 {
-                    MsgBox.Show("لطفا برروری سطر مورد نظر خود کلیک کنید","توجه");
+                    MsgBox.Show("لطفا برروری سطر مورد نظر خود کلیک کنید", "توجه");
 
                     //Forms.frmMsg FrmMsg = new Forms.frmMsg();
                     //FrmMsg.labelMsg.Text = "لطفا برروری سطر مورد نظر خود کلیک کنید";
@@ -91,13 +92,13 @@ namespace Wfa_ZabanSara.Forms
                 BusinessDegree ObjBD = new BusinessDegree();
                 if (ObjBD.Update(objD) != 0)
                 {
-                    MsgBox.Show("مدرک درست ویرایش شد","");
+                    MsgBox.Show("مدرک درست ویرایش شد", "");
                     GetList();
                     ClearText();
                 }
                 else
                 {
-                    MsgBox.Show("مدرک درست ویرایش نشد","");
+                    MsgBox.Show("مدرک درست ویرایش نشد", "");
                 }
             }
         }
@@ -127,7 +128,7 @@ namespace Wfa_ZabanSara.Forms
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
-        {      
+        {
             //Forms.frmMsg f = new frmMsg();
             if (TextBoxTitle.Tag.ToString().Trim() == string.Empty)
             {
@@ -136,18 +137,18 @@ namespace Wfa_ZabanSara.Forms
                 //f.labelMsg.Text = "لطفا برروری سطر مورد نظر خود کلیک کنید";
                 //f.ButtonCount = 1;
                 //f.ShowDialog();
-                
+
                 return;
             }
 
-            
+
 
             //f.labelMsg.Text = "آیا می خواهید این رکورد حذف شود";
             //f.StrFormName = "توجه!";
             //f.ButtonCount = 2;
 
             //if (f.ShowDialog() == DialogResult.OK)
-            if ( MsgBox.Show("آیا می خواهید این رکورد حذف شود","توجه!",2)== DialogResult.OK)
+            if (MsgBox.Show("آیا می خواهید این رکورد حذف شود", "توجه!", 2) == DialogResult.OK)
             {
                 Degree objD = new Degree();
                 objD.ID = int.Parse(TextBoxTitle.Tag.ToString());
@@ -157,7 +158,7 @@ namespace Wfa_ZabanSara.Forms
                 GetList();
                 ClearText();
 
-                MsgBox.Show("رکورد مورد نظر شما حذف شد","");
+                MsgBox.Show("رکورد مورد نظر شما حذف شد", "");
                 //f.labelMsg.Text = "رکورد مورد نظر شما حذف شد";
                 //f.ButtonCount = 1;
                 //f.ShowDialog();
@@ -173,6 +174,11 @@ namespace Wfa_ZabanSara.Forms
         private void TxtTitle_Leave(object sender, EventArgs e)
         {
             TextBoxTitle.BackColor = Color.White;
+        }
+
+        private void BtnPrint_Click(object sender, EventArgs e)
+        {
+            PrintDGV.Print_DataGridView(FarsiGridView.reverse_DataGridView(DgvDgree));
         }
     }
 }

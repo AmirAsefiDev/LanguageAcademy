@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label10 = new Label();
             label9 = new Label();
             ButtonSearchCourseYear = new Button();
@@ -40,10 +40,10 @@
             TextBoxSearchCourseTeacher = new BaseControl.MyTextBox();
             ButtonPrintCourseGroup = new Button();
             panel2 = new Panel();
-            DgvCourseGroup = new DataGridView();
+            DgvCourseSelect = new DataGridView();
             ColumnRowNumber = new DataGridViewTextBoxColumn();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DgvCourseGroup).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgvCourseSelect).BeginInit();
             SuspendLayout();
             // 
             // label10
@@ -163,23 +163,24 @@
             panel2.Size = new Size(914, 100);
             panel2.TabIndex = 19;
             // 
-            // DgvCourseGroup
+            // DgvCourseSelect
             // 
-            DgvCourseGroup.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(192, 192, 255);
-            DgvCourseGroup.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            DgvCourseGroup.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvCourseGroup.BackgroundColor = SystemColors.ButtonHighlight;
-            DgvCourseGroup.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgvCourseGroup.Columns.AddRange(new DataGridViewColumn[] { ColumnRowNumber });
-            DgvCourseGroup.Dock = DockStyle.Fill;
-            DgvCourseGroup.Location = new Point(0, 163);
-            DgvCourseGroup.Name = "DgvCourseGroup";
-            DgvCourseGroup.ReadOnly = true;
-            DgvCourseGroup.Size = new Size(914, 347);
-            DgvCourseGroup.TabIndex = 20;
-            DgvCourseGroup.CellFormatting += DgvCourseGroup_CellFormatting;
-            DgvCourseGroup.DoubleClick += DgvCourseGroup_DoubleClick;
+            DgvCourseSelect.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(192, 192, 255);
+            DgvCourseSelect.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            DgvCourseSelect.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvCourseSelect.BackgroundColor = SystemColors.ButtonHighlight;
+            DgvCourseSelect.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvCourseSelect.Columns.AddRange(new DataGridViewColumn[] { ColumnRowNumber });
+            DgvCourseSelect.Dock = DockStyle.Fill;
+            DgvCourseSelect.Location = new Point(0, 163);
+            DgvCourseSelect.Name = "DgvCourseSelect";
+            DgvCourseSelect.ReadOnly = true;
+            DgvCourseSelect.Size = new Size(914, 347);
+            DgvCourseSelect.TabIndex = 20;
+            DgvCourseSelect.CellDoubleClick += DgvCourseGroup_CellDoubleClick;
+            DgvCourseSelect.CellFormatting += DgvCourseGroup_CellFormatting;
+            DgvCourseSelect.DoubleClick += DgvCourseGroup_DoubleClick;
             // 
             // ColumnRowNumber
             // 
@@ -192,16 +193,16 @@
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 510);
-            Controls.Add(DgvCourseGroup);
+            Controls.Add(DgvCourseSelect);
             Controls.Add(panel2);
             Margin = new Padding(5);
             Name = "SearchCourseGroupForm";
             Load += SearchCourseGroupForm_Load;
             Controls.SetChildIndex(panel2, 0);
-            Controls.SetChildIndex(DgvCourseGroup, 0);
+            Controls.SetChildIndex(DgvCourseSelect, 0);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DgvCourseGroup).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgvCourseSelect).EndInit();
             ResumeLayout(false);
         }
 
@@ -219,6 +220,6 @@
         private Button ButtonPrintCourseGroup;
         private Panel panel2;
         private DataGridViewTextBoxColumn ColumnRowNumber;
-        public DataGridView DgvCourseGroup;
+        public DataGridView DgvCourseSelect;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel2 = new Panel();
             label3 = new Label();
             TextBoxActivityScore = new BaseControl.MyTextBox();
@@ -90,17 +90,18 @@
             panel2.Controls.Add(ButtonStudentCourseSelect);
             panel2.Controls.Add(ButtonCourseGroup);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 63);
+            panel2.Location = new Point(0, 78);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1175, 137);
+            panel2.Size = new Size(1494, 169);
             panel2.TabIndex = 1;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(518, 30);
+            label3.Location = new Point(579, 37);
             label3.Name = "label3";
-            label3.Size = new Size(73, 17);
+            label3.Size = new Size(97, 23);
             label3.TabIndex = 6;
             label3.Text = "نمره فعالیت";
             // 
@@ -108,17 +109,18 @@
             // 
             TextBoxActivityScore.IsNumber = true;
             TextBoxActivityScore.IsReal = false;
-            TextBoxActivityScore.Location = new Point(428, 27);
+            TextBoxActivityScore.Location = new Point(478, 33);
+            TextBoxActivityScore.Margin = new Padding(3, 5, 3, 5);
             TextBoxActivityScore.Name = "TextBoxActivityScore";
-            TextBoxActivityScore.Size = new Size(84, 23);
+            TextBoxActivityScore.Size = new Size(84, 27);
             TextBoxActivityScore.TabIndex = 7;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(153, 30);
+            label2.Location = new Point(169, 37);
             label2.Name = "label2";
-            label2.Size = new Size(37, 17);
+            label2.Size = new Size(50, 23);
             label2.TabIndex = 10;
             label2.Text = "پایانی";
             // 
@@ -126,17 +128,18 @@
             // 
             TextBoxFinalScore.IsNumber = true;
             TextBoxFinalScore.IsReal = false;
-            TextBoxFinalScore.Location = new Point(63, 27);
+            TextBoxFinalScore.Location = new Point(68, 33);
+            TextBoxFinalScore.Margin = new Padding(3, 5, 3, 5);
             TextBoxFinalScore.Name = "TextBoxFinalScore";
-            TextBoxFinalScore.Size = new Size(84, 23);
+            TextBoxFinalScore.Size = new Size(84, 27);
             TextBoxFinalScore.TabIndex = 11;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(310, 30);
+            label1.Location = new Point(345, 37);
             label1.Name = "label1";
-            label1.Size = new Size(101, 17);
+            label1.Size = new Size(133, 23);
             label1.TabIndex = 8;
             label1.Text = "نمره حضوروغیاب";
             // 
@@ -144,18 +147,20 @@
             // 
             TextBoxAttendScore.IsNumber = true;
             TextBoxAttendScore.IsReal = false;
-            TextBoxAttendScore.Location = new Point(220, 27);
+            TextBoxAttendScore.Location = new Point(244, 33);
+            TextBoxAttendScore.Margin = new Padding(3, 5, 3, 5);
             TextBoxAttendScore.Name = "TextBoxAttendScore";
-            TextBoxAttendScore.Size = new Size(84, 23);
+            TextBoxAttendScore.Size = new Size(84, 27);
             TextBoxAttendScore.TabIndex = 9;
             // 
             // ButtonGroupSelection
             // 
             ButtonGroupSelection.Image = Properties.Resources.InsertImage;
             ButtonGroupSelection.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonGroupSelection.Location = new Point(13, 71);
+            ButtonGroupSelection.Location = new Point(24, 88);
+            ButtonGroupSelection.Margin = new Padding(3, 4, 3, 4);
             ButtonGroupSelection.Name = "ButtonGroupSelection";
-            ButtonGroupSelection.Size = new Size(138, 53);
+            ButtonGroupSelection.Size = new Size(155, 65);
             ButtonGroupSelection.TabIndex = 16;
             ButtonGroupSelection.Text = "انتخاب گروهی";
             ButtonGroupSelection.TextAlign = ContentAlignment.MiddleLeft;
@@ -166,9 +171,10 @@
             // 
             ButtonDeleteCourseSelect.Image = Properties.Resources.DeleteImage;
             ButtonDeleteCourseSelect.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonDeleteCourseSelect.Location = new Point(249, 71);
+            ButtonDeleteCourseSelect.Location = new Point(289, 88);
+            ButtonDeleteCourseSelect.Margin = new Padding(3, 4, 3, 4);
             ButtonDeleteCourseSelect.Name = "ButtonDeleteCourseSelect";
-            ButtonDeleteCourseSelect.Size = new Size(93, 53);
+            ButtonDeleteCourseSelect.Size = new Size(105, 65);
             ButtonDeleteCourseSelect.TabIndex = 14;
             ButtonDeleteCourseSelect.Text = "حذف";
             ButtonDeleteCourseSelect.TextAlign = ContentAlignment.MiddleLeft;
@@ -179,9 +185,10 @@
             // 
             ButtonNewCourseSelect.Image = Properties.Resources.InsertImage;
             ButtonNewCourseSelect.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonNewCourseSelect.Location = new Point(448, 71);
+            ButtonNewCourseSelect.Location = new Point(513, 88);
+            ButtonNewCourseSelect.Margin = new Padding(3, 4, 3, 4);
             ButtonNewCourseSelect.Name = "ButtonNewCourseSelect";
-            ButtonNewCourseSelect.Size = new Size(93, 53);
+            ButtonNewCourseSelect.Size = new Size(105, 65);
             ButtonNewCourseSelect.TabIndex = 12;
             ButtonNewCourseSelect.Text = "جدید";
             ButtonNewCourseSelect.TextAlign = ContentAlignment.MiddleLeft;
@@ -192,9 +199,10 @@
             // 
             ButtonEditCourseSelect.Image = Properties.Resources.UpdateImage;
             ButtonEditCourseSelect.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonEditCourseSelect.Location = new Point(350, 71);
+            ButtonEditCourseSelect.Location = new Point(403, 88);
+            ButtonEditCourseSelect.Margin = new Padding(3, 4, 3, 4);
             ButtonEditCourseSelect.Name = "ButtonEditCourseSelect";
-            ButtonEditCourseSelect.Size = new Size(91, 53);
+            ButtonEditCourseSelect.Size = new Size(102, 65);
             ButtonEditCourseSelect.TabIndex = 13;
             ButtonEditCourseSelect.Text = "ویرایش";
             ButtonEditCourseSelect.TextAlign = ContentAlignment.MiddleLeft;
@@ -205,18 +213,20 @@
             // 
             TextBoxStudentCourseSelect.IsNumber = true;
             TextBoxStudentCourseSelect.IsReal = false;
-            TextBoxStudentCourseSelect.Location = new Point(984, 27);
+            TextBoxStudentCourseSelect.Location = new Point(1104, 33);
+            TextBoxStudentCourseSelect.Margin = new Padding(3, 5, 3, 5);
             TextBoxStudentCourseSelect.Name = "TextBoxStudentCourseSelect";
-            TextBoxStudentCourseSelect.Size = new Size(130, 23);
+            TextBoxStudentCourseSelect.Size = new Size(130, 27);
             TextBoxStudentCourseSelect.TabIndex = 1;
             // 
             // ButtonPrintCourseSelect
             // 
             ButtonPrintCourseSelect.Image = Properties.Resources.PrintImge;
             ButtonPrintCourseSelect.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonPrintCourseSelect.Location = new Point(161, 71);
+            ButtonPrintCourseSelect.Location = new Point(190, 88);
+            ButtonPrintCourseSelect.Margin = new Padding(3, 4, 3, 4);
             ButtonPrintCourseSelect.Name = "ButtonPrintCourseSelect";
-            ButtonPrintCourseSelect.Size = new Size(79, 53);
+            ButtonPrintCourseSelect.Size = new Size(89, 65);
             ButtonPrintCourseSelect.TabIndex = 15;
             ButtonPrintCourseSelect.Text = "پرنیت";
             ButtonPrintCourseSelect.TextAlign = ContentAlignment.MiddleLeft;
@@ -227,26 +237,27 @@
             // 
             TextBoxCourseGroup.IsNumber = false;
             TextBoxCourseGroup.IsReal = false;
-            TextBoxCourseGroup.Location = new Point(665, 27);
+            TextBoxCourseGroup.Location = new Point(745, 33);
+            TextBoxCourseGroup.Margin = new Padding(3, 5, 3, 5);
             TextBoxCourseGroup.Name = "TextBoxCourseGroup";
-            TextBoxCourseGroup.Size = new Size(182, 23);
+            TextBoxCourseGroup.Size = new Size(182, 27);
             TextBoxCourseGroup.TabIndex = 4;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(853, 30);
+            label10.Location = new Point(956, 37);
             label10.Name = "label10";
-            label10.Size = new Size(67, 17);
+            label10.Size = new Size(87, 23);
             label10.TabIndex = 3;
             label10.Text = "گروه درسی";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(1120, 30);
+            label9.Location = new Point(1257, 37);
             label9.Name = "label9";
-            label9.Size = new Size(48, 17);
+            label9.Size = new Size(62, 23);
             label9.TabIndex = 0;
             label9.Text = "دانشجو";
             // 
@@ -254,9 +265,10 @@
             // 
             ButtonStudentCourseSelect.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonStudentCourseSelect.Image = Properties.Resources.search_1_;
-            ButtonStudentCourseSelect.Location = new Point(933, 25);
+            ButtonStudentCourseSelect.Location = new Point(1046, 31);
+            ButtonStudentCourseSelect.Margin = new Padding(3, 4, 3, 4);
             ButtonStudentCourseSelect.Name = "ButtonStudentCourseSelect";
-            ButtonStudentCourseSelect.Size = new Size(33, 29);
+            ButtonStudentCourseSelect.Size = new Size(37, 36);
             ButtonStudentCourseSelect.TabIndex = 2;
             ButtonStudentCourseSelect.UseVisualStyleBackColor = true;
             ButtonStudentCourseSelect.Click += ButtonStudentCourseSelect_Click;
@@ -265,9 +277,10 @@
             // 
             ButtonCourseGroup.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonCourseGroup.Image = Properties.Resources.search_1_;
-            ButtonCourseGroup.Location = new Point(610, 25);
+            ButtonCourseGroup.Location = new Point(683, 31);
+            ButtonCourseGroup.Margin = new Padding(3, 4, 3, 4);
             ButtonCourseGroup.Name = "ButtonCourseGroup";
-            ButtonCourseGroup.Size = new Size(33, 29);
+            ButtonCourseGroup.Size = new Size(37, 36);
             ButtonCourseGroup.TabIndex = 5;
             ButtonCourseGroup.UseVisualStyleBackColor = true;
             ButtonCourseGroup.Click += ButtonCourseGroup_Click;
@@ -275,17 +288,19 @@
             // DgvCourseSelect
             // 
             DgvCourseSelect.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(192, 192, 255);
-            DgvCourseSelect.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(192, 192, 255);
+            DgvCourseSelect.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DgvCourseSelect.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvCourseSelect.BackgroundColor = SystemColors.ButtonHighlight;
             DgvCourseSelect.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvCourseSelect.Columns.AddRange(new DataGridViewColumn[] { ColumnRowNumber });
             DgvCourseSelect.Dock = DockStyle.Fill;
-            DgvCourseSelect.Location = new Point(0, 200);
+            DgvCourseSelect.Location = new Point(0, 247);
+            DgvCourseSelect.Margin = new Padding(3, 4, 3, 4);
             DgvCourseSelect.Name = "DgvCourseSelect";
             DgvCourseSelect.ReadOnly = true;
-            DgvCourseSelect.Size = new Size(1175, 472);
+            DgvCourseSelect.RowHeadersWidth = 51;
+            DgvCourseSelect.Size = new Size(1494, 697);
             DgvCourseSelect.TabIndex = 2;
             DgvCourseSelect.CellClick += DgvCourseSelect_CellClick;
             DgvCourseSelect.CellFormatting += DgvCourseSelect_CellFormatting;
@@ -293,6 +308,7 @@
             // ColumnRowNumber
             // 
             ColumnRowNumber.HeaderText = "ردیف";
+            ColumnRowNumber.MinimumWidth = 6;
             ColumnRowNumber.Name = "ColumnRowNumber";
             ColumnRowNumber.ReadOnly = true;
             // 
@@ -305,9 +321,10 @@
             // 
             panel3.Controls.Add(groupBox1);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 590);
+            panel3.Location = new Point(0, 843);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1175, 82);
+            panel3.Size = new Size(1494, 101);
             panel3.TabIndex = 3;
             // 
             // groupBox1
@@ -324,8 +341,10 @@
             groupBox1.Controls.Add(TextBoxSearchStudent);
             groupBox1.Dock = DockStyle.Bottom;
             groupBox1.Location = new Point(0, 2);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1175, 80);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(1494, 99);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "جستجو";
@@ -333,26 +352,27 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(1092, 36);
+            label5.Location = new Point(1315, 44);
             label5.Name = "label5";
-            label5.Size = new Size(48, 17);
+            label5.Size = new Size(62, 23);
             label5.TabIndex = 11;
             label5.Text = "دانشجو";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(753, 36);
+            label4.Location = new Point(905, 44);
             label4.Name = "label4";
-            label4.Size = new Size(67, 17);
+            label4.Size = new Size(87, 23);
             label4.TabIndex = 10;
             label4.Text = "گروه درسی";
             // 
             // ButtonSearchMore
             // 
-            ButtonSearchMore.Location = new Point(45, 25);
+            ButtonSearchMore.Location = new Point(76, 31);
+            ButtonSearchMore.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchMore.Name = "ButtonSearchMore";
-            ButtonSearchMore.Size = new Size(102, 39);
+            ButtonSearchMore.Size = new Size(138, 48);
             ButtonSearchMore.TabIndex = 9;
             ButtonSearchMore.Text = "جستجوی بیشتر";
             ButtonSearchMore.UseVisualStyleBackColor = true;
@@ -362,9 +382,10 @@
             // 
             ButtonSearchCourseGroupYear.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonSearchCourseGroupYear.Image = Properties.Resources.search_1_;
-            ButtonSearchCourseGroupYear.Location = new Point(204, 32);
+            ButtonSearchCourseGroupYear.Location = new Point(283, 36);
+            ButtonSearchCourseGroupYear.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchCourseGroupYear.Name = "ButtonSearchCourseGroupYear";
-            ButtonSearchCourseGroupYear.Size = new Size(33, 29);
+            ButtonSearchCourseGroupYear.Size = new Size(37, 36);
             ButtonSearchCourseGroupYear.TabIndex = 8;
             ButtonSearchCourseGroupYear.UseVisualStyleBackColor = true;
             ButtonSearchCourseGroupYear.Click += ButtonSearchCourseGroupYear_Click;
@@ -373,9 +394,10 @@
             // 
             ButtonSearchCourseGroup.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonSearchCourseGroup.Image = Properties.Resources.search_1_;
-            ButtonSearchCourseGroup.Location = new Point(538, 32);
+            ButtonSearchCourseGroup.Location = new Point(656, 36);
+            ButtonSearchCourseGroup.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchCourseGroup.Name = "ButtonSearchCourseGroup";
-            ButtonSearchCourseGroup.Size = new Size(33, 29);
+            ButtonSearchCourseGroup.Size = new Size(37, 36);
             ButtonSearchCourseGroup.TabIndex = 5;
             ButtonSearchCourseGroup.UseVisualStyleBackColor = true;
             ButtonSearchCourseGroup.Click += ButtonSearchCourseGroup_Click;
@@ -384,9 +406,10 @@
             // 
             ButtonSearchStudent.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonSearchStudent.Image = Properties.Resources.search_1_;
-            ButtonSearchStudent.Location = new Point(876, 32);
+            ButtonSearchStudent.Location = new Point(1059, 38);
+            ButtonSearchStudent.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchStudent.Name = "ButtonSearchStudent";
-            ButtonSearchStudent.Size = new Size(33, 29);
+            ButtonSearchStudent.Size = new Size(37, 36);
             ButtonSearchStudent.TabIndex = 2;
             ButtonSearchStudent.UseVisualStyleBackColor = true;
             ButtonSearchStudent.Click += ButtonSearchStudent_Click;
@@ -395,17 +418,18 @@
             // 
             TextBoxSearchCourseGroupYear.IsNumber = true;
             TextBoxSearchCourseGroupYear.IsReal = false;
-            TextBoxSearchCourseGroupYear.Location = new Point(243, 32);
+            TextBoxSearchCourseGroupYear.Location = new Point(331, 40);
+            TextBoxSearchCourseGroupYear.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchCourseGroupYear.Name = "TextBoxSearchCourseGroupYear";
-            TextBoxSearchCourseGroupYear.Size = new Size(170, 23);
+            TextBoxSearchCourseGroupYear.Size = new Size(170, 27);
             TextBoxSearchCourseGroupYear.TabIndex = 7;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(419, 35);
+            label11.Location = new Point(529, 43);
             label11.Name = "label11";
-            label11.Size = new Size(31, 17);
+            label11.Size = new Size(39, 23);
             label11.TabIndex = 6;
             label11.Text = "سال";
             // 
@@ -413,29 +437,31 @@
             // 
             TextBoxSearchCourseGroup.IsNumber = false;
             TextBoxSearchCourseGroup.IsReal = false;
-            TextBoxSearchCourseGroup.Location = new Point(577, 33);
+            TextBoxSearchCourseGroup.Location = new Point(715, 41);
+            TextBoxSearchCourseGroup.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchCourseGroup.Name = "TextBoxSearchCourseGroup";
-            TextBoxSearchCourseGroup.Size = new Size(170, 23);
+            TextBoxSearchCourseGroup.Size = new Size(170, 27);
             TextBoxSearchCourseGroup.TabIndex = 4;
             // 
             // TextBoxSearchStudent
             // 
             TextBoxSearchStudent.IsNumber = true;
             TextBoxSearchStudent.IsReal = false;
-            TextBoxSearchStudent.Location = new Point(915, 32);
+            TextBoxSearchStudent.Location = new Point(1116, 40);
+            TextBoxSearchStudent.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchStudent.Name = "TextBoxSearchStudent";
-            TextBoxSearchStudent.Size = new Size(171, 23);
+            TextBoxSearchStudent.Size = new Size(171, 27);
             TextBoxSearchStudent.TabIndex = 1;
             // 
             // CourseSelectForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1175, 672);
+            ClientSize = new Size(1494, 944);
             Controls.Add(panel3);
             Controls.Add(DgvCourseSelect);
             Controls.Add(panel2);
-            Margin = new Padding(5);
+            Margin = new Padding(6);
             Name = "CourseSelectForm";
             Load += CourseSelectForm_Load;
             Controls.SetChildIndex(panel2, 0);

@@ -56,27 +56,30 @@
             panel2.Controls.Add(BtnEdit);
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(310, 63);
+            panel2.Location = new Point(349, 78);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(267, 413);
+            panel2.Size = new Size(300, 510);
             panel2.TabIndex = 2;
             // 
             // TextBoxTitle
             // 
             TextBoxTitle.IsNumber = false;
             TextBoxTitle.IsReal = false;
-            TextBoxTitle.Location = new Point(30, 26);
+            TextBoxTitle.Location = new Point(34, 32);
+            TextBoxTitle.Margin = new Padding(3, 5, 3, 5);
             TextBoxTitle.Name = "TextBoxTitle";
-            TextBoxTitle.Size = new Size(170, 23);
+            TextBoxTitle.Size = new Size(170, 29);
             TextBoxTitle.TabIndex = 8;
             // 
             // BtnDelete
             // 
             BtnDelete.Image = Properties.Resources.DeleteImage;
             BtnDelete.ImageAlign = ContentAlignment.MiddleRight;
-            BtnDelete.Location = new Point(151, 320);
+            BtnDelete.Location = new Point(170, 395);
+            BtnDelete.Margin = new Padding(3, 4, 3, 4);
             BtnDelete.Name = "BtnDelete";
-            BtnDelete.Size = new Size(91, 53);
+            BtnDelete.Size = new Size(102, 65);
             BtnDelete.TabIndex = 7;
             BtnDelete.Text = "حذف";
             BtnDelete.TextAlign = ContentAlignment.MiddleLeft;
@@ -87,21 +90,24 @@
             // 
             BtnPrint.Image = Properties.Resources.PrintImge;
             BtnPrint.ImageAlign = ContentAlignment.MiddleRight;
-            BtnPrint.Location = new Point(30, 320);
+            BtnPrint.Location = new Point(34, 395);
+            BtnPrint.Margin = new Padding(3, 4, 3, 4);
             BtnPrint.Name = "BtnPrint";
-            BtnPrint.Size = new Size(91, 53);
+            BtnPrint.Size = new Size(102, 65);
             BtnPrint.TabIndex = 6;
             BtnPrint.Text = "پرنیت";
             BtnPrint.TextAlign = ContentAlignment.MiddleLeft;
             BtnPrint.UseVisualStyleBackColor = true;
+            BtnPrint.Click += BtnPrint_Click;
             // 
             // BtnNew
             // 
             BtnNew.Image = Properties.Resources.InsertImage;
             BtnNew.ImageAlign = ContentAlignment.MiddleRight;
-            BtnNew.Location = new Point(151, 247);
+            BtnNew.Location = new Point(170, 305);
+            BtnNew.Margin = new Padding(3, 4, 3, 4);
             BtnNew.Name = "BtnNew";
-            BtnNew.Size = new Size(91, 53);
+            BtnNew.Size = new Size(102, 65);
             BtnNew.TabIndex = 5;
             BtnNew.Text = "جدید";
             BtnNew.TextAlign = ContentAlignment.MiddleLeft;
@@ -112,9 +118,10 @@
             // 
             BtnEdit.Image = Properties.Resources.UpdateImage;
             BtnEdit.ImageAlign = ContentAlignment.MiddleRight;
-            BtnEdit.Location = new Point(30, 247);
+            BtnEdit.Location = new Point(34, 305);
+            BtnEdit.Margin = new Padding(3, 4, 3, 4);
             BtnEdit.Name = "BtnEdit";
-            BtnEdit.Size = new Size(91, 53);
+            BtnEdit.Size = new Size(102, 65);
             BtnEdit.TabIndex = 4;
             BtnEdit.Text = "ویرایش";
             BtnEdit.TextAlign = ContentAlignment.MiddleLeft;
@@ -124,9 +131,9 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(206, 26);
+            label2.Location = new Point(232, 32);
             label2.Name = "label2";
-            label2.Size = new Size(39, 17);
+            label2.Size = new Size(50, 23);
             label2.TabIndex = 3;
             label2.Text = "عنوان";
             // 
@@ -134,9 +141,10 @@
             // 
             panel3.Controls.Add(DgvDgree);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 63);
+            panel3.Location = new Point(0, 78);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(310, 413);
+            panel3.Size = new Size(349, 510);
             panel3.TabIndex = 3;
             // 
             // DgvDgree
@@ -151,9 +159,11 @@
             DgvDgree.Columns.AddRange(new DataGridViewColumn[] { ColumnRowNumber });
             DgvDgree.Dock = DockStyle.Fill;
             DgvDgree.Location = new Point(0, 0);
+            DgvDgree.Margin = new Padding(3, 4, 3, 4);
             DgvDgree.Name = "DgvDgree";
             DgvDgree.ReadOnly = true;
-            DgvDgree.Size = new Size(310, 413);
+            DgvDgree.RowHeadersWidth = 51;
+            DgvDgree.Size = new Size(349, 510);
             DgvDgree.TabIndex = 0;
             DgvDgree.CellClick += DgvDgree_CellClick;
             DgvDgree.CellFormatting += DgvDgree_CellFormatting;
@@ -161,6 +171,7 @@
             // ColumnRowNumber
             // 
             ColumnRowNumber.HeaderText = "ردیف";
+            ColumnRowNumber.MinimumWidth = 6;
             ColumnRowNumber.Name = "ColumnRowNumber";
             ColumnRowNumber.ReadOnly = true;
             // 
@@ -171,12 +182,12 @@
             // 
             // DegreeForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(577, 476);
+            ClientSize = new Size(649, 588);
             Controls.Add(panel3);
             Controls.Add(panel2);
-            Margin = new Padding(5);
+            Margin = new Padding(6, 6, 6, 6);
             Name = "DegreeForm";
             Load += DegreeForm_Load;
             Controls.SetChildIndex(panel2, 0);

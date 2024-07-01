@@ -1,5 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 using Wfa_ZabanSara.App_source;
+using winprint;
 
 namespace Wfa_ZabanSara.Forms
 {
@@ -50,20 +53,20 @@ namespace Wfa_ZabanSara.Forms
             searchCourseGroup.StrFormName = "فرم جستجوی گروه درسی";
             searchCourseGroup.ShowDialog();
             //----------------------------------------
-            if (searchCourseGroup.SendParameter > 0)
+            if (searchCourseGroup.SendParameters > 0)
             {
-                if (searchCourseGroup.DgvCourseGroup.Rows.Count > 1)
+                if (searchCourseGroup.DgvCourseSelect.Rows.Count > 1)
                 {
-                    if (searchCourseGroup.DgvCourseGroup.CurrentRow.Cells["ID"].Value == null)
+                    if (searchCourseGroup.DgvCourseSelect.CurrentRow.Cells["ID"].Value == null)
                         return;
-                    if (searchCourseGroup.DgvCourseGroup.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
+                    if (searchCourseGroup.DgvCourseSelect.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
                         return;
 
-                    string TeacherName = searchCourseGroup.DgvCourseGroup.CurrentRow.Cells["teacherName"].Value.ToString();
-                    string CourseTitle = searchCourseGroup.DgvCourseGroup.CurrentRow.Cells["Title"].Value.ToString();
+                    string TeacherName = searchCourseGroup.DgvCourseSelect.CurrentRow.Cells["teacherName"].Value.ToString();
+                    string CourseTitle = searchCourseGroup.DgvCourseSelect.CurrentRow.Cells["Title"].Value.ToString();
 
                     TextBoxCourseGroup.Text = CourseTitle + "(" + TeacherName + ")";
-                    TextBoxCourseGroup.Tag = searchCourseGroup.DgvCourseGroup.CurrentRow.Cells["ID"].Value.ToString();
+                    TextBoxCourseGroup.Tag = searchCourseGroup.DgvCourseSelect.CurrentRow.Cells["ID"].Value.ToString();
                 }
             }
         }
@@ -158,12 +161,33 @@ namespace Wfa_ZabanSara.Forms
 
         private void ButtonPrintCourseSelect_Click(object sender, EventArgs e)
         {
-
+            PrintDGV.Print_DataGridView(FarsiGridView.reverse_DataGridView(DgvCourseSelect));
         }
 
         private void ButtonGroupSelection_Click(object sender, EventArgs e)
         {
-
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("IDCourseGroup");
+            dataTable.Columns.Add("IDStudent");
+            for (int i =0; i < DgvCourseSelect.RowCount-1;++i)
+            {
+                dataTable.Rows.Add("IDStudent",
+                    int.Parse(DgvCourseSelect.Rows[i].Cells
+                    ["ID_FK_Student"].Value.ToString()));      
+                dataTable.Rows.Add("IDCourseGroup",
+                    int.Parse(DgvCourseSelect.Rows[i].Cells
+                    ["ID_FK_CourseGroup"].Value.ToString()));
+            }
+            //------------------------------------
+            SqlCon sqlCon = new();
+            SqlCommand command = new();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "SelectCourseAll";
+            command.Parameters.AddWithValue("@Tbl_Input",dataTable);
+            command.Connection = sqlCon.OpenCon();
+            command.ExecuteNonQuery();
+            sqlCon.CloseCon();
+            MsgBox.Show("انتخاب گروهی انجام شد");
         }
 
         private void ButtonSearchStudent_Click(object sender, EventArgs e)
@@ -187,7 +211,7 @@ namespace Wfa_ZabanSara.Forms
                     TextBoxSearchStudent.Text = StudentName + " " + StudentLastName;
                     TextBoxSearchStudent.Tag = searchStudent.DgvStudent.CurrentRow.Cells["ID"].Value.ToString();
 
-                    DgvCourseSelect.DataSource = new CourseSelectBusiness().DetailsByField("Student.ID",TextBoxSearchStudent.Tag.ToString());
+                    DgvCourseSelect.DataSource = new CourseSelectBusiness().DetailsByField("Student.ID", TextBoxSearchStudent.Tag.ToString());
                     SetSettingCourseSelect();
                 }
             }
@@ -199,20 +223,20 @@ namespace Wfa_ZabanSara.Forms
             searchCourseGroup.StrFormName = "فرم جستجوی گروه درسی";
             searchCourseGroup.ShowDialog();
             //----------------------------------------
-            if (searchCourseGroup.SendParameter > 0)
+            if (searchCourseGroup.SendParameters > 0)
             {
-                if (searchCourseGroup.DgvCourseGroup.Rows.Count > 1)
+                if (searchCourseGroup.DgvCourseSelect.Rows.Count > 1)
                 {
-                    if (searchCourseGroup.DgvCourseGroup.CurrentRow.Cells["ID"].Value == null)
+                    if (searchCourseGroup.DgvCourseSelect.CurrentRow.Cells["ID"].Value == null)
                         return;
-                    if (searchCourseGroup.DgvCourseGroup.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
+                    if (searchCourseGroup.DgvCourseSelect.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
                         return;
 
-                    string TeacherName = searchCourseGroup.DgvCourseGroup.CurrentRow.Cells["teacherName"].Value.ToString();
-                    string CourseTitle = searchCourseGroup.DgvCourseGroup.CurrentRow.Cells["Title"].Value.ToString();
+                    string TeacherName = searchCourseGroup.DgvCourseSelect.CurrentRow.Cells["teacherName"].Value.ToString();
+                    string CourseTitle = searchCourseGroup.DgvCourseSelect.CurrentRow.Cells["Title"].Value.ToString();
 
                     TextBoxSearchCourseGroup.Text = CourseTitle + "(" + TeacherName + ")";
-                    TextBoxSearchCourseGroup.Tag = searchCourseGroup.DgvCourseGroup.CurrentRow.Cells["ID"].Value.ToString();
+                    TextBoxSearchCourseGroup.Tag = searchCourseGroup.DgvCourseSelect.CurrentRow.Cells["ID"].Value.ToString();
 
                     DgvCourseSelect.DataSource = new CourseSelectBusiness().DetailsByField("ID_FK_CourseGroup", TextBoxSearchCourseGroup.Tag.ToString());
                 }
@@ -232,7 +256,33 @@ namespace Wfa_ZabanSara.Forms
 
         private void ButtonSearchMore_Click(object sender, EventArgs e)
         {
-            //
+            SearchCourseSelectForm search = new();
+            search.StrFormName = "فرم جستجوی انتخاب واحد ها";
+            search.ShowDialog();
+            //------------------------------------------------------------
+            if (search.SendParameters > 0)
+            {
+                if (search.DgvCourseSelect.Rows.Count > 1)
+                {
+                    if (search.DgvCourseSelect.CurrentRow.Cells["ID"].Value == null)
+                        return;
+                    if (search.DgvCourseSelect.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
+                        return;
+                    TextBoxSearchStudent.Text = search.DgvCourseSelect.CurrentRow.Cells["StudentName"].Value.ToString();
+                    TextBoxSearchStudent.Tag = search.DgvCourseSelect.CurrentRow.Cells["ID_FK_Student"].Value.ToString();
+                    string TeahcreName = search.DgvCourseSelect.CurrentRow.Cells["teacherName"].Value.ToString(); ;
+                    string CourseTitle = search.DgvCourseSelect.CurrentRow.Cells["Title"].Value.ToString();
+
+                    TextBoxCourseGroup.Text = CourseTitle + "(" + TeahcreName + ")";
+                    TextBoxCourseGroup.Tag = search.DgvCourseSelect.CurrentRow.Cells["ID_FK_CourseGroup"].Value.ToString();
+                    TextBoxAttendScore.Text = search.DgvCourseSelect.CurrentRow.Cells["AttendScore"].Value.ToString();
+                    TextBoxFinalScore.Text = search.DgvCourseSelect.CurrentRow.Cells["FinalScore"].Value.ToString();
+                    TextBoxAttendScore.Text = search.DgvCourseSelect.CurrentRow.Cells["ActivityScore"].Value.ToString();
+                    TextBoxAttendScore.Tag = search.DgvCourseSelect.CurrentRow.Cells["ID"].Value.ToString();
+
+
+                }
+            }
         }
 
         private void GetListCourseSelect()
@@ -246,7 +296,7 @@ namespace Wfa_ZabanSara.Forms
             DgvCourseSelect.Columns["ID"].Visible = false;
             DgvCourseSelect.Columns["ID_FK_CourseGroup"].Visible = false;
             DgvCourseSelect.Columns["ID_FK_Student"].Visible = false;
-            DgvCourseSelect.Columns["StudentName"].HeaderText = "دانشجو";
+            DgvCourseSelect.Columns["StudentName"].HeaderText = "نام دانشجو";
             DgvCourseSelect.Columns["Title"].HeaderText = "نام درس";
             DgvCourseSelect.Columns["teacherName"].HeaderText = " نام استاد";
             DgvCourseSelect.Columns["LevelCourse"].HeaderText = " سطح";
@@ -259,6 +309,21 @@ namespace Wfa_ZabanSara.Forms
             DgvCourseSelect.Columns["ActivityScore"].HeaderText = "نمره فعالیت کلاسی ";
             DgvCourseSelect.Columns["Score"].HeaderText = "نمره کامل";
             DgvCourseSelect.Columns["WeekPlan"].HeaderText = "برنامه هفتگی";
+            //--------------------Columns Width
+            DgvCourseSelect.Columns["Term"].Width = 30;
+            DgvCourseSelect.Columns["LevelCourse"].Width = 50;
+            DgvCourseSelect.Columns["Year"].Width = 50;
+            DgvCourseSelect.Columns["Tuition"].Width = 80;
+            DgvCourseSelect.Columns["ClassNumber"].Width = 70;
+            DgvCourseSelect.Columns["AttendScore"].Width = 70;
+            DgvCourseSelect.Columns["FinalScore"].Width = 70;
+            DgvCourseSelect.Columns["ActivityScore"].Width = 70;
+            DgvCourseSelect.Columns["Score"].Width = 70;
+            DgvCourseSelect.Columns["ClassNumber"].Width = 70;
+            if (DgvCourseSelect.Rows.Count == 1)
+            {
+                App_source.MsgBox.Show("هیچ رکوردی پیدا نشد", " انتخاب واحد");
+            }
         }
         private bool ValidateData()
         {
@@ -325,6 +390,5 @@ namespace Wfa_ZabanSara.Forms
             };
             return courseSelect;
         }
-
     }
 }

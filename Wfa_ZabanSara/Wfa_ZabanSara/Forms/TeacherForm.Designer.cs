@@ -88,18 +88,21 @@
             TeacherGroupBox.Controls.Add(TextBoxSearchName);
             TeacherGroupBox.Controls.Add(TextBoxSearchNationalCode);
             TeacherGroupBox.Dock = DockStyle.Bottom;
-            TeacherGroupBox.Location = new Point(0, 543);
+            TeacherGroupBox.Location = new Point(0, 671);
+            TeacherGroupBox.Margin = new Padding(3, 4, 3, 4);
             TeacherGroupBox.Name = "TeacherGroupBox";
-            TeacherGroupBox.Size = new Size(1212, 94);
+            TeacherGroupBox.Padding = new Padding(3, 4, 3, 4);
+            TeacherGroupBox.Size = new Size(1364, 116);
             TeacherGroupBox.TabIndex = 3;
             TeacherGroupBox.TabStop = false;
             TeacherGroupBox.Text = "جستجو";
             // 
             // ButtonSearchMore
             // 
-            ButtonSearchMore.Location = new Point(39, 28);
+            ButtonSearchMore.Location = new Point(44, 35);
+            ButtonSearchMore.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchMore.Name = "ButtonSearchMore";
-            ButtonSearchMore.Size = new Size(124, 39);
+            ButtonSearchMore.Size = new Size(140, 48);
             ButtonSearchMore.TabIndex = 9;
             ButtonSearchMore.Text = "جستجوی بیشتر";
             ButtonSearchMore.UseVisualStyleBackColor = true;
@@ -109,9 +112,10 @@
             // 
             ButtonSearchLastName.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonSearchLastName.Image = Properties.Resources.search_1_;
-            ButtonSearchLastName.Location = new Point(209, 35);
+            ButtonSearchLastName.Location = new Point(235, 43);
+            ButtonSearchLastName.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchLastName.Name = "ButtonSearchLastName";
-            ButtonSearchLastName.Size = new Size(33, 29);
+            ButtonSearchLastName.Size = new Size(37, 36);
             ButtonSearchLastName.TabIndex = 8;
             ButtonSearchLastName.UseVisualStyleBackColor = true;
             ButtonSearchLastName.Click += ButtonSearchLastName_Click;
@@ -120,9 +124,10 @@
             // 
             ButtonSearchName.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonSearchName.Image = Properties.Resources.search_1_;
-            ButtonSearchName.Location = new Point(580, 36);
+            ButtonSearchName.Location = new Point(652, 44);
+            ButtonSearchName.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchName.Name = "ButtonSearchName";
-            ButtonSearchName.Size = new Size(33, 29);
+            ButtonSearchName.Size = new Size(37, 36);
             ButtonSearchName.TabIndex = 5;
             ButtonSearchName.UseVisualStyleBackColor = true;
             ButtonSearchName.Click += ButtonSearchName_Click;
@@ -131,9 +136,10 @@
             // 
             ButtonSearchNationalCode.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonSearchNationalCode.Image = Properties.Resources.search_1_;
-            ButtonSearchNationalCode.Location = new Point(897, 36);
+            ButtonSearchNationalCode.Location = new Point(1009, 44);
+            ButtonSearchNationalCode.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchNationalCode.Name = "ButtonSearchNationalCode";
-            ButtonSearchNationalCode.Size = new Size(33, 29);
+            ButtonSearchNationalCode.Size = new Size(37, 36);
             ButtonSearchNationalCode.TabIndex = 2;
             ButtonSearchNationalCode.UseVisualStyleBackColor = true;
             ButtonSearchNationalCode.Click += ButtonSearchNationalCode_Click;
@@ -141,9 +147,9 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(448, 40);
+            label9.Location = new Point(504, 49);
             label9.Name = "label9";
-            label9.Size = new Size(77, 17);
+            label9.Size = new Size(100, 23);
             label9.TabIndex = 6;
             label9.Text = "نام خانوادگی";
             // 
@@ -151,26 +157,27 @@
             // 
             TextBoxSearchLastName.IsNumber = false;
             TextBoxSearchLastName.IsReal = false;
-            TextBoxSearchLastName.Location = new Point(247, 38);
+            TextBoxSearchLastName.Location = new Point(278, 47);
+            TextBoxSearchLastName.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchLastName.Name = "TextBoxSearchLastName";
-            TextBoxSearchLastName.Size = new Size(200, 23);
+            TextBoxSearchLastName.Size = new Size(200, 29);
             TextBoxSearchLastName.TabIndex = 7;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(826, 39);
+            label10.Location = new Point(929, 48);
             label10.Name = "label10";
-            label10.Size = new Size(23, 17);
+            label10.Size = new Size(30, 23);
             label10.TabIndex = 3;
             label10.Text = "نام";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(1144, 38);
+            label11.Location = new Point(1287, 47);
             label11.Name = "label11";
-            label11.Size = new Size(45, 17);
+            label11.Size = new Size(58, 23);
             label11.TabIndex = 0;
             label11.Text = "کدملی";
             // 
@@ -178,18 +185,20 @@
             // 
             TextBoxSearchName.IsNumber = false;
             TextBoxSearchName.IsReal = false;
-            TextBoxSearchName.Location = new Point(619, 38);
+            TextBoxSearchName.Location = new Point(696, 47);
+            TextBoxSearchName.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchName.Name = "TextBoxSearchName";
-            TextBoxSearchName.Size = new Size(200, 23);
+            TextBoxSearchName.Size = new Size(200, 29);
             TextBoxSearchName.TabIndex = 4;
             // 
             // TextBoxSearchNationalCode
             // 
             TextBoxSearchNationalCode.IsNumber = true;
             TextBoxSearchNationalCode.IsReal = false;
-            TextBoxSearchNationalCode.Location = new Point(937, 38);
+            TextBoxSearchNationalCode.Location = new Point(1054, 47);
+            TextBoxSearchNationalCode.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchNationalCode.Name = "TextBoxSearchNationalCode";
-            TextBoxSearchNationalCode.Size = new Size(200, 23);
+            TextBoxSearchNationalCode.Size = new Size(200, 29);
             TextBoxSearchNationalCode.TabIndex = 1;
             // 
             // StudentPanel
@@ -218,17 +227,19 @@
             StudentPanel.Controls.Add(label1);
             StudentPanel.Controls.Add(TextBoxNationalCode);
             StudentPanel.Dock = DockStyle.Right;
-            StudentPanel.Location = new Point(758, 63);
+            StudentPanel.Location = new Point(853, 78);
+            StudentPanel.Margin = new Padding(3, 4, 3, 4);
             StudentPanel.Name = "StudentPanel";
-            StudentPanel.Size = new Size(454, 480);
+            StudentPanel.Size = new Size(511, 593);
             StudentPanel.TabIndex = 0;
             // 
             // ButtonSaveImage
             // 
             ButtonSaveImage.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ButtonSaveImage.Location = new Point(20, 144);
+            ButtonSaveImage.Location = new Point(22, 178);
+            ButtonSaveImage.Margin = new Padding(3, 4, 3, 4);
             ButtonSaveImage.Name = "ButtonSaveImage";
-            ButtonSaveImage.Size = new Size(51, 23);
+            ButtonSaveImage.Size = new Size(57, 28);
             ButtonSaveImage.TabIndex = 21;
             ButtonSaveImage.Text = "ذخیره";
             ButtonSaveImage.UseVisualStyleBackColor = true;
@@ -237,9 +248,10 @@
             // ButtonChooseImage
             // 
             ButtonChooseImage.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ButtonChooseImage.Location = new Point(72, 143);
+            ButtonChooseImage.Location = new Point(81, 177);
+            ButtonChooseImage.Margin = new Padding(3, 4, 3, 4);
             ButtonChooseImage.Name = "ButtonChooseImage";
-            ButtonChooseImage.Size = new Size(83, 24);
+            ButtonChooseImage.Size = new Size(93, 30);
             ButtonChooseImage.TabIndex = 20;
             ButtonChooseImage.Text = "انتخاب تصویر";
             ButtonChooseImage.UseVisualStyleBackColor = true;
@@ -249,9 +261,10 @@
             // 
             PictureBoxTeacher.BackColor = Color.White;
             PictureBoxTeacher.BorderStyle = BorderStyle.Fixed3D;
-            PictureBoxTeacher.Location = new Point(20, 16);
+            PictureBoxTeacher.Location = new Point(22, 20);
+            PictureBoxTeacher.Margin = new Padding(3, 4, 3, 4);
             PictureBoxTeacher.Name = "PictureBoxTeacher";
-            PictureBoxTeacher.Size = new Size(135, 125);
+            PictureBoxTeacher.Size = new Size(151, 153);
             PictureBoxTeacher.SizeMode = PictureBoxSizeMode.StretchImage;
             PictureBoxTeacher.TabIndex = 26;
             PictureBoxTeacher.TabStop = false;
@@ -260,9 +273,10 @@
             // 
             ButtonDelete.Image = Properties.Resources.DeleteImage;
             ButtonDelete.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonDelete.Location = new Point(129, 412);
+            ButtonDelete.Location = new Point(145, 509);
+            ButtonDelete.Margin = new Padding(3, 4, 3, 4);
             ButtonDelete.Name = "ButtonDelete";
-            ButtonDelete.Size = new Size(91, 53);
+            ButtonDelete.Size = new Size(102, 65);
             ButtonDelete.TabIndex = 18;
             ButtonDelete.Text = "حذف";
             ButtonDelete.TextAlign = ContentAlignment.MiddleLeft;
@@ -273,21 +287,24 @@
             // 
             ButtonPrint.Image = Properties.Resources.PrintImge;
             ButtonPrint.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonPrint.Location = new Point(24, 412);
+            ButtonPrint.Location = new Point(27, 509);
+            ButtonPrint.Margin = new Padding(3, 4, 3, 4);
             ButtonPrint.Name = "ButtonPrint";
-            ButtonPrint.Size = new Size(91, 53);
+            ButtonPrint.Size = new Size(102, 65);
             ButtonPrint.TabIndex = 19;
             ButtonPrint.Text = "پرنیت";
             ButtonPrint.TextAlign = ContentAlignment.MiddleLeft;
             ButtonPrint.UseVisualStyleBackColor = true;
+            ButtonPrint.Click += ButtonPrint_Click;
             // 
             // ButtonNew
             // 
             ButtonNew.Image = Properties.Resources.InsertImage;
             ButtonNew.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonNew.Location = new Point(339, 412);
+            ButtonNew.Location = new Point(381, 509);
+            ButtonNew.Margin = new Padding(3, 4, 3, 4);
             ButtonNew.Name = "ButtonNew";
-            ButtonNew.Size = new Size(91, 53);
+            ButtonNew.Size = new Size(102, 65);
             ButtonNew.TabIndex = 16;
             ButtonNew.Text = "جدید";
             ButtonNew.TextAlign = ContentAlignment.MiddleLeft;
@@ -298,9 +315,10 @@
             // 
             ButtonUpdate.Image = Properties.Resources.UpdateImage;
             ButtonUpdate.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonUpdate.Location = new Point(235, 412);
+            ButtonUpdate.Location = new Point(264, 509);
+            ButtonUpdate.Margin = new Padding(3, 4, 3, 4);
             ButtonUpdate.Name = "ButtonUpdate";
-            ButtonUpdate.Size = new Size(91, 53);
+            ButtonUpdate.Size = new Size(102, 65);
             ButtonUpdate.TabIndex = 17;
             ButtonUpdate.Text = "ویرایش";
             ButtonUpdate.TextAlign = ContentAlignment.MiddleLeft;
@@ -310,26 +328,27 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(356, 330);
+            label8.Location = new Point(400, 408);
             label8.Name = "label8";
-            label8.Size = new Size(37, 17);
+            label8.Size = new Size(49, 23);
             label8.TabIndex = 14;
             label8.Text = "آدرس";
             // 
             // TextBoxAddress
             // 
-            TextBoxAddress.Location = new Point(177, 330);
+            TextBoxAddress.Location = new Point(199, 408);
+            TextBoxAddress.Margin = new Padding(3, 4, 3, 4);
             TextBoxAddress.Multiline = true;
             TextBoxAddress.Name = "TextBoxAddress";
-            TextBoxAddress.Size = new Size(173, 67);
+            TextBoxAddress.Size = new Size(194, 82);
             TextBoxAddress.TabIndex = 15;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(356, 241);
+            label6.Location = new Point(400, 298);
             label6.Name = "label6";
-            label6.Size = new Size(59, 17);
+            label6.Size = new Size(79, 23);
             label6.TabIndex = 10;
             label6.Text = "تاریخ تولد";
             // 
@@ -337,19 +356,19 @@
             // 
             DatePickerDateOfBirth.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DatePickerDateOfBirth.InputMask = "";
-            DatePickerDateOfBirth.Location = new Point(177, 235);
-            DatePickerDateOfBirth.Margin = new Padding(4, 3, 4, 3);
+            DatePickerDateOfBirth.Location = new Point(199, 290);
+            DatePickerDateOfBirth.Margin = new Padding(4, 4, 4, 4);
             DatePickerDateOfBirth.Name = "DatePickerDateOfBirth";
-            DatePickerDateOfBirth.Size = new Size(172, 29);
+            DatePickerDateOfBirth.Size = new Size(194, 36);
             DatePickerDateOfBirth.TabIndex = 11;
             DatePickerDateOfBirth.Value = "";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(354, 194);
+            label5.Location = new Point(398, 240);
             label5.Name = "label5";
-            label5.Size = new Size(47, 17);
+            label5.Size = new Size(62, 23);
             label5.TabIndex = 8;
             label5.Text = "جنسیت";
             // 
@@ -360,20 +379,21 @@
             ComboBoxSex.DataSource = null;
             ComboBoxSex.DisplayMember = "";
             ComboBoxSex.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ComboBoxSex.Location = new Point(177, 190);
+            ComboBoxSex.Location = new Point(199, 235);
+            ComboBoxSex.Margin = new Padding(3, 5, 3, 5);
             ComboBoxSex.Name = "ComboBoxSex";
             ComboBoxSex.SelectedIndex = -1;
             ComboBoxSex.SelectedValue = null;
-            ComboBoxSex.Size = new Size(173, 25);
+            ComboBoxSex.Size = new Size(173, 29);
             ComboBoxSex.TabIndex = 9;
             ComboBoxSex.ValueMember = "";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(354, 148);
+            label4.Location = new Point(398, 183);
             label4.Name = "label4";
-            label4.Size = new Size(39, 17);
+            label4.Size = new Size(51, 23);
             label4.TabIndex = 6;
             label4.Text = "مدرک";
             // 
@@ -384,29 +404,30 @@
             ComboBox_ID_FK_Degree.DataSource = null;
             ComboBox_ID_FK_Degree.DisplayMember = "";
             ComboBox_ID_FK_Degree.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ComboBox_ID_FK_Degree.Location = new Point(177, 144);
+            ComboBox_ID_FK_Degree.Location = new Point(199, 178);
+            ComboBox_ID_FK_Degree.Margin = new Padding(3, 5, 3, 5);
             ComboBox_ID_FK_Degree.Name = "ComboBox_ID_FK_Degree";
             ComboBox_ID_FK_Degree.SelectedIndex = -1;
             ComboBox_ID_FK_Degree.SelectedValue = null;
-            ComboBox_ID_FK_Degree.Size = new Size(173, 25);
+            ComboBox_ID_FK_Degree.Size = new Size(173, 29);
             ComboBox_ID_FK_Degree.TabIndex = 7;
             ComboBox_ID_FK_Degree.ValueMember = "";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(355, 286);
+            label7.Location = new Point(399, 353);
             label7.Name = "label7";
-            label7.Size = new Size(32, 17);
+            label7.Size = new Size(42, 23);
             label7.TabIndex = 12;
             label7.Text = "تلفن";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(356, 103);
+            label3.Location = new Point(400, 127);
             label3.Name = "label3";
-            label3.Size = new Size(77, 17);
+            label3.Size = new Size(100, 23);
             label3.TabIndex = 4;
             label3.Text = "نام خانوادگی";
             // 
@@ -414,26 +435,28 @@
             // 
             TextBoxPhone.IsNumber = true;
             TextBoxPhone.IsReal = false;
-            TextBoxPhone.Location = new Point(176, 283);
+            TextBoxPhone.Location = new Point(198, 350);
+            TextBoxPhone.Margin = new Padding(3, 5, 3, 5);
             TextBoxPhone.Name = "TextBoxPhone";
-            TextBoxPhone.Size = new Size(173, 23);
+            TextBoxPhone.Size = new Size(173, 29);
             TextBoxPhone.TabIndex = 13;
             // 
             // TextBoxLastName
             // 
             TextBoxLastName.IsNumber = false;
             TextBoxLastName.IsReal = false;
-            TextBoxLastName.Location = new Point(177, 100);
+            TextBoxLastName.Location = new Point(199, 124);
+            TextBoxLastName.Margin = new Padding(3, 5, 3, 5);
             TextBoxLastName.Name = "TextBoxLastName";
-            TextBoxLastName.Size = new Size(173, 23);
+            TextBoxLastName.Size = new Size(173, 29);
             TextBoxLastName.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(356, 59);
+            label2.Location = new Point(400, 73);
             label2.Name = "label2";
-            label2.Size = new Size(23, 17);
+            label2.Size = new Size(30, 23);
             label2.TabIndex = 2;
             label2.Text = "نام";
             // 
@@ -441,17 +464,18 @@
             // 
             TextBoxName.IsNumber = false;
             TextBoxName.IsReal = false;
-            TextBoxName.Location = new Point(177, 56);
+            TextBoxName.Location = new Point(199, 69);
+            TextBoxName.Margin = new Padding(3, 5, 3, 5);
             TextBoxName.Name = "TextBoxName";
-            TextBoxName.Size = new Size(173, 23);
+            TextBoxName.Size = new Size(173, 29);
             TextBoxName.TabIndex = 3;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(356, 19);
+            label1.Location = new Point(400, 23);
             label1.Name = "label1";
-            label1.Size = new Size(45, 17);
+            label1.Size = new Size(58, 23);
             label1.TabIndex = 0;
             label1.Text = "کدملی";
             // 
@@ -459,9 +483,10 @@
             // 
             TextBoxNationalCode.IsNumber = true;
             TextBoxNationalCode.IsReal = false;
-            TextBoxNationalCode.Location = new Point(177, 16);
+            TextBoxNationalCode.Location = new Point(199, 20);
+            TextBoxNationalCode.Margin = new Padding(3, 5, 3, 5);
             TextBoxNationalCode.Name = "TextBoxNationalCode";
-            TextBoxNationalCode.Size = new Size(173, 23);
+            TextBoxNationalCode.Size = new Size(173, 29);
             TextBoxNationalCode.TabIndex = 1;
             // 
             // DataGridViewTeacher
@@ -474,10 +499,12 @@
             DataGridViewTeacher.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DataGridViewTeacher.Columns.AddRange(new DataGridViewColumn[] { ColumnRowNumber });
             DataGridViewTeacher.Dock = DockStyle.Fill;
-            DataGridViewTeacher.Location = new Point(0, 63);
+            DataGridViewTeacher.Location = new Point(0, 78);
+            DataGridViewTeacher.Margin = new Padding(3, 4, 3, 4);
             DataGridViewTeacher.Name = "DataGridViewTeacher";
             DataGridViewTeacher.ReadOnly = true;
-            DataGridViewTeacher.Size = new Size(758, 480);
+            DataGridViewTeacher.RowHeadersWidth = 51;
+            DataGridViewTeacher.Size = new Size(853, 593);
             DataGridViewTeacher.TabIndex = 5;
             DataGridViewTeacher.CellClick += DataGridViewTeacher_CellClick;
             DataGridViewTeacher.CellFormatting += DataGridViewTeacher_CellFormatting;
@@ -485,22 +512,24 @@
             // ColumnRowNumber
             // 
             ColumnRowNumber.HeaderText = "ردیف";
+            ColumnRowNumber.MinimumWidth = 6;
             ColumnRowNumber.Name = "ColumnRowNumber";
             ColumnRowNumber.ReadOnly = true;
             // 
             // errorProviderTeacher
             // 
             errorProviderTeacher.ContainerControl = this;
+            errorProviderTeacher.RightToLeft = true;
             // 
             // TeacherForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1212, 637);
+            ClientSize = new Size(1364, 787);
             Controls.Add(DataGridViewTeacher);
             Controls.Add(StudentPanel);
             Controls.Add(TeacherGroupBox);
-            Margin = new Padding(5);
+            Margin = new Padding(6, 6, 6, 6);
             Name = "TeacherForm";
             Load += TeacherForm_Load;
             Controls.SetChildIndex(TeacherGroupBox, 0);

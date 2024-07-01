@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Globalization;
 using Wfa_ZabanSara.App_source;
+using winprint;
 
 namespace Wfa_ZabanSara.Forms
 {
@@ -163,7 +164,7 @@ namespace Wfa_ZabanSara.Forms
 
         private void ButtonPrintCourseGroup_Click(object sender, EventArgs e)
         {
-
+            PrintDGV.Print_DataGridView(FarsiGridView.reverse_DataGridView(DgvCourseGroup));
         }
 
         private void ButtonSearchCourseTeacher_Click(object sender, EventArgs e)
@@ -241,19 +242,19 @@ namespace Wfa_ZabanSara.Forms
             searchForm.StrFormName = "فرم جستجوی گروه درسی";
             searchForm.ShowDialog();
             //---------------------------------------------
-            if (searchForm.SendParameter > 0)
+            if (searchForm.SendParameters > 0)
             {
-                if (searchForm.DgvCourseGroup.Rows.Count > 1)
+                if (searchForm.DgvCourseSelect.Rows.Count > 1)
                 {
-                    if (searchForm.DgvCourseGroup.CurrentRow.Cells["ID"].Value == null)
+                    if (searchForm.DgvCourseSelect.CurrentRow.Cells["ID"].Value == null)
                         return;
-                    if (searchForm.DgvCourseGroup.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
+                    if (searchForm.DgvCourseSelect.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
                         return;
-                    TextBoxTuition.Tag = searchForm.DgvCourseGroup.CurrentRow.Cells["ID"].Value.ToString();
-                    TextBoxTeacherCourse.Tag = searchForm.DgvCourseGroup.CurrentRow.Cells["ID_FK_Teacher"].Value.ToString();
-                    TextBoxCourseName.Tag = searchForm.DgvCourseGroup.CurrentRow.Cells["ID_FK_Course"].Value.ToString();
-                    TextBoxTeacherCourse.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["teacherName"].Value.ToString();
-                    TextBoxCourseName.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["Title"].Value.ToString();
+                    TextBoxTuition.Tag = searchForm.DgvCourseSelect.CurrentRow.Cells["ID"].Value.ToString();
+                    TextBoxTeacherCourse.Tag = searchForm.DgvCourseSelect.CurrentRow.Cells["ID_FK_Teacher"].Value.ToString();
+                    TextBoxCourseName.Tag = searchForm.DgvCourseSelect.CurrentRow.Cells["ID_FK_Course"].Value.ToString();
+                    TextBoxTeacherCourse.Text = searchForm.DgvCourseSelect.CurrentRow.Cells["teacherName"].Value.ToString();
+                    TextBoxCourseName.Text = searchForm.DgvCourseSelect.CurrentRow.Cells["Title"].Value.ToString();
 
                     //--------GetAllLevels------
 
@@ -265,13 +266,13 @@ namespace Wfa_ZabanSara.Forms
                         ComboBoxLevelCourse.Items.Add(i);
                     }
 
-                    ComboBoxLevelCourse.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["LevelCourse"].Value.ToString();
+                    ComboBoxLevelCourse.Text = searchForm.DgvCourseSelect.CurrentRow.Cells["LevelCourse"].Value.ToString();
 
-                    TextBoxTuition.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["Tuition"].Value.ToString();
-                    TextBoxCourseYear.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["Year"].Value.ToString();
-                    TextBoxTerm.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["Term"].Value.ToString();
-                    TextBoxClassNumber.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["ClassNumber"].Value.ToString();
-                    TextBoxWeekPlan.Text = searchForm.DgvCourseGroup.CurrentRow.Cells["Weekplan"].Value.ToString();
+                    TextBoxTuition.Text = searchForm.DgvCourseSelect.CurrentRow.Cells["Tuition"].Value.ToString();
+                    TextBoxCourseYear.Text = searchForm.DgvCourseSelect.CurrentRow.Cells["Year"].Value.ToString();
+                    TextBoxTerm.Text = searchForm.DgvCourseSelect.CurrentRow.Cells["Term"].Value.ToString();
+                    TextBoxClassNumber.Text = searchForm.DgvCourseSelect.CurrentRow.Cells["ClassNumber"].Value.ToString();
+                    TextBoxWeekPlan.Text = searchForm.DgvCourseSelect.CurrentRow.Cells["WeekPlan"].Value.ToString();
                 }
             }
         }

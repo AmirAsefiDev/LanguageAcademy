@@ -233,7 +233,7 @@
             // 
             ButtonSearchTeacher.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonSearchTeacher.Image = Properties.Resources.search_1_;
-            ButtonSearchTeacher.Location = new Point(41, 139);
+            ButtonSearchTeacher.Location = new Point(34, 139);
             ButtonSearchTeacher.Name = "ButtonSearchTeacher";
             ButtonSearchTeacher.Size = new Size(33, 29);
             ButtonSearchTeacher.TabIndex = 11;
@@ -244,7 +244,7 @@
             // 
             ButtonCourseName.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonCourseName.Image = Properties.Resources.search_1_;
-            ButtonCourseName.Location = new Point(41, 14);
+            ButtonCourseName.Location = new Point(34, 14);
             ButtonCourseName.Name = "ButtonCourseName";
             ButtonCourseName.Size = new Size(33, 29);
             ButtonCourseName.TabIndex = 2;

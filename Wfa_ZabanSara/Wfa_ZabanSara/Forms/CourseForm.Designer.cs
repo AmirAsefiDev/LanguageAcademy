@@ -62,18 +62,21 @@
             groupBox1.Controls.Add(TextBoxSearchTitle);
             groupBox1.Controls.Add(label1);
             groupBox1.Dock = DockStyle.Bottom;
-            groupBox1.Location = new Point(0, 356);
+            groupBox1.Location = new Point(0, 440);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(814, 94);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(916, 116);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "جستجو";
             // 
             // ButtonSearchMore
             // 
-            ButtonSearchMore.Location = new Point(129, 27);
+            ButtonSearchMore.Location = new Point(145, 33);
+            ButtonSearchMore.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchMore.Name = "ButtonSearchMore";
-            ButtonSearchMore.Size = new Size(124, 39);
+            ButtonSearchMore.Size = new Size(140, 48);
             ButtonSearchMore.TabIndex = 3;
             ButtonSearchMore.Text = "جستجوی بیشتر";
             ButtonSearchMore.UseVisualStyleBackColor = true;
@@ -83,9 +86,10 @@
             // 
             ButtonSearchTitle.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonSearchTitle.Image = Properties.Resources.search_1_;
-            ButtonSearchTitle.Location = new Point(415, 33);
+            ButtonSearchTitle.Location = new Point(467, 41);
+            ButtonSearchTitle.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchTitle.Name = "ButtonSearchTitle";
-            ButtonSearchTitle.Size = new Size(33, 29);
+            ButtonSearchTitle.Size = new Size(37, 36);
             ButtonSearchTitle.TabIndex = 2;
             ButtonSearchTitle.UseVisualStyleBackColor = true;
             ButtonSearchTitle.Click += ButtonSearchTitle_Click;
@@ -94,17 +98,18 @@
             // 
             TextBoxSearchTitle.IsNumber = false;
             TextBoxSearchTitle.IsReal = false;
-            TextBoxSearchTitle.Location = new Point(454, 35);
+            TextBoxSearchTitle.Location = new Point(511, 43);
+            TextBoxSearchTitle.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchTitle.Name = "TextBoxSearchTitle";
-            TextBoxSearchTitle.Size = new Size(173, 23);
+            TextBoxSearchTitle.Size = new Size(173, 29);
             TextBoxSearchTitle.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(633, 38);
+            label1.Location = new Point(712, 47);
             label1.Name = "label1";
-            label1.Size = new Size(53, 17);
+            label1.Size = new Size(70, 23);
             label1.TabIndex = 0;
             label1.Text = "نام درس";
             // 
@@ -121,18 +126,20 @@
             panel2.Controls.Add(label2);
             panel2.Controls.Add(TextBoxLevelCount);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(541, 63);
+            panel2.Location = new Point(609, 78);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(273, 293);
+            panel2.Size = new Size(307, 362);
             panel2.TabIndex = 1;
             // 
             // ButtonDeleteCourse
             // 
             ButtonDeleteCourse.Image = Properties.Resources.DeleteImage;
             ButtonDeleteCourse.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonDeleteCourse.Location = new Point(139, 221);
+            ButtonDeleteCourse.Location = new Point(156, 273);
+            ButtonDeleteCourse.Margin = new Padding(3, 4, 3, 4);
             ButtonDeleteCourse.Name = "ButtonDeleteCourse";
-            ButtonDeleteCourse.Size = new Size(91, 53);
+            ButtonDeleteCourse.Size = new Size(102, 65);
             ButtonDeleteCourse.TabIndex = 8;
             ButtonDeleteCourse.Text = "حذف";
             ButtonDeleteCourse.TextAlign = ContentAlignment.MiddleLeft;
@@ -143,29 +150,32 @@
             // 
             ButtonPrintCourse.Image = Properties.Resources.PrintImge;
             ButtonPrintCourse.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonPrintCourse.Location = new Point(42, 221);
+            ButtonPrintCourse.Location = new Point(47, 273);
+            ButtonPrintCourse.Margin = new Padding(3, 4, 3, 4);
             ButtonPrintCourse.Name = "ButtonPrintCourse";
-            ButtonPrintCourse.Size = new Size(91, 53);
+            ButtonPrintCourse.Size = new Size(102, 65);
             ButtonPrintCourse.TabIndex = 9;
             ButtonPrintCourse.Text = "پرنیت";
             ButtonPrintCourse.TextAlign = ContentAlignment.MiddleLeft;
             ButtonPrintCourse.UseVisualStyleBackColor = true;
+            ButtonPrintCourse.Click += ButtonPrintCourse_Click;
             // 
             // TextBoxTitle
             // 
             TextBoxTitle.IsNumber = false;
             TextBoxTitle.IsReal = false;
-            TextBoxTitle.Location = new Point(22, 20);
+            TextBoxTitle.Location = new Point(25, 25);
+            TextBoxTitle.Margin = new Padding(3, 5, 3, 5);
             TextBoxTitle.Name = "TextBoxTitle";
-            TextBoxTitle.Size = new Size(173, 23);
+            TextBoxTitle.Size = new Size(173, 29);
             TextBoxTitle.TabIndex = 1;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(195, 20);
+            label4.Location = new Point(219, 25);
             label4.Name = "label4";
-            label4.Size = new Size(53, 17);
+            label4.Size = new Size(70, 23);
             label4.TabIndex = 0;
             label4.Text = "نام درس";
             // 
@@ -173,9 +183,10 @@
             // 
             ButtonNewCource.Image = Properties.Resources.InsertImage;
             ButtonNewCource.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonNewCource.Location = new Point(139, 162);
+            ButtonNewCource.Location = new Point(156, 200);
+            ButtonNewCource.Margin = new Padding(3, 4, 3, 4);
             ButtonNewCource.Name = "ButtonNewCource";
-            ButtonNewCource.Size = new Size(91, 53);
+            ButtonNewCource.Size = new Size(102, 65);
             ButtonNewCource.TabIndex = 6;
             ButtonNewCource.Text = "جدید";
             ButtonNewCource.TextAlign = ContentAlignment.MiddleLeft;
@@ -186,9 +197,10 @@
             // 
             ButtonEditCourse.Image = Properties.Resources.UpdateImage;
             ButtonEditCourse.ImageAlign = ContentAlignment.MiddleRight;
-            ButtonEditCourse.Location = new Point(42, 162);
+            ButtonEditCourse.Location = new Point(47, 200);
+            ButtonEditCourse.Margin = new Padding(3, 4, 3, 4);
             ButtonEditCourse.Name = "ButtonEditCourse";
-            ButtonEditCourse.Size = new Size(91, 53);
+            ButtonEditCourse.Size = new Size(102, 65);
             ButtonEditCourse.TabIndex = 7;
             ButtonEditCourse.Text = "ویرایش";
             ButtonEditCourse.TextAlign = ContentAlignment.MiddleLeft;
@@ -198,9 +210,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(199, 119);
+            label3.Location = new Point(224, 147);
             label3.Name = "label3";
-            label3.Size = new Size(43, 17);
+            label3.Size = new Size(56, 23);
             label3.TabIndex = 4;
             label3.Text = "شهریه";
             // 
@@ -208,17 +220,18 @@
             // 
             TextBoxTuition.IsNumber = true;
             TextBoxTuition.IsReal = false;
-            TextBoxTuition.Location = new Point(22, 117);
+            TextBoxTuition.Location = new Point(25, 145);
+            TextBoxTuition.Margin = new Padding(3, 5, 3, 5);
             TextBoxTuition.Name = "TextBoxTuition";
-            TextBoxTuition.Size = new Size(173, 23);
+            TextBoxTuition.Size = new Size(173, 29);
             TextBoxTuition.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(199, 70);
+            label2.Location = new Point(224, 86);
             label2.Name = "label2";
-            label2.Size = new Size(71, 17);
+            label2.Size = new Size(91, 23);
             label2.TabIndex = 2;
             label2.Text = "تعداد سطح";
             // 
@@ -226,9 +239,10 @@
             // 
             TextBoxLevelCount.IsNumber = true;
             TextBoxLevelCount.IsReal = false;
-            TextBoxLevelCount.Location = new Point(22, 68);
+            TextBoxLevelCount.Location = new Point(25, 84);
+            TextBoxLevelCount.Margin = new Padding(3, 5, 3, 5);
             TextBoxLevelCount.Name = "TextBoxLevelCount";
-            TextBoxLevelCount.Size = new Size(173, 23);
+            TextBoxLevelCount.Size = new Size(173, 29);
             TextBoxLevelCount.TabIndex = 3;
             // 
             // DataGridViewCourse
@@ -241,10 +255,12 @@
             DataGridViewCourse.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DataGridViewCourse.Columns.AddRange(new DataGridViewColumn[] { ColumnRowNumber });
             DataGridViewCourse.Dock = DockStyle.Fill;
-            DataGridViewCourse.Location = new Point(0, 63);
+            DataGridViewCourse.Location = new Point(0, 78);
+            DataGridViewCourse.Margin = new Padding(3, 4, 3, 4);
             DataGridViewCourse.Name = "DataGridViewCourse";
             DataGridViewCourse.ReadOnly = true;
-            DataGridViewCourse.Size = new Size(541, 293);
+            DataGridViewCourse.RowHeadersWidth = 51;
+            DataGridViewCourse.Size = new Size(609, 362);
             DataGridViewCourse.TabIndex = 3;
             DataGridViewCourse.CellClick += DataGridViewCourse_CellClick;
             DataGridViewCourse.CellFormatting += DataGridViewCourse_CellFormatting;
@@ -252,6 +268,7 @@
             // ColumnRowNumber
             // 
             ColumnRowNumber.HeaderText = "ردیف";
+            ColumnRowNumber.MinimumWidth = 6;
             ColumnRowNumber.Name = "ColumnRowNumber";
             ColumnRowNumber.ReadOnly = true;
             // 
@@ -262,12 +279,13 @@
             // 
             // CourseForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(814, 450);
+            ClientSize = new Size(916, 556);
             Controls.Add(DataGridViewCourse);
             Controls.Add(panel2);
             Controls.Add(groupBox1);
+            Margin = new Padding(4, 6, 4, 6);
             Name = "CourseForm";
             Load += CourseForm_Load;
             Controls.SetChildIndex(groupBox1, 0);

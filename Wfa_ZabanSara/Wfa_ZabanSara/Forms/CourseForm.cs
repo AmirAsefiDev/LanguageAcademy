@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using Wfa_ZabanSara.App_source;
 using Wfa_ZabanSara.App_source.Cpublic;
+using winprint;
 
 namespace Wfa_ZabanSara.Forms
 {
@@ -138,7 +139,10 @@ namespace Wfa_ZabanSara.Forms
                 }
             }
         }
-
+        private void ButtonPrintCourse_Click(object sender, EventArgs e)
+        {
+            PrintDGV.Print_DataGridView(FarsiGridView.reverse_DataGridView(DataGridViewCourse));
+        }
 
         //this method get all information about Course Table in Database to dataGridView
         private void GetListCourse()
@@ -208,6 +212,7 @@ namespace Wfa_ZabanSara.Forms
             };
             return course;
         }
+
 
     }
 }
