@@ -139,7 +139,7 @@ namespace Wfa_ZabanSara.Forms
 
         private void ButtonDeleteCourseSelect_Click(object sender, EventArgs e)
         {
-            if (TextBoxFinalScore.Tag.ToString() == string.Empty)
+            if (TextBoxFinalScore.Tag.ToString() == string.Empty || TextBoxFinalScore.Tag.ToString() == string.Empty)
             {
                 MsgBox.Show("لطفا بر روی رکورد مورد نظر کلیک کنید", "هشدار");
                 return;
@@ -166,28 +166,35 @@ namespace Wfa_ZabanSara.Forms
 
         private void ButtonGroupSelection_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("IDCourseGroup");
-            dataTable.Columns.Add("IDStudent");
-            for (int i =0; i < DgvCourseSelect.RowCount-1;++i)
+            if (TextBoxCourseGroup.Tag.ToString() != string.Empty)
             {
-                dataTable.Rows.Add("IDStudent",
-                    int.Parse(DgvCourseSelect.Rows[i].Cells
-                    ["ID_FK_Student"].Value.ToString()));      
-                dataTable.Rows.Add("IDCourseGroup",
-                    int.Parse(DgvCourseSelect.Rows[i].Cells
-                    ["ID_FK_CourseGroup"].Value.ToString()));
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("IDCourseGroup");
+                dataTable.Columns.Add("IDStudent");
+                for (int i = 0; i < DgvCourseSelect.RowCount - 1; ++i)
+                {
+                    dataTable.Rows.Add(TextBoxCourseGroup.Tag,
+                        int.Parse(DgvCourseSelect.Rows[i].Cells["ID_FK_Student"].Value.ToString()));
+                    //dataTable.Rows.Add("IDCourseGroup",
+                    //    int.Parse(DgvCourseSelect.Rows[i].Cells["ID_FK_CourseGroup"].Value.ToString()));
+                }
+                //------------------------------------
+                SqlCon sqlCon = new();
+                SqlCommand command = new();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "SelectCourseAll";
+                command.Parameters.AddWithValue("@Tbl_Input",dataTable);
+                command.Connection = sqlCon.OpenCon();
+                command.ExecuteNonQuery();
+                sqlCon.CloseCon();
+                MsgBox.Show("انتخاب گروهی انجام شد");
+                GetListCourseSelect();
+                ClearText();
             }
-            //------------------------------------
-            SqlCon sqlCon = new();
-            SqlCommand command = new();
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "SelectCourseAll";
-            command.Parameters.AddWithValue("@Tbl_Input",dataTable);
-            command.Connection = sqlCon.OpenCon();
-            command.ExecuteNonQuery();
-            sqlCon.CloseCon();
-            MsgBox.Show("انتخاب گروهی انجام شد");
+            else
+            {
+                errorProviderCourseSelect.SetError(TextBoxCourseGroup,"لطفا گروهی درسی مورد نظر خود را انتخاب کنید");
+            }
         }
 
         private void ButtonSearchStudent_Click(object sender, EventArgs e)
@@ -342,13 +349,13 @@ namespace Wfa_ZabanSara.Forms
             }
 
             if (TextBoxActivityScore.Text.Trim() == string.Empty)
-                TextBoxActivityScore.Text = "0.00";
+                TextBoxActivityScore.Text = "0";
 
             if (TextBoxAttendScore.Text.Trim() == string.Empty)
-                TextBoxAttendScore.Text = "0.00";
+                TextBoxAttendScore.Text = "0";
 
             if (TextBoxFinalScore.Text.Trim() == string.Empty)
-                TextBoxFinalScore.Text = "0.00";
+                TextBoxFinalScore.Text = "0";
 
             decimal ActivityScore = Convert.ToDecimal(TextBoxActivityScore.Text.Trim());
             decimal AttendScore = Convert.ToDecimal(TextBoxAttendScore.Text.Trim());
@@ -369,11 +376,11 @@ namespace Wfa_ZabanSara.Forms
             TextBoxStudentCourseSelect.Tag = string.Empty;
             TextBoxCourseGroup.Text = string.Empty;
             TextBoxCourseGroup.Tag = string.Empty;
-            TextBoxActivityScore.Text = "0.00";
+            TextBoxActivityScore.Text = "0";
             TextBoxActivityScore.Tag = string.Empty;
-            TextBoxAttendScore.Text = "0.00";
+            TextBoxAttendScore.Text = "0";
             TextBoxAttendScore.Tag = string.Empty;
-            TextBoxFinalScore.Text = "0.00";
+            TextBoxFinalScore.Text = "0";
             TextBoxFinalScore.Text = string.Empty;
         }
 
