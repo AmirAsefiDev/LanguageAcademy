@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Wfa_ZabanSara.App_source;
+using winprint;
 
 namespace Wfa_ZabanSara.Forms
 {
@@ -31,7 +32,7 @@ namespace Wfa_ZabanSara.Forms
 
         private void BtnSearchTitle_Click(object sender, EventArgs e)
         {
-            if(TextBoxSearchTitle.Text.Trim().Length >= 2)
+            if (TextBoxSearchTitle.Text.Trim().Length >= 2)
             {
                 CourseBusiness business = new();
                 DataGridViewSearchCourse.DataSource = business.DetailsByField("Title", TextBoxSearchTitle.Text.Trim());
@@ -46,9 +47,9 @@ namespace Wfa_ZabanSara.Forms
         {
             if (TextBoxSearchLevelCount.Text.Trim().Length >= 1)
             {
-            CourseBusiness business = new();
-            DataGridViewSearchCourse.DataSource = business.DetailsByField("LevelCount", TextBoxSearchLevelCount.Text.Trim());
-            SetSettingCourse();
+                CourseBusiness business = new();
+                DataGridViewSearchCourse.DataSource = business.DetailsByField("LevelCount", TextBoxSearchLevelCount.Text.Trim());
+                SetSettingCourse();
             }
             else
                 MsgBox.Show("مقدار تعداد سطح را به درستی وارد کنید", "هشدار");
@@ -60,7 +61,7 @@ namespace Wfa_ZabanSara.Forms
             if (TextBoxSearchTuition.Text.Trim().Length >= 2)
             {
                 CourseBusiness business = new();
-                DataGridViewSearchCourse.DataSource = business.DetailsByField("Tuition",TextBoxSearchTuition.Text.Trim());
+                DataGridViewSearchCourse.DataSource = business.DetailsByField("Tuition", TextBoxSearchTuition.Text.Trim());
                 SetSettingCourse();
             }
             else
@@ -100,5 +101,9 @@ namespace Wfa_ZabanSara.Forms
             }
         }
 
+        private void ButtonPrintSearch_Click(object sender, EventArgs e)
+        {
+            PrintDGV.Print_DataGridView(FarsiGridView.reverse_DataGridView(DataGridViewSearchCourse));
+        }
     }
 }

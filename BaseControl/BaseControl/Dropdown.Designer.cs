@@ -28,44 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ShowDropdownButton = new System.Windows.Forms.Button();
-            this.DropDownInputMaskedEdit = new System.Windows.Forms.MaskedTextBox();
-            this.SuspendLayout();
+            ShowDropdownButton = new Button();
+            DropDownInputMaskedEdit = new MaskedTextBox();
+            SuspendLayout();
             // 
             // ShowDropdownButton
             // 
-            this.ShowDropdownButton.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowDropdownButton.Location = new System.Drawing.Point(0, 1);
-            this.ShowDropdownButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ShowDropdownButton.Name = "ShowDropdownButton";
-            this.ShowDropdownButton.Size = new System.Drawing.Size(73, 29);
-            this.ShowDropdownButton.TabIndex = 0;
-            this.ShowDropdownButton.Text = "▼";
-            this.ShowDropdownButton.UseVisualStyleBackColor = true;
-            this.ShowDropdownButton.Click += new System.EventHandler(this.ShowDropdownButton_Click);
+            ShowDropdownButton.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ShowDropdownButton.Location = new Point(0, 1);
+            ShowDropdownButton.Margin = new Padding(4, 3, 4, 3);
+            ShowDropdownButton.Name = "ShowDropdownButton";
+            ShowDropdownButton.Size = new Size(73, 29);
+            ShowDropdownButton.TabIndex = 0;
+            ShowDropdownButton.Text = "▼";
+            ShowDropdownButton.UseVisualStyleBackColor = true;
+            ShowDropdownButton.Click += ShowDropdownButton_Click;
             // 
             // DropDownInputMaskedEdit
             // 
-            this.DropDownInputMaskedEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DropDownInputMaskedEdit.Location = new System.Drawing.Point(72, 4);
-            this.DropDownInputMaskedEdit.Name = "DropDownInputMaskedEdit";
-            this.DropDownInputMaskedEdit.Size = new System.Drawing.Size(279, 23);
-            this.DropDownInputMaskedEdit.TabIndex = 2;
+            DropDownInputMaskedEdit.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            DropDownInputMaskedEdit.Location = new Point(72, 2);
+            DropDownInputMaskedEdit.Name = "DropDownInputMaskedEdit";
+            DropDownInputMaskedEdit.Size = new Size(279, 27);
+            DropDownInputMaskedEdit.TabIndex = 2;
             // 
             // Dropdown
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.DropDownInputMaskedEdit);
-            this.Controls.Add(this.ShowDropdownButton);
-            this.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Dropdown";
-            this.Size = new System.Drawing.Size(351, 29);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(DropDownInputMaskedEdit);
+            Controls.Add(ShowDropdownButton);
+            Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Dropdown";
+            Size = new Size(351, 31);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

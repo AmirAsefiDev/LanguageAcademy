@@ -1,6 +1,5 @@
 ﻿using BaseControl.ExtensionMethods;
 using System.Data;
-using System.Windows.Forms;
 using Wfa_ZabanSara.App_source;
 using Wfa_ZabanSara.App_source.BusinessLayer;
 using Wfa_ZabanSara.App_source.Cpublic;
@@ -50,7 +49,8 @@ namespace Wfa_ZabanSara.Forms
             };
 
 
-            GetListTeacher();
+            //GetListTeacher();
+            ClearText();
             SetSettingOnlyOneRun();
         }
 
@@ -116,6 +116,7 @@ namespace Wfa_ZabanSara.Forms
                             MyFile.TeacherImage + ID.ToString() + ".jpg");
 
                 }
+                TextBoxNationalCode.Tag = ID;
                 GetListTeacher();
                 MsgBox.Show("استاد مورد نظر اضافه شد", "درج استاد");
                 ClearText();
@@ -287,8 +288,14 @@ namespace Wfa_ZabanSara.Forms
 
         private void GetListTeacher()
         {
-            DataGridViewTeacher.DataSource = new TeacherBusiness().GetList();
-            SetSettingTeacher();
+            if (TextBoxNationalCode.Tag.ToString() != string.Empty)
+            {
+                StudentBusiness b = new StudentBusiness();
+                DataGridViewTeacher.DataSource = b.DetailsByField("Teacher.ID", TextBoxNationalCode.Tag.ToString());
+                SetSettingTeacher();
+            }
+            else
+                DataGridViewTeacher.DataSource = null;
 
         }
         public void SetSettingTeacher()

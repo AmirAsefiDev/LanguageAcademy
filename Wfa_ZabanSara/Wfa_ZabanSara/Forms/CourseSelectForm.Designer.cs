@@ -352,7 +352,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(1315, 44);
+            label5.Location = new Point(1390, 44);
             label5.Name = "label5";
             label5.Size = new Size(62, 23);
             label5.TabIndex = 11;
@@ -361,7 +361,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(905, 44);
+            label4.Location = new Point(956, 44);
             label4.Name = "label4";
             label4.Size = new Size(87, 23);
             label4.TabIndex = 10;
@@ -394,7 +394,7 @@
             // 
             ButtonSearchCourseGroup.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonSearchCourseGroup.Image = Properties.Resources.search_1_;
-            ButtonSearchCourseGroup.Location = new Point(656, 36);
+            ButtonSearchCourseGroup.Location = new Point(669, 36);
             ButtonSearchCourseGroup.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchCourseGroup.Name = "ButtonSearchCourseGroup";
             ButtonSearchCourseGroup.Size = new Size(37, 36);
@@ -406,7 +406,7 @@
             // 
             ButtonSearchStudent.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonSearchStudent.Image = Properties.Resources.search_1_;
-            ButtonSearchStudent.Location = new Point(1059, 38);
+            ButtonSearchStudent.Location = new Point(1134, 38);
             ButtonSearchStudent.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchStudent.Name = "ButtonSearchStudent";
             ButtonSearchStudent.Size = new Size(37, 36);
@@ -427,7 +427,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(529, 43);
+            label11.Location = new Point(513, 44);
             label11.Name = "label11";
             label11.Size = new Size(39, 23);
             label11.TabIndex = 6;
@@ -437,17 +437,17 @@
             // 
             TextBoxSearchCourseGroup.IsNumber = false;
             TextBoxSearchCourseGroup.IsReal = false;
-            TextBoxSearchCourseGroup.Location = new Point(715, 41);
+            TextBoxSearchCourseGroup.Location = new Point(728, 41);
             TextBoxSearchCourseGroup.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchCourseGroup.Name = "TextBoxSearchCourseGroup";
-            TextBoxSearchCourseGroup.Size = new Size(170, 27);
+            TextBoxSearchCourseGroup.Size = new Size(212, 29);
             TextBoxSearchCourseGroup.TabIndex = 4;
             // 
             // TextBoxSearchStudent
             // 
             TextBoxSearchStudent.IsNumber = true;
             TextBoxSearchStudent.IsReal = false;
-            TextBoxSearchStudent.Location = new Point(1116, 40);
+            TextBoxSearchStudent.Location = new Point(1191, 40);
             TextBoxSearchStudent.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchStudent.Name = "TextBoxSearchStudent";
             TextBoxSearchStudent.Size = new Size(171, 27);

@@ -163,7 +163,7 @@
             TextBoxSearchLastName.Location = new Point(324, 73);
             TextBoxSearchLastName.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchLastName.Name = "TextBoxSearchLastName";
-            TextBoxSearchLastName.Size = new Size(200, 29);
+            TextBoxSearchLastName.Size = new Size(200, 27);
             TextBoxSearchLastName.TabIndex = 7;
             // 
             // label10
@@ -191,7 +191,7 @@
             TextBoxSearchName.Location = new Point(774, 75);
             TextBoxSearchName.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchName.Name = "TextBoxSearchName";
-            TextBoxSearchName.Size = new Size(200, 29);
+            TextBoxSearchName.Size = new Size(200, 27);
             TextBoxSearchName.TabIndex = 4;
             // 
             // TextBoxSearchNationalCode
@@ -201,7 +201,7 @@
             TextBoxSearchNationalCode.Location = new Point(1151, 75);
             TextBoxSearchNationalCode.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchNationalCode.Name = "TextBoxSearchNationalCode";
-            TextBoxSearchNationalCode.Size = new Size(200, 29);
+            TextBoxSearchNationalCode.Size = new Size(200, 27);
             TextBoxSearchNationalCode.TabIndex = 1;
             // 
             // panel2
@@ -231,17 +231,17 @@
             panel2.Controls.Add(TextBoxName);
             panel2.Controls.Add(TextBoxNationalCode);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(956, 78);
+            panel2.Location = new Point(932, 78);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(516, 600);
+            panel2.Size = new Size(540, 600);
             panel2.TabIndex = 0;
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             button1.ImageAlign = ContentAlignment.TopCenter;
-            button1.Location = new Point(7, 188);
+            button1.Location = new Point(9, 188);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(53, 35);
@@ -254,10 +254,10 @@
             // 
             DatePickerDateOfBirth.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DatePickerDateOfBirth.InputMask = "";
-            DatePickerDateOfBirth.Location = new Point(184, 283);
-            DatePickerDateOfBirth.Margin = new Padding(4, 4, 4, 4);
+            DatePickerDateOfBirth.Location = new Point(180, 285);
+            DatePickerDateOfBirth.Margin = new Padding(4);
             DatePickerDateOfBirth.Name = "DatePickerDateOfBirth";
-            DatePickerDateOfBirth.Size = new Size(226, 36);
+            DatePickerDateOfBirth.Size = new Size(245, 30);
             DatePickerDateOfBirth.TabIndex = 10;
             DatePickerDateOfBirth.Value = "";
             // 
@@ -265,7 +265,7 @@
             // 
             ButtonOpenImage.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonOpenImage.ImageAlign = ContentAlignment.TopCenter;
-            ButtonOpenImage.Location = new Point(63, 188);
+            ButtonOpenImage.Location = new Point(65, 188);
             ButtonOpenImage.Margin = new Padding(3, 4, 3, 4);
             ButtonOpenImage.Name = "ButtonOpenImage";
             ButtonOpenImage.Size = new Size(106, 35);
@@ -278,7 +278,7 @@
             // 
             pictureBoxStudent.BackColor = Color.White;
             pictureBoxStudent.BorderStyle = BorderStyle.Fixed3D;
-            pictureBoxStudent.Location = new Point(8, 23);
+            pictureBoxStudent.Location = new Point(10, 23);
             pictureBoxStudent.Margin = new Padding(3, 4, 3, 4);
             pictureBoxStudent.Name = "pictureBoxStudent";
             pictureBoxStudent.Size = new Size(159, 161);
@@ -345,7 +345,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(417, 385);
+            label8.Location = new Point(432, 385);
             label8.Name = "label8";
             label8.Size = new Size(49, 23);
             label8.TabIndex = 15;
@@ -353,17 +353,17 @@
             // 
             // TextBoxAddress
             // 
-            TextBoxAddress.Location = new Point(184, 385);
+            TextBoxAddress.Location = new Point(180, 385);
             TextBoxAddress.Margin = new Padding(3, 4, 3, 4);
             TextBoxAddress.Multiline = true;
             TextBoxAddress.Name = "TextBoxAddress";
-            TextBoxAddress.Size = new Size(226, 94);
+            TextBoxAddress.Size = new Size(245, 94);
             TextBoxAddress.TabIndex = 14;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(417, 338);
+            label7.Location = new Point(432, 338);
             label7.Name = "label7";
             label7.Size = new Size(42, 23);
             label7.TabIndex = 13;
@@ -373,16 +373,16 @@
             // 
             TextBoxPhone.IsNumber = true;
             TextBoxPhone.IsReal = false;
-            TextBoxPhone.Location = new Point(184, 338);
+            TextBoxPhone.Location = new Point(180, 338);
             TextBoxPhone.Margin = new Padding(3, 5, 3, 5);
             TextBoxPhone.Name = "TextBoxPhone";
-            TextBoxPhone.Size = new Size(200, 29);
+            TextBoxPhone.Size = new Size(219, 27);
             TextBoxPhone.TabIndex = 12;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(417, 288);
+            label6.Location = new Point(432, 288);
             label6.Name = "label6";
             label6.Size = new Size(79, 23);
             label6.TabIndex = 11;
@@ -391,7 +391,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(417, 237);
+            label5.Location = new Point(432, 237);
             label5.Name = "label5";
             label5.Size = new Size(62, 23);
             label5.TabIndex = 9;
@@ -404,19 +404,19 @@
             ComboBoxSex.DataSource = null;
             ComboBoxSex.DisplayMember = "";
             ComboBoxSex.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ComboBoxSex.Location = new Point(184, 237);
+            ComboBoxSex.Location = new Point(180, 237);
             ComboBoxSex.Margin = new Padding(3, 5, 3, 5);
             ComboBoxSex.Name = "ComboBoxSex";
             ComboBoxSex.SelectedIndex = -1;
             ComboBoxSex.SelectedValue = null;
-            ComboBoxSex.Size = new Size(200, 29);
+            ComboBoxSex.Size = new Size(219, 31);
             ComboBoxSex.TabIndex = 8;
             ComboBoxSex.ValueMember = "";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(417, 185);
+            label4.Location = new Point(432, 185);
             label4.Name = "label4";
             label4.Size = new Size(51, 23);
             label4.TabIndex = 7;
@@ -429,19 +429,19 @@
             ComboBox_ID_FK_Degree.DataSource = null;
             ComboBox_ID_FK_Degree.DisplayMember = "";
             ComboBox_ID_FK_Degree.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ComboBox_ID_FK_Degree.Location = new Point(184, 185);
+            ComboBox_ID_FK_Degree.Location = new Point(180, 185);
             ComboBox_ID_FK_Degree.Margin = new Padding(3, 5, 3, 5);
             ComboBox_ID_FK_Degree.Name = "ComboBox_ID_FK_Degree";
             ComboBox_ID_FK_Degree.SelectedIndex = -1;
             ComboBox_ID_FK_Degree.SelectedValue = null;
-            ComboBox_ID_FK_Degree.Size = new Size(200, 29);
+            ComboBox_ID_FK_Degree.Size = new Size(219, 31);
             ComboBox_ID_FK_Degree.TabIndex = 6;
             ComboBox_ID_FK_Degree.ValueMember = "";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(417, 131);
+            label3.Location = new Point(432, 131);
             label3.Name = "label3";
             label3.Size = new Size(100, 23);
             label3.TabIndex = 5;
@@ -451,16 +451,16 @@
             // 
             TextBoxLastName.IsNumber = false;
             TextBoxLastName.IsReal = false;
-            TextBoxLastName.Location = new Point(184, 131);
+            TextBoxLastName.Location = new Point(180, 131);
             TextBoxLastName.Margin = new Padding(3, 5, 3, 5);
             TextBoxLastName.Name = "TextBoxLastName";
-            TextBoxLastName.Size = new Size(200, 29);
+            TextBoxLastName.Size = new Size(219, 27);
             TextBoxLastName.TabIndex = 4;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(417, 75);
+            label2.Location = new Point(432, 75);
             label2.Name = "label2";
             label2.Size = new Size(30, 23);
             label2.TabIndex = 3;
@@ -469,7 +469,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(417, 23);
+            label1.Location = new Point(432, 23);
             label1.Name = "label1";
             label1.Size = new Size(58, 23);
             label1.TabIndex = 1;
@@ -479,20 +479,20 @@
             // 
             TextBoxName.IsNumber = false;
             TextBoxName.IsReal = false;
-            TextBoxName.Location = new Point(184, 75);
+            TextBoxName.Location = new Point(180, 75);
             TextBoxName.Margin = new Padding(3, 5, 3, 5);
             TextBoxName.Name = "TextBoxName";
-            TextBoxName.Size = new Size(200, 29);
+            TextBoxName.Size = new Size(219, 27);
             TextBoxName.TabIndex = 2;
             // 
             // TextBoxNationalCode
             // 
             TextBoxNationalCode.IsNumber = true;
             TextBoxNationalCode.IsReal = false;
-            TextBoxNationalCode.Location = new Point(184, 23);
+            TextBoxNationalCode.Location = new Point(180, 23);
             TextBoxNationalCode.Margin = new Padding(3, 5, 3, 5);
             TextBoxNationalCode.Name = "TextBoxNationalCode";
-            TextBoxNationalCode.Size = new Size(200, 29);
+            TextBoxNationalCode.Size = new Size(219, 27);
             TextBoxNationalCode.TabIndex = 0;
             // 
             // panel3
@@ -502,7 +502,7 @@
             panel3.Location = new Point(0, 78);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(956, 600);
+            panel3.Size = new Size(932, 600);
             panel3.TabIndex = 4;
             // 
             // DgvStudent
@@ -520,7 +520,7 @@
             DgvStudent.Name = "DgvStudent";
             DgvStudent.ReadOnly = true;
             DgvStudent.RowHeadersWidth = 51;
-            DgvStudent.Size = new Size(956, 600);
+            DgvStudent.Size = new Size(932, 600);
             DgvStudent.TabIndex = 0;
             DgvStudent.CellClick += DgvStudent_CellClick;
             DgvStudent.CellFormatting += DgvStudent_CellFormatting;
@@ -545,7 +545,7 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(groupBox1);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             Name = "StudentForm";
             Load += StudentForm_Load;
             Controls.SetChildIndex(groupBox1, 0);

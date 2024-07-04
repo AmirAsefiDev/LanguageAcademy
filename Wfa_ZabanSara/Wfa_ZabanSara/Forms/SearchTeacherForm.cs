@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Wfa_ZabanSara.App_source.BusinessLayer;
 using Wfa_ZabanSara.App_source;
 using Wfa_ZabanSara.App_source.Cpublic;
+using winprint;
 
 namespace Wfa_ZabanSara.Forms
 {
@@ -115,7 +116,7 @@ namespace Wfa_ZabanSara.Forms
         }
         public void LoadImage()
         {
-            for (int i = 0; i < DataGridViewTeacher.RowCount; i++)
+            for (int i = 0; i < DataGridViewTeacher.RowCount; ++i)
             {
                 if (DataGridViewTeacher.Rows[i].Cells["ID"].Value != null)
                 {
@@ -130,6 +131,11 @@ namespace Wfa_ZabanSara.Forms
             }
         }
 
-
+        private void BtnPrint_Click(object sender, EventArgs e)
+        {
+            DataGridViewTeacher.Columns["ColumnImage"].Visible = false;
+            PrintDGV.Print_DataGridView(FarsiGridView.reverse_DataGridView(DataGridViewTeacher));
+            DataGridViewTeacher.Columns["ColumnImage"].Visible = true;
+        }
     }
 }

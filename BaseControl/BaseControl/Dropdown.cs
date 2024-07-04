@@ -48,8 +48,8 @@ namespace BaseControl
             dropdownForm.FormBorderStyle = FormBorderStyle.None;
             dropdownForm.BackColor = Color.Gainsboro;
             var screenLocation = this.PointToScreen(Point.Empty);
-            dropdownForm.Width = 320;
-            dropdownForm.Height = 250;
+            dropdownForm.Width = 400;
+            dropdownForm.Height = 280;
             dropdownForm.ShowInTaskbar = false;
             dropdownForm.TopMost = true;
             if(GetDropdownControl != null)

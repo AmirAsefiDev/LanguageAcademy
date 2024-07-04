@@ -1,4 +1,5 @@
 ﻿using Wfa_ZabanSara.App_source;
+using winprint;
 
 namespace Wfa_ZabanSara.Forms
 {
@@ -120,7 +121,7 @@ namespace Wfa_ZabanSara.Forms
             DgvCourseSelect.Columns["Tuition"].HeaderText = "شهریه";
             DgvCourseSelect.Columns["Year"].HeaderText = "سال";
             DgvCourseSelect.Columns["Term"].HeaderText = "ترم";
-            DgvCourseSelect.Columns["ClassNumber"].HeaderText = "شماره کلاس";           
+            DgvCourseSelect.Columns["ClassNumber"].HeaderText = "شماره کلاس";
             DgvCourseSelect.Columns["WeekPlan"].HeaderText = "برنامه هفتگی";
 
         }
@@ -136,6 +137,11 @@ namespace Wfa_ZabanSara.Forms
                 SendParameters = int.Parse(DgvCourseSelect.CurrentRow.Cells["ID"].Value.ToString());
                 this.Close();
             }
+        }
+
+        private void ButtonPrintCourseGroup_Click(object sender, EventArgs e)
+        {
+            PrintDGV.Print_DataGridView(FarsiGridView.reverse_DataGridView(DgvCourseSelect));
         }
     }
 }

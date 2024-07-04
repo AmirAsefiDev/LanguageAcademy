@@ -1,6 +1,5 @@
 ﻿using System.Data;
 using Wfa_ZabanSara.App_source;
-using Wfa_ZabanSara.App_source.Cpublic;
 using winprint;
 
 namespace Wfa_ZabanSara.Forms
@@ -14,7 +13,8 @@ namespace Wfa_ZabanSara.Forms
 
         private void CourseForm_Load(object sender, EventArgs e)
         {
-            GetListCourse();
+            //GetListCourse();
+            ClearText();
         }
 
         private void DataGridViewCourse_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -35,8 +35,12 @@ namespace Wfa_ZabanSara.Forms
                     MsgBox.Show("این درس وجود دارد لطفا درس دیگری را وارد کنید", "هشدار");
                     return;
                 }
+
                 Course course = FillDataCourse();
-                courseBusiness.Insert(course);
+
+                //courseBusiness.Insert(course);
+                int Id = courseBusiness.Insert(course);
+                 TextBoxTitle.Tag = Id;
                 GetListCourse();
                 MsgBox.Show("درس مورد نظر اضافه شد", "درج درس");
                 ClearText();
@@ -54,8 +58,8 @@ namespace Wfa_ZabanSara.Forms
                 if (DataGridViewCourse.CurrentRow.Cells["ID"].Value.ToString() == string.Empty)
                     return;
 
-                TextBoxTitle.Tag = DataGridViewCourse.CurrentRow.Cells["ID"].Value.ToString();
                 TextBoxTitle.Text = DataGridViewCourse.CurrentRow.Cells["Title"].Value.ToString();
+                TextBoxTitle.Tag = DataGridViewCourse.CurrentRow.Cells["ID"].Value.ToString();
                 TextBoxLevelCount.Text = DataGridViewCourse.CurrentRow.Cells["LevelCount"].Value.ToString();
                 TextBoxTuition.Text = DataGridViewCourse.CurrentRow.Cells["Tuition"].Value.ToString();
             }
@@ -133,7 +137,7 @@ namespace Wfa_ZabanSara.Forms
                         return;
 
                     TextBoxTitle.Text = search.DataGridViewSearchCourse.CurrentRow.Cells["Title"].Value.ToString();
-                    TextBoxTitle.Tag = search.DataGridViewSearchCourse.CurrentRow.Cells["Title"].Value.ToString();
+                    TextBoxTitle.Tag = search.DataGridViewSearchCourse.CurrentRow.Cells["ID"].Value.ToString();
                     TextBoxLevelCount.Text = search.DataGridViewSearchCourse.CurrentRow.Cells["LevelCount"].Value.ToString();
                     TextBoxTuition.Text = search.DataGridViewSearchCourse.CurrentRow.Cells["Tuition"].Value.ToString();
                 }
@@ -147,8 +151,14 @@ namespace Wfa_ZabanSara.Forms
         //this method get all information about Course Table in Database to dataGridView
         private void GetListCourse()
         {
-            DataGridViewCourse.DataSource = new CourseBusiness().GetList();
-            SetSettingCourse();
+            if (TextBoxTitle.Tag.ToString() != string.Empty)
+            {
+                CourseBusiness b = new CourseBusiness();
+                DataGridViewCourse.DataSource = b.DetailsByField("Course.ID", TextBoxTitle.Tag.ToString());
+                SetSettingCourse();
+            }
+            else
+                DataGridViewCourse.DataSource = null;
         }
 
         // this method edit ColumnName to persian to user

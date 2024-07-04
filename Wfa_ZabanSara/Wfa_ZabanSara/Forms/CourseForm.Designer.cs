@@ -66,7 +66,7 @@
             groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(916, 116);
+            groupBox1.Size = new Size(926, 116);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "جستجو";
@@ -101,7 +101,7 @@
             TextBoxSearchTitle.Location = new Point(511, 43);
             TextBoxSearchTitle.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchTitle.Name = "TextBoxSearchTitle";
-            TextBoxSearchTitle.Size = new Size(173, 29);
+            TextBoxSearchTitle.Size = new Size(173, 27);
             TextBoxSearchTitle.TabIndex = 1;
             // 
             // label1
@@ -126,7 +126,7 @@
             panel2.Controls.Add(label2);
             panel2.Controls.Add(TextBoxLevelCount);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(609, 78);
+            panel2.Location = new Point(619, 78);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Size = new Size(307, 362);
@@ -164,16 +164,16 @@
             // 
             TextBoxTitle.IsNumber = false;
             TextBoxTitle.IsReal = false;
-            TextBoxTitle.Location = new Point(25, 25);
+            TextBoxTitle.Location = new Point(19, 25);
             TextBoxTitle.Margin = new Padding(3, 5, 3, 5);
             TextBoxTitle.Name = "TextBoxTitle";
-            TextBoxTitle.Size = new Size(173, 29);
+            TextBoxTitle.Size = new Size(173, 27);
             TextBoxTitle.TabIndex = 1;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(219, 25);
+            label4.Location = new Point(213, 25);
             label4.Name = "label4";
             label4.Size = new Size(70, 23);
             label4.TabIndex = 0;
@@ -210,7 +210,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(224, 147);
+            label3.Location = new Point(218, 147);
             label3.Name = "label3";
             label3.Size = new Size(56, 23);
             label3.TabIndex = 4;
@@ -220,16 +220,16 @@
             // 
             TextBoxTuition.IsNumber = true;
             TextBoxTuition.IsReal = false;
-            TextBoxTuition.Location = new Point(25, 145);
+            TextBoxTuition.Location = new Point(19, 145);
             TextBoxTuition.Margin = new Padding(3, 5, 3, 5);
             TextBoxTuition.Name = "TextBoxTuition";
-            TextBoxTuition.Size = new Size(173, 29);
+            TextBoxTuition.Size = new Size(173, 27);
             TextBoxTuition.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(224, 86);
+            label2.Location = new Point(218, 86);
             label2.Name = "label2";
             label2.Size = new Size(91, 23);
             label2.TabIndex = 2;
@@ -239,10 +239,10 @@
             // 
             TextBoxLevelCount.IsNumber = true;
             TextBoxLevelCount.IsReal = false;
-            TextBoxLevelCount.Location = new Point(25, 84);
+            TextBoxLevelCount.Location = new Point(19, 84);
             TextBoxLevelCount.Margin = new Padding(3, 5, 3, 5);
             TextBoxLevelCount.Name = "TextBoxLevelCount";
-            TextBoxLevelCount.Size = new Size(173, 29);
+            TextBoxLevelCount.Size = new Size(173, 27);
             TextBoxLevelCount.TabIndex = 3;
             // 
             // DataGridViewCourse
@@ -260,7 +260,7 @@
             DataGridViewCourse.Name = "DataGridViewCourse";
             DataGridViewCourse.ReadOnly = true;
             DataGridViewCourse.RowHeadersWidth = 51;
-            DataGridViewCourse.Size = new Size(609, 362);
+            DataGridViewCourse.Size = new Size(619, 362);
             DataGridViewCourse.TabIndex = 3;
             DataGridViewCourse.CellClick += DataGridViewCourse_CellClick;
             DataGridViewCourse.CellFormatting += DataGridViewCourse_CellFormatting;
@@ -281,7 +281,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(916, 556);
+            ClientSize = new Size(926, 556);
             Controls.Add(DataGridViewCourse);
             Controls.Add(panel2);
             Controls.Add(groupBox1);

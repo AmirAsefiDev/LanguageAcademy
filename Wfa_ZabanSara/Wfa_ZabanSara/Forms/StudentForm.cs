@@ -48,7 +48,7 @@ namespace Wfa_ZabanSara.Forms
                 return picker;
             };
 
-            GetListStudent();
+            //GetListStudent();
             ClearText();
             SetSettingOnlyOneRun();
         }
@@ -101,6 +101,7 @@ namespace Wfa_ZabanSara.Forms
                     st.Image = MyFile.StudentImage + ID.ToString() + ".jpg";
                     stb.Update(st);
                 }
+                TextBoxNationalCode.Tag = ID;
                 GetListStudent();
                 MsgBox.Show("دانش آموز مورد نظر اضافه شد", "درج دانش آموز");
                 ClearText();
@@ -310,9 +311,14 @@ namespace Wfa_ZabanSara.Forms
 
         private void GetListStudent()
         {
-            DgvStudent.DataSource = new StudentBusiness().GetList();
-            SetSettingStudent();
-
+            if(TextBoxNationalCode.Tag.ToString() != string.Empty)
+            {
+                StudentBusiness b = new StudentBusiness();
+                DgvStudent.DataSource = b.DetailsByField("Student.ID", TextBoxNationalCode.Tag.ToString());
+                SetSettingStudent();
+            }
+            else
+                DgvStudent.DataSource = null;
         }
         public void SetSettingStudent()
         {

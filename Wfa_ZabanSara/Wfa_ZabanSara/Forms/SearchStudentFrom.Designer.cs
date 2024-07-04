@@ -62,9 +62,10 @@
             panel2.Controls.Add(groupBox1);
             panel2.Controls.Add(ButtonSearchLastName);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 63);
+            panel2.Location = new Point(0, 78);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(941, 133);
+            panel2.Size = new Size(1059, 164);
             panel2.TabIndex = 2;
             // 
             // groupBox1
@@ -89,8 +90,10 @@
             groupBox1.Controls.Add(TextBoxSearchNationalCode);
             groupBox1.Dock = DockStyle.Top;
             groupBox1.Location = new Point(0, 0);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(941, 133);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(1059, 164);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "جستجو";
@@ -99,21 +102,24 @@
             // 
             BtnPrint.Image = Properties.Resources.PrintImge;
             BtnPrint.ImageAlign = ContentAlignment.MiddleRight;
-            BtnPrint.Location = new Point(191, 68);
+            BtnPrint.Location = new Point(215, 84);
+            BtnPrint.Margin = new Padding(3, 4, 3, 4);
             BtnPrint.Name = "BtnPrint";
-            BtnPrint.Size = new Size(91, 47);
+            BtnPrint.Size = new Size(102, 58);
             BtnPrint.TabIndex = 15;
             BtnPrint.Text = "پرنیت";
             BtnPrint.TextAlign = ContentAlignment.MiddleLeft;
             BtnPrint.UseVisualStyleBackColor = true;
+            BtnPrint.Click += BtnPrint_Click;
             // 
             // BtnSearchDegree
             // 
             BtnSearchDegree.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             BtnSearchDegree.Image = Properties.Resources.search_1_;
-            BtnSearchDegree.Location = new Point(698, 78);
+            BtnSearchDegree.Location = new Point(785, 96);
+            BtnSearchDegree.Margin = new Padding(3, 4, 3, 4);
             BtnSearchDegree.Name = "BtnSearchDegree";
-            BtnSearchDegree.Size = new Size(33, 29);
+            BtnSearchDegree.Size = new Size(37, 36);
             BtnSearchDegree.TabIndex = 11;
             BtnSearchDegree.UseVisualStyleBackColor = true;
             BtnSearchDegree.Click += BtnSearchDegree_Click;
@@ -121,9 +127,9 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(873, 83);
+            label4.Location = new Point(982, 103);
             label4.Name = "label4";
-            label4.Size = new Size(39, 17);
+            label4.Size = new Size(51, 23);
             label4.TabIndex = 9;
             label4.Text = "مدرک";
             // 
@@ -134,11 +140,12 @@
             ComboBoxSearch_ID_FK_Degree.DataSource = null;
             ComboBoxSearch_ID_FK_Degree.DisplayMember = "";
             ComboBoxSearch_ID_FK_Degree.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ComboBoxSearch_ID_FK_Degree.Location = new Point(737, 79);
+            ComboBoxSearch_ID_FK_Degree.Location = new Point(829, 98);
+            ComboBoxSearch_ID_FK_Degree.Margin = new Padding(3, 5, 3, 5);
             ComboBoxSearch_ID_FK_Degree.Name = "ComboBoxSearch_ID_FK_Degree";
             ComboBoxSearch_ID_FK_Degree.SelectedIndex = -1;
             ComboBoxSearch_ID_FK_Degree.SelectedValue = null;
-            ComboBoxSearch_ID_FK_Degree.Size = new Size(130, 25);
+            ComboBoxSearch_ID_FK_Degree.Size = new Size(130, 29);
             ComboBoxSearch_ID_FK_Degree.TabIndex = 10;
             ComboBoxSearch_ID_FK_Degree.ValueMember = "";
             // 
@@ -146,9 +153,10 @@
             // 
             BtnSearchSex.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             BtnSearchSex.Image = Properties.Resources.search_1_;
-            BtnSearchSex.Location = new Point(385, 74);
+            BtnSearchSex.Location = new Point(433, 91);
+            BtnSearchSex.Margin = new Padding(3, 4, 3, 4);
             BtnSearchSex.Name = "BtnSearchSex";
-            BtnSearchSex.Size = new Size(33, 29);
+            BtnSearchSex.Size = new Size(37, 36);
             BtnSearchSex.TabIndex = 14;
             BtnSearchSex.UseVisualStyleBackColor = true;
             BtnSearchSex.Click += BtnSearchSex_Click;
@@ -156,9 +164,9 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(562, 81);
+            label5.Location = new Point(632, 100);
             label5.Name = "label5";
-            label5.Size = new Size(47, 17);
+            label5.Size = new Size(62, 23);
             label5.TabIndex = 12;
             label5.Text = "جنسیت";
             // 
@@ -169,20 +177,21 @@
             ComboBoxSearchSex.DataSource = null;
             ComboBoxSearchSex.DisplayMember = "";
             ComboBoxSearchSex.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ComboBoxSearchSex.Location = new Point(424, 78);
-            ComboBoxSearchSex.Margin = new Padding(3, 4, 3, 4);
+            ComboBoxSearchSex.Location = new Point(477, 96);
+            ComboBoxSearchSex.Margin = new Padding(3, 5, 3, 5);
             ComboBoxSearchSex.Name = "ComboBoxSearchSex";
             ComboBoxSearchSex.SelectedIndex = -1;
             ComboBoxSearchSex.SelectedValue = null;
-            ComboBoxSearchSex.Size = new Size(130, 25);
+            ComboBoxSearchSex.Size = new Size(130, 29);
             ComboBoxSearchSex.TabIndex = 13;
             ComboBoxSearchSex.ValueMember = "";
             // 
             // button1
             // 
-            button1.Location = new Point(61, 67);
+            button1.Location = new Point(69, 83);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(92, 47);
+            button1.Size = new Size(104, 58);
             button1.TabIndex = 16;
             button1.Text = "انتقال کد";
             button1.UseVisualStyleBackColor = true;
@@ -191,9 +200,10 @@
             // 
             BtnSearchLastName.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             BtnSearchLastName.Image = Properties.Resources.search_1_;
-            BtnSearchLastName.Location = new Point(22, 22);
+            BtnSearchLastName.Location = new Point(25, 27);
+            BtnSearchLastName.Margin = new Padding(3, 4, 3, 4);
             BtnSearchLastName.Name = "BtnSearchLastName";
-            BtnSearchLastName.Size = new Size(33, 29);
+            BtnSearchLastName.Size = new Size(37, 36);
             BtnSearchLastName.TabIndex = 8;
             BtnSearchLastName.UseVisualStyleBackColor = true;
             BtnSearchLastName.Click += BtnSearchLastName_Click;
@@ -202,9 +212,10 @@
             // 
             BtnSearchName.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             BtnSearchName.Image = Properties.Resources.search_1_;
-            BtnSearchName.Location = new Point(385, 25);
+            BtnSearchName.Location = new Point(433, 31);
+            BtnSearchName.Margin = new Padding(3, 4, 3, 4);
             BtnSearchName.Name = "BtnSearchName";
-            BtnSearchName.Size = new Size(33, 29);
+            BtnSearchName.Size = new Size(37, 36);
             BtnSearchName.TabIndex = 5;
             BtnSearchName.UseVisualStyleBackColor = true;
             BtnSearchName.Click += ButtonSearchName_Click;
@@ -213,9 +224,10 @@
             // 
             BtnSearchNationalCode.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             BtnSearchNationalCode.Image = Properties.Resources.search_1_;
-            BtnSearchNationalCode.Location = new Point(698, 24);
+            BtnSearchNationalCode.Location = new Point(785, 30);
+            BtnSearchNationalCode.Margin = new Padding(3, 4, 3, 4);
             BtnSearchNationalCode.Name = "BtnSearchNationalCode";
-            BtnSearchNationalCode.Size = new Size(33, 29);
+            BtnSearchNationalCode.Size = new Size(37, 36);
             BtnSearchNationalCode.TabIndex = 2;
             BtnSearchNationalCode.UseVisualStyleBackColor = true;
             BtnSearchNationalCode.Click += ButtonSearchNationalCode_Click;
@@ -223,9 +235,9 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(204, 29);
+            label9.Location = new Point(230, 36);
             label9.Name = "label9";
-            label9.Size = new Size(77, 17);
+            label9.Size = new Size(100, 23);
             label9.TabIndex = 6;
             label9.Text = "نام خانوادگی";
             // 
@@ -233,27 +245,27 @@
             // 
             TextBoxSearchLastName.IsNumber = false;
             TextBoxSearchLastName.IsReal = false;
-            TextBoxSearchLastName.Location = new Point(61, 25);
-            TextBoxSearchLastName.Margin = new Padding(3, 4, 3, 4);
+            TextBoxSearchLastName.Location = new Point(69, 31);
+            TextBoxSearchLastName.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchLastName.Name = "TextBoxSearchLastName";
-            TextBoxSearchLastName.Size = new Size(140, 23);
+            TextBoxSearchLastName.Size = new Size(140, 29);
             TextBoxSearchLastName.TabIndex = 7;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(570, 28);
+            label10.Location = new Point(641, 35);
             label10.Name = "label10";
-            label10.Size = new Size(23, 17);
+            label10.Size = new Size(30, 23);
             label10.TabIndex = 3;
             label10.Text = "نام";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(883, 31);
+            label11.Location = new Point(993, 38);
             label11.Name = "label11";
-            label11.Size = new Size(45, 17);
+            label11.Size = new Size(58, 23);
             label11.TabIndex = 0;
             label11.Text = "کدملی";
             // 
@@ -261,29 +273,30 @@
             // 
             TextBoxSearchName.IsNumber = false;
             TextBoxSearchName.IsReal = false;
-            TextBoxSearchName.Location = new Point(424, 25);
-            TextBoxSearchName.Margin = new Padding(3, 4, 3, 4);
+            TextBoxSearchName.Location = new Point(477, 31);
+            TextBoxSearchName.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchName.Name = "TextBoxSearchName";
-            TextBoxSearchName.Size = new Size(140, 23);
+            TextBoxSearchName.Size = new Size(140, 29);
             TextBoxSearchName.TabIndex = 4;
             // 
             // TextBoxSearchNationalCode
             // 
             TextBoxSearchNationalCode.IsNumber = true;
             TextBoxSearchNationalCode.IsReal = false;
-            TextBoxSearchNationalCode.Location = new Point(737, 26);
-            TextBoxSearchNationalCode.Margin = new Padding(3, 4, 3, 4);
+            TextBoxSearchNationalCode.Location = new Point(829, 32);
+            TextBoxSearchNationalCode.Margin = new Padding(3, 5, 3, 5);
             TextBoxSearchNationalCode.Name = "TextBoxSearchNationalCode";
-            TextBoxSearchNationalCode.Size = new Size(140, 23);
+            TextBoxSearchNationalCode.Size = new Size(140, 29);
             TextBoxSearchNationalCode.TabIndex = 1;
             // 
             // ButtonSearchLastName
             // 
             ButtonSearchLastName.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             ButtonSearchLastName.Image = Properties.Resources.search_1_;
-            ButtonSearchLastName.Location = new Point(-133, 36);
+            ButtonSearchLastName.Location = new Point(-150, 44);
+            ButtonSearchLastName.Margin = new Padding(3, 4, 3, 4);
             ButtonSearchLastName.Name = "ButtonSearchLastName";
-            ButtonSearchLastName.Size = new Size(33, 29);
+            ButtonSearchLastName.Size = new Size(37, 36);
             ButtonSearchLastName.TabIndex = 32;
             ButtonSearchLastName.UseVisualStyleBackColor = true;
             // 
@@ -297,11 +310,12 @@
             DgvStudent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgvStudent.Columns.AddRange(new DataGridViewColumn[] { ColumnRowNumber, ColumnImage });
             DgvStudent.Dock = DockStyle.Fill;
-            DgvStudent.Location = new Point(0, 196);
+            DgvStudent.Location = new Point(0, 242);
+            DgvStudent.Margin = new Padding(3, 4, 3, 4);
             DgvStudent.Name = "DgvStudent";
             DgvStudent.ReadOnly = true;
             DgvStudent.RowHeadersWidth = 51;
-            DgvStudent.Size = new Size(941, 296);
+            DgvStudent.Size = new Size(1059, 366);
             DgvStudent.TabIndex = 0;
             DgvStudent.CellDoubleClick += DgvStudent_CellDoubleClick;
             DgvStudent.CellFormatting += DgvStudent_CellFormatting;
@@ -316,6 +330,7 @@
             // ColumnImage
             // 
             ColumnImage.HeaderText = "عکس";
+            ColumnImage.MinimumWidth = 6;
             ColumnImage.Name = "ColumnImage";
             ColumnImage.ReadOnly = true;
             ColumnImage.Resizable = DataGridViewTriState.True;
@@ -323,12 +338,12 @@
             // 
             // SearchStudentFrom
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(941, 492);
+            ClientSize = new Size(1059, 608);
             Controls.Add(DgvStudent);
             Controls.Add(panel2);
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(4, 6, 4, 6);
             Name = "SearchStudentFrom";
             Load += SearchStudentFrom_Load;
             Controls.SetChildIndex(panel2, 0);

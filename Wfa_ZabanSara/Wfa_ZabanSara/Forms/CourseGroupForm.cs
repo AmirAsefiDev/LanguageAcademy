@@ -15,7 +15,7 @@ namespace Wfa_ZabanSara.Forms
 
         private void CourseGroupForm_Load(object sender, EventArgs e)
         {
-            GetListCourseGroup();
+            //GetListCourseGroup();
             ClearText();
         }
         private void DgvCourseGroup_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -281,18 +281,14 @@ namespace Wfa_ZabanSara.Forms
 
         private void GetListCourseGroup()
         {
-            ////if (TextBoxTuition.Tag == null)
-            //if (TextBoxTuition.Tag.ToString() != string.Empty)
-            //{
-            //    CourseGroupBusiness courseGroupBusiness = new();
-            //    DgvCourseGroup.DataSource = courseGroupBusiness.DetailsByField("CourseGroup.ID",TextBoxTuition.Tag.ToString());
-            //    SetSettingCourseGroup();
-            //}
-            //else
-            //    DgvCourseGroup.DataSource = null;
-            CourseGroupBusiness courseGroupBusiness = new();
-            DgvCourseGroup.DataSource = courseGroupBusiness.GetList();
-            SetSettingCourseGroup();
+            if (TextBoxTuition.Tag.ToString() != string.Empty)
+            {
+                CourseGroupBusiness courseGroupBusiness = new();
+                DgvCourseGroup.DataSource = courseGroupBusiness.DetailsByField("CourseGroup.ID", TextBoxTuition.Tag.ToString());
+                SetSettingCourseGroup();
+            }
+            else
+                DgvCourseGroup.DataSource = null;
 
         }
         private void SetSettingCourseGroup()

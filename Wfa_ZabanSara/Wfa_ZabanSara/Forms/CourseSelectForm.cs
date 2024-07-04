@@ -14,9 +14,8 @@ namespace Wfa_ZabanSara.Forms
         }
         private void CourseSelectForm_Load(object sender, EventArgs e)
         {
-            GetListCourseSelect();
+            //GetListCourseSelect();
             ClearText();
-
         }
         private void DgvCourseSelect_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
@@ -78,12 +77,14 @@ namespace Wfa_ZabanSara.Forms
             {
                 CourseSelectBusiness ObjCourseSelectBusiness = new();
                 CourseSelect ObjCourseSelect = FillData();
-                if (ObjCourseSelectBusiness.Insert(ObjCourseSelect) == 0)
+                int Id = ObjCourseSelectBusiness.Insert(ObjCourseSelect);
+                if (Id == 0)
                 {
                     MsgBox.Show("این دانشجو قبلا این انتخاب را انجام داده است", "انتخاب واحد");
                 }
                 else
                 {
+                    TextBoxFinalScore.Tag = Id;
                     GetListCourseSelect();
                     MsgBox.Show("انتخاب واحد مورد نظر اضافه شد", "انتخاب واحد");
                     ClearText();
@@ -130,7 +131,7 @@ namespace Wfa_ZabanSara.Forms
                 CourseSelect ObjCourseSelect = FillData();
 
                 ObjCourseSelect.ID = int.Parse(TextBoxFinalScore.Tag.ToString());
-                ObjCourseSelectBusiness.Update(ObjCourseSelect);
+                int id = ObjCourseSelectBusiness.Update(ObjCourseSelect);
                 GetListCourseSelect();
                 MsgBox.Show(" انتخاب واحد مورد نظر ویرایش شد", "ویرایش انتخاب واحد");
                 ClearText();
@@ -284,8 +285,8 @@ namespace Wfa_ZabanSara.Forms
                     TextBoxCourseGroup.Tag = search.DgvCourseSelect.CurrentRow.Cells["ID_FK_CourseGroup"].Value.ToString();
                     TextBoxAttendScore.Text = search.DgvCourseSelect.CurrentRow.Cells["AttendScore"].Value.ToString();
                     TextBoxFinalScore.Text = search.DgvCourseSelect.CurrentRow.Cells["FinalScore"].Value.ToString();
-                    TextBoxAttendScore.Text = search.DgvCourseSelect.CurrentRow.Cells["ActivityScore"].Value.ToString();
-                    TextBoxAttendScore.Tag = search.DgvCourseSelect.CurrentRow.Cells["ID"].Value.ToString();
+                    TextBoxActivityScore.Text = search.DgvCourseSelect.CurrentRow.Cells["ActivityScore"].Value.ToString();
+                    TextBoxFinalScore.Tag = search.DgvCourseSelect.CurrentRow.Cells["ID"].Value.ToString();
 
 
                 }
@@ -294,9 +295,14 @@ namespace Wfa_ZabanSara.Forms
 
         private void GetListCourseSelect()
         {
-            CourseSelectBusiness ObjCourseSelectBusiness = new();
-            DgvCourseSelect.DataSource = ObjCourseSelectBusiness.GetList();
-            SetSettingCourseSelect();
+            if (TextBoxFinalScore.Tag.ToString() != string.Empty)
+            {
+                CourseSelectBusiness b = new CourseSelectBusiness();
+                DgvCourseSelect.DataSource = b.DetailsByField("CourseSelect.ID", TextBoxFinalScore.Tag.ToString());
+                SetSettingCourseSelect();
+            }
+            else
+                DgvCourseSelect.DataSource = null;
         }
         private void SetSettingCourseSelect()
         {
@@ -382,6 +388,9 @@ namespace Wfa_ZabanSara.Forms
             TextBoxAttendScore.Tag = string.Empty;
             TextBoxFinalScore.Text = "0";
             TextBoxFinalScore.Text = string.Empty;
+            TextBoxSearchCourseGroup.Text = string.Empty;
+            TextBoxSearchStudent.Text = string.Empty;
+            TextBoxSearchCourseGroupYear.Text = string.Empty;
         }
 
         public CourseSelect FillData()

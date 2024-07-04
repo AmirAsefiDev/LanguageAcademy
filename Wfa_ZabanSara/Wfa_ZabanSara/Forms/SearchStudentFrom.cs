@@ -1,4 +1,5 @@
 ﻿using Wfa_ZabanSara.App_source.BusinessLayer;
+using winprint;
 
 namespace Wfa_ZabanSara.Forms
 {
@@ -120,6 +121,13 @@ namespace Wfa_ZabanSara.Forms
 
                 }
             }
+        }
+
+        private void BtnPrint_Click(object sender, EventArgs e)
+        {
+            DgvStudent.Columns["ColumnImage"].Visible = false;
+            PrintDGV.Print_DataGridView(FarsiGridView.reverse_DataGridView(DgvStudent));
+            DgvStudent.Columns["ColumnImage"].Visible = true;
         }
     }
 }
