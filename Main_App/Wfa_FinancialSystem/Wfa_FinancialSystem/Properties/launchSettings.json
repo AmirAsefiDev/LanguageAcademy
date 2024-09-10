@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Wfa_FinancialSystem": {
+      "commandName": "Project",
+      "sqlDebugging": false
+    }
+  }
+}
